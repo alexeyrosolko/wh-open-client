@@ -1,0 +1,15 @@
+import { makeEnvironmentProviders } from "@angular/core";
+import { Configuration } from './configuration.mjs';
+import { BASE_PATH } from './variables.mjs';
+// Returns the service class providers, to be used in the [ApplicationConfig](https://angular.dev/api/core/ApplicationConfig).
+export function provideApi(configOrBasePath) {
+    return makeEnvironmentProviders([
+        typeof configOrBasePath === "string"
+            ? { provide: BASE_PATH, useValue: configOrBasePath }
+            : {
+                provide: Configuration,
+                useValue: new Configuration({ ...configOrBasePath }),
+            },
+    ]);
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJvdmlkZS1hcGkuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy93aHVpLWNsaWVudC9zcmMvbGliL2FwaS1jbGllbnQvcHJvdmlkZS1hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUF3Qix3QkFBd0IsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUMvRSxPQUFPLEVBQUUsYUFBYSxFQUEyQixNQUFNLGlCQUFpQixDQUFDO0FBQ3pFLE9BQU8sRUFBRSxTQUFTLEVBQUUsTUFBTSxhQUFhLENBQUM7QUFFeEMsOEhBQThIO0FBQzlILE1BQU0sVUFBVSxVQUFVLENBQUMsZ0JBQWtEO0lBQ3pFLE9BQU8sd0JBQXdCLENBQUM7UUFDNUIsT0FBTyxnQkFBZ0IsS0FBSyxRQUFRO1lBQ2hDLENBQUMsQ0FBQyxFQUFFLE9BQU8sRUFBRSxTQUFTLEVBQUUsUUFBUSxFQUFFLGdCQUFnQixFQUFFO1lBQ3BELENBQUMsQ0FBQztnQkFDRSxPQUFPLEVBQUUsYUFBYTtnQkFDdEIsUUFBUSxFQUFFLElBQUksYUFBYSxDQUFDLEVBQUUsR0FBRyxnQkFBZ0IsRUFBRSxDQUFDO2FBQ3ZEO0tBQ1IsQ0FBQyxDQUFDO0FBQ1AsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEVudmlyb25tZW50UHJvdmlkZXJzLCBtYWtlRW52aXJvbm1lbnRQcm92aWRlcnMgfSBmcm9tIFwiQGFuZ3VsYXIvY29yZVwiO1xuaW1wb3J0IHsgQ29uZmlndXJhdGlvbiwgQ29uZmlndXJhdGlvblBhcmFtZXRlcnMgfSBmcm9tICcuL2NvbmZpZ3VyYXRpb24nO1xuaW1wb3J0IHsgQkFTRV9QQVRIIH0gZnJvbSAnLi92YXJpYWJsZXMnO1xuXG4vLyBSZXR1cm5zIHRoZSBzZXJ2aWNlIGNsYXNzIHByb3ZpZGVycywgdG8gYmUgdXNlZCBpbiB0aGUgW0FwcGxpY2F0aW9uQ29uZmlnXShodHRwczovL2FuZ3VsYXIuZGV2L2FwaS9jb3JlL0FwcGxpY2F0aW9uQ29uZmlnKS5cbmV4cG9ydCBmdW5jdGlvbiBwcm92aWRlQXBpKGNvbmZpZ09yQmFzZVBhdGg6IHN0cmluZyB8IENvbmZpZ3VyYXRpb25QYXJhbWV0ZXJzKTogRW52aXJvbm1lbnRQcm92aWRlcnMge1xuICAgIHJldHVybiBtYWtlRW52aXJvbm1lbnRQcm92aWRlcnMoW1xuICAgICAgICB0eXBlb2YgY29uZmlnT3JCYXNlUGF0aCA9PT0gXCJzdHJpbmdcIlxuICAgICAgICAgICAgPyB7IHByb3ZpZGU6IEJBU0VfUEFUSCwgdXNlVmFsdWU6IGNvbmZpZ09yQmFzZVBhdGggfVxuICAgICAgICAgICAgOiB7XG4gICAgICAgICAgICAgICAgcHJvdmlkZTogQ29uZmlndXJhdGlvbixcbiAgICAgICAgICAgICAgICB1c2VWYWx1ZTogbmV3IENvbmZpZ3VyYXRpb24oeyAuLi5jb25maWdPckJhc2VQYXRoIH0pLFxuICAgICAgICAgICAgfSxcbiAgICBdKTtcbn0iXX0=
