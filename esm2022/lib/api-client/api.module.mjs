@@ -1,5 +1,5 @@
 import { NgModule, SkipSelf, Optional } from '@angular/core';
-import { Configuration } from './configuration.mjs';
+import { Configuration } from './configuration';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/common/http";
 export class ApiModule {

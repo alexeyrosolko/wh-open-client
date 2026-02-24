@@ -1,36 +1,7 @@
 import * as i0 from '@angular/core';
-import { Injectable, Component, InjectionToken, Optional, Inject, NgModule, SkipSelf, makeEnvironmentProviders } from '@angular/core';
+import { InjectionToken, Injectable, Optional, Inject, NgModule, SkipSelf, makeEnvironmentProviders } from '@angular/core';
 import * as i1 from '@angular/common/http';
 import { HttpParams, HttpHeaders, HttpContext } from '@angular/common/http';
-
-class WhuiClientService {
-    constructor() { }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: WhuiClientService, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: WhuiClientService, providedIn: 'root' });
-}
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: WhuiClientService, decorators: [{
-            type: Injectable,
-            args: [{
-                    providedIn: 'root'
-                }]
-        }], ctorParameters: () => [] });
-
-class WhuiClientComponent {
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: WhuiClientComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
-    static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.14", type: WhuiClientComponent, isStandalone: true, selector: "lib-whui-client", ngImport: i0, template: `
-    <p>
-      whui-client works!
-    </p>
-  `, isInline: true, styles: [""] });
-}
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: WhuiClientComponent, decorators: [{
-            type: Component,
-            args: [{ selector: 'lib-whui-client', standalone: true, imports: [], template: `
-    <p>
-      whui-client works!
-    </p>
-  ` }]
-        }] });
 
 const BASE_PATH = new InjectionToken('basePath');
 const COLLECTION_FORMATS = {
@@ -4074,5 +4045,5 @@ function provideApi(configOrBasePath) {
  * Generated bundle index. Do not edit.
  */
 
-export { APIS, AdminService, ApiModule, BASE_PATH, COLLECTION_FORMATS, Configuration, HistoryService, OrderDto, OrderService, OrdersControllerService, OrdersService, PersonDto, PrinterControllerService, PrinterService, SuppliesTransitionService, SupplyDto, SupplyService, SupplyTaskService, SupplyTransitionService, SupplyUploadRecordService, TenantService, TenantsService, ToStockTransitionService, WhuiClientComponent, WhuiClientService, provideApi };
-//# sourceMappingURL=whui-client.mjs.map
+export { APIS, AdminService, ApiModule, BASE_PATH, COLLECTION_FORMATS, Configuration, HistoryService, OrderDto, OrderService, OrdersControllerService, OrdersService, PersonDto, PrinterControllerService, PrinterService, SuppliesTransitionService, SupplyDto, SupplyService, SupplyTaskService, SupplyTransitionService, SupplyUploadRecordService, TenantService, TenantsService, ToStockTransitionService, provideApi };
+//# sourceMappingURL=wh-open-client.mjs.map

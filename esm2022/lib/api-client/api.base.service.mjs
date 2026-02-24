@@ -8,9 +8,9 @@
  * Do not edit the class manually.
  */
 import { HttpHeaders } from '@angular/common/http';
-import { CustomHttpParameterCodec } from './encoder.mjs';
-import { Configuration } from './configuration.mjs';
-import { QueryParamStyle, concatHttpParamsObject } from './query.params.mjs';
+import { CustomHttpParameterCodec } from './encoder';
+import { Configuration } from './configuration';
+import { QueryParamStyle, concatHttpParamsObject } from './query.params';
 export class BaseService {
     basePath = 'http://localhost:8080';
     defaultHeaders = new HttpHeaders();

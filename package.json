@@ -1,6 +1,6 @@
 {
-  "name": "whui-client",
-  "version": "0.1.9",
+  "name": "wh-open-client",
+  "version": "0.1.10",
   "peerDependencies": {
     "@angular/common": "^18.2.0",
     "@angular/core": "^18.2.0"
@@ -9,7 +9,7 @@
     "tslib": "^2.3.0"
   },
   "sideEffects": false,
-  "module": "fesm2022/whui-client.mjs",
+  "module": "fesm2022/wh-open-client.mjs",
   "typings": "index.d.ts",
   "exports": {
     "./package.json": {
@@ -17,9 +17,9 @@
     },
     ".": {
       "types": "./index.d.ts",
-      "esm2022": "./esm2022/whui-client.mjs",
-      "esm": "./esm2022/whui-client.mjs",
-      "default": "./fesm2022/whui-client.mjs"
+      "esm2022": "./esm2022/wh-open-client.mjs",
+      "esm": "./esm2022/wh-open-client.mjs",
+      "default": "./fesm2022/wh-open-client.mjs"
     }
   }
 }

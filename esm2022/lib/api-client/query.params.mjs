@@ -1,5 +1,5 @@
 import { HttpParams } from '@angular/common/http';
-import { CustomHttpParameterCodec, IdentityHttpParameterCodec } from './encoder.mjs';
+import { CustomHttpParameterCodec, IdentityHttpParameterCodec } from './encoder';
 export var QueryParamStyle;
 (function (QueryParamStyle) {
     QueryParamStyle[QueryParamStyle["Json"] = 0] = "Json";

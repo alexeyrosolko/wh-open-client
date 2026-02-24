@@ -10,13 +10,13 @@
 /* tslint:disable:no-unused-variable member-ordering */
 import { Inject, Injectable, Optional } from '@angular/core';
 import { HttpContext } from '@angular/common/http';
-import { OpenApiHttpParams, QueryParamStyle } from '../query.params.mjs';
+import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 // @ts-ignore
-import { BASE_PATH } from '../variables.mjs';
-import { BaseService } from '../api.base.service.mjs';
+import { BASE_PATH } from '../variables';
+import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
 import * as i1 from "@angular/common/http";
-import * as i2 from "../configuration.mjs";
+import * as i2 from "../configuration";
 export class SupplyUploadRecordService extends BaseService {
     httpClient;
     constructor(httpClient, basePath, configuration) {
