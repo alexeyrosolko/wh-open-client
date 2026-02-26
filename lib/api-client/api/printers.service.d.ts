@@ -36,8 +36,8 @@ export declare class PrintersService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponsePrinterDto>>;
     /**
-     * Получить список тенантов
-     * Возвращает список всех тенантов с пагинацией
+     * Получить список принтеров
+     * Возвращает список всех принтеров с пагинацией
      * @endpoint get /api/printer
      * @param pageable
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.

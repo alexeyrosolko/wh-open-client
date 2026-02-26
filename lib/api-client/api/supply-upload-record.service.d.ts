@@ -66,6 +66,31 @@ export declare class SupplyUploadRecordService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;
     /**
+     * Скопировать записи загрузок в буфер обмена
+     * Скопировать записи загрузок в буфер обмена
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/uploadrecord/csv/clipboard
+     * @param warehouseCode
+     * @param supplyCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    copySupplyUploadRecordsToClipboard(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<string>;
+    copySupplyUploadRecordsToClipboard(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<string>>;
+    copySupplyUploadRecordsToClipboard(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<string>>;
+    /**
      * Посчитать записи загрузок
      * Вернуть количество записей загрузок, соответствующих поставке
      * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/uploadrecord/count
@@ -188,6 +213,32 @@ export declare class SupplyUploadRecordService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
     uploadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, uploadSupplyUploadRecordsCsvRequest?: UploadSupplyUploadRecordsCsvRequest, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseCommonDto>>;
+    /**
+     * Загрузить записи поставки из буфера обмена
+     * Загрузить записи поставки из буфера обмена
+     * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/uploadrecord/csv/clipboard
+     * @param warehouseCode
+     * @param supplyCode
+     * @param body
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    uploadSupplyUploadRecordsFromClipboard(warehouseCode: string, supplyCode: string, body: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseCommonDto>;
+    uploadSupplyUploadRecordsFromClipboard(warehouseCode: string, supplyCode: string, body: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseCommonDto>>;
+    uploadSupplyUploadRecordsFromClipboard(warehouseCode: string, supplyCode: string, body: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*';
         context?: HttpContext;
         transferCache?: boolean;
