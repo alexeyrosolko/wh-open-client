@@ -7,10 +7,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { PrintSringPayload } from './print-sring-payload';
 import { PersonDto } from './person-dto';
 export interface PrintTaskDto {
     id?: string;
     person?: PersonDto;
-    barCode?: string;
+    payload?: PrintSringPayload;
     timestamp?: string;
 }

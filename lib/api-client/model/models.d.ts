@@ -19,6 +19,8 @@ export * from './order-upload-record-dto';
 export * from './out-stock-transition-dto';
 export * from './pageable';
 export * from './person-dto';
+export * from './print-payload';
+export * from './print-sring-payload';
 export * from './print-task-dto';
 export * from './printer-dto';
 export * from './response-article-dto';
