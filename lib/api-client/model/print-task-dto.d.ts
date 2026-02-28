@@ -7,11 +7,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { PrintTaskDtoPayload } from './print-task-dto-payload';
 import { PersonDto } from './person-dto';
+import { GetBarImageRequest } from './get-bar-image-request';
 export interface PrintTaskDto {
     id?: string;
     person?: PersonDto;
-    payload?: PrintTaskDtoPayload;
+    payload?: GetBarImageRequest;
     timestamp?: string;
 }

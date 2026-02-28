@@ -10,7 +10,7 @@
 import { PrintSringPayload } from './print-sring-payload';
 import { PrintNameBarCountPayload } from './print-name-bar-count-payload';
 /**
- * @type PrintTaskDtoPayload
+ * @type GetBarImageRequest
  * @export
  */
-export type PrintTaskDtoPayload = PrintNameBarCountPayload | PrintSringPayload;
+export type GetBarImageRequest = PrintNameBarCountPayload | PrintSringPayload;

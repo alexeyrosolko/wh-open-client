@@ -784,7 +784,10 @@ class ImageService extends BaseService {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
-    getBarImage(observe = 'body', reportProgress = false, options) {
+    getBarImage(printNameBarCountPayloadPrintSringPayload, observe = 'body', reportProgress = false, options) {
+        if (printNameBarCountPayloadPrintSringPayload === null || printNameBarCountPayloadPrintSringPayload === undefined) {
+            throw new Error('Required parameter printNameBarCountPayloadPrintSringPayload was null or undefined when calling getBarImage.');
+        }
         let localVarHeaders = this.defaultHeaders;
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             '*/*',
@@ -795,6 +798,14 @@ class ImageService extends BaseService {
         }
         const localVarHttpContext = options?.context ?? new HttpContext();
         const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
         let responseType_ = 'json';
         if (localVarHttpHeaderAcceptSelected) {
             if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
@@ -807,10 +818,11 @@ class ImageService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/barcode/`;
+        let localVarPath = `/api/barcode`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
+            body: printNameBarCountPayloadPrintSringPayload,
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
