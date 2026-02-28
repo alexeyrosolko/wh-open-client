@@ -8,6 +8,5 @@
  * Do not edit the class manually.
  */
 export interface PrintPayload {
-    str?: string;
     type: string;
 }
