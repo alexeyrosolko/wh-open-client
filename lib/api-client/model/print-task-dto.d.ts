@@ -13,5 +13,6 @@ export interface PrintTaskDto {
     id?: string;
     person?: PersonDto;
     payload?: GetBarImageRequest;
+    quantity?: number;
     timestamp?: string;
 }
