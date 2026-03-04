@@ -2596,6 +2596,45 @@ class SupplyTasksService extends BaseService {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
+    getByWarehouse(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getByWarehouse.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/task`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
     getSupplyTasks(observe = 'body', reportProgress = false, options) {
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -3267,6 +3306,143 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImpo
  * Do not edit the class manually.
  */
 /* tslint:disable:no-unused-variable member-ordering */
+class TaskService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    addTask(warehouseCode, taskDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling addTask.');
+        }
+        if (taskDto === null || taskDto === undefined) {
+            throw new Error('Required parameter taskDto was null or undefined when calling addTask.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/task`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: taskDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    deleteTask(warehouseCode, taskDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling deleteTask.');
+        }
+        if (taskDto === null || taskDto === undefined) {
+            throw new Error('Required parameter taskDto was null or undefined when calling deleteTask.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/task`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: taskDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: TaskService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: TaskService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: TaskService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
 class TenantService extends BaseService {
     httpClient;
     constructor(httpClient, basePath, configuration) {
@@ -3783,7 +3959,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImpo
                     type: Optional
                 }] }] });
 
-const APIS = [AdminService, HistoryService, ImageService, OrderService, OrdersService, OrdersControllerService, PrintService, PrintersService, SuppliesTransitionService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, TenantService, TenantsService, ToStockTransitionService];
+const APIS = [AdminService, HistoryService, ImageService, OrderService, OrdersService, OrdersControllerService, PrintService, PrintersService, SuppliesTransitionService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, TaskService, TenantService, TenantsService, ToStockTransitionService];
 
 /**
  * OpenAPI definition
@@ -4264,5 +4440,5 @@ function provideApi(configOrBasePath) {
  * Generated bundle index. Do not edit.
  */
 
-export { APIS, AdminService, ApiModule, BASE_PATH, COLLECTION_FORMATS, Configuration, HistoryService, ImageService, OrderDto, OrderService, OrdersControllerService, OrdersService, PersonDto, PrintService, PrintersService, SuppliesTransitionService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, TenantService, TenantsService, ToStockTransitionService, provideApi };
+export { APIS, AdminService, ApiModule, BASE_PATH, COLLECTION_FORMATS, Configuration, HistoryService, ImageService, OrderDto, OrderService, OrdersControllerService, OrdersService, PersonDto, PrintService, PrintersService, SuppliesTransitionService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, TaskService, TenantService, TenantsService, ToStockTransitionService, provideApi };
 //# sourceMappingURL=wh-open-client.mjs.map

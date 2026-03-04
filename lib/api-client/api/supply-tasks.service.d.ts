@@ -8,6 +8,30 @@ export declare class SupplyTasksService extends BaseService {
     protected httpClient: HttpClient;
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
     /**
+     * Выборка задач на разнесение прихода по складу
+     * Выборка задач на разнесение прихода по складу
+     * @endpoint get /api/warehouse/{warehouseCode}/task
+     * @param warehouseCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    getByWarehouse(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseListTaskDto>;
+    getByWarehouse(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseListTaskDto>>;
+    getByWarehouse(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseListTaskDto>>;
+    /**
      * Выборка задач на разнесение прихода по текущему кладовщику
      * Выборка задач на разнесение прихода по текущему кладовщику
      * @endpoint get /api/task/login
