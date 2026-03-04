@@ -1,12 +1,9 @@
 import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FieldMapsDto } from '../model/field-maps-dto';
 import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListSupplyDto } from '../model/response-list-supply-dto';
 import { ResponseSupplyDto } from '../model/response-supply-dto';
-import { ResponseUploadedFileDto } from '../model/response-uploaded-file-dto';
-import { UploadSupplyUploadRecordsCsvRequest } from '../model/upload-supply-upload-records-csv-request';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
@@ -116,31 +113,6 @@ export declare class SupplyService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseSupplyDto>>;
     /**
-     * Получить предзагруженный файл
-     * Получить предзагруженный файл
-     * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/uploadedfile
-     * @param warehouseCode
-     * @param supplyCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    getSupplyUploadedFile(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseUploadedFileDto>;
-    getSupplyUploadedFile(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseUploadedFileDto>>;
-    getSupplyUploadedFile(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseUploadedFileDto>>;
-    /**
      * Поиск поставок
      * Найти список поставок по коду склада и шаблону кода поставки
      * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/search
@@ -165,58 +137,6 @@ export declare class SupplyService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListSupplyDto>>;
-    /**
-     * Загрузить данные через загруженного файла
-     * Загрузить данные через загруженного файла
-     * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/uploadedfile/csv
-     * @param warehouseCode
-     * @param supplyCode
-     * @param uploadSupplyUploadRecordsCsvRequest
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    uploadFromUploadedFile(warehouseCode: string, supplyCode: string, uploadSupplyUploadRecordsCsvRequest?: UploadSupplyUploadRecordsCsvRequest, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    uploadFromUploadedFile(warehouseCode: string, supplyCode: string, uploadSupplyUploadRecordsCsvRequest?: UploadSupplyUploadRecordsCsvRequest, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadFromUploadedFile(warehouseCode: string, supplyCode: string, uploadSupplyUploadRecordsCsvRequest?: UploadSupplyUploadRecordsCsvRequest, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
-    /**
-     * Загрузить данные поставки из загруженного файла
-     * Выполнить загрузку данных в указанную поставку из ранее загруженного файла
-     * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/uploadedfile/convert
-     * @param warehouseCode
-     * @param supplyCode
-     * @param fields
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    uploadFromUploadedFile1(warehouseCode: string, supplyCode: string, fields: FieldMapsDto, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    uploadFromUploadedFile1(warehouseCode: string, supplyCode: string, fields: FieldMapsDto, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadFromUploadedFile1(warehouseCode: string, supplyCode: string, fields: FieldMapsDto, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SupplyService, [null, { optional: true; }, { optional: true; }]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SupplyService>;
 }
