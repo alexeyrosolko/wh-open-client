@@ -128,6 +128,29 @@ export declare class AdminService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseWhAdminIsPresentDto>>;
+    /**
+     * truncateAllTables
+     * truncateAllTables
+     * @endpoint delete /api/admin/delete
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    truncateAllTables(observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseCommonDto>;
+    truncateAllTables(observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseCommonDto>>;
+    truncateAllTables(observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseCommonDto>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<AdminService, [null, { optional: true; }, { optional: true; }]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<AdminService>;
 }

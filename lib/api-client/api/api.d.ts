@@ -1,5 +1,9 @@
+export * from './absent-articles.service';
+import { AbsentArticlesService } from './absent-articles.service';
 export * from './admin.service';
 import { AdminService } from './admin.service';
+export * from './helper.service';
+import { HelperService } from './helper.service';
 export * from './history.service';
 import { HistoryService } from './history.service';
 export * from './image.service';
@@ -34,4 +38,4 @@ export * from './tenants.service';
 import { TenantsService } from './tenants.service';
 export * from './to-stock-transition.service';
 import { ToStockTransitionService } from './to-stock-transition.service';
-export declare const APIS: (typeof AdminService | typeof HistoryService | typeof ImageService | typeof OrderService | typeof OrdersService | typeof OrdersControllerService | typeof PrintService | typeof PrintersService | typeof SuppliesTransitionService | typeof SupplyService | typeof SupplyTaskService | typeof SupplyTasksService | typeof SupplyTransitionService | typeof SupplyUploadRecordService | typeof TaskService | typeof TenantService | typeof TenantsService | typeof ToStockTransitionService)[];
+export declare const APIS: (typeof AbsentArticlesService | typeof AdminService | typeof HelperService | typeof HistoryService | typeof ImageService | typeof OrderService | typeof OrdersService | typeof OrdersControllerService | typeof PrintService | typeof PrintersService | typeof SuppliesTransitionService | typeof SupplyService | typeof SupplyTaskService | typeof SupplyTasksService | typeof SupplyTransitionService | typeof SupplyUploadRecordService | typeof TaskService | typeof TenantService | typeof TenantsService | typeof ToStockTransitionService)[];

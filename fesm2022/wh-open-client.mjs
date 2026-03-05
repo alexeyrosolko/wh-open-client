@@ -415,6 +415,111 @@ class BaseService {
  * Do not edit the class manually.
  */
 /* tslint:disable:no-unused-variable member-ordering */
+class AbsentArticlesService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    moveAbsentArticlesToArticles(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/sparepart/absentarticles/movetoarticles`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    moveAbsentArticlesToArticles1(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse//sparepart/absentarticles/movetoarticles`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AbsentArticlesService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AbsentArticlesService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AbsentArticlesService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
 class AdminService extends BaseService {
     httpClient;
     constructor(httpClient, basePath, configuration) {
@@ -614,10 +719,155 @@ class AdminService extends BaseService {
             reportProgress: reportProgress
         });
     }
+    truncateAllTables(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/admin/delete`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AdminService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AdminService, providedIn: 'root' });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AdminService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class HelperService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    getAuthorization(authorization, observe = 'body', reportProgress = false, options) {
+        if (authorization === null || authorization === undefined) {
+            throw new Error('Required parameter authorization was null or undefined when calling getAuthorization.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        if (authorization !== undefined && authorization !== null) {
+            localVarHeaders = localVarHeaders.set('Authorization', String(authorization));
+        }
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/admin/AUTHORIZATION`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    helloWorld(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/admin`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: HelperService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: HelperService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: HelperService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -3626,7 +3876,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImpo
                     type: Optional
                 }] }] });
 
-const APIS = [AdminService, HistoryService, ImageService, OrderService, OrdersService, OrdersControllerService, PrintService, PrintersService, SuppliesTransitionService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, TaskService, TenantService, TenantsService, ToStockTransitionService];
+const APIS = [AbsentArticlesService, AdminService, HelperService, HistoryService, ImageService, OrderService, OrdersService, OrdersControllerService, PrintService, PrintersService, SuppliesTransitionService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, TaskService, TenantService, TenantsService, ToStockTransitionService];
 
 /**
  * OpenAPI definition
@@ -4127,5 +4377,5 @@ function provideApi(configOrBasePath) {
  * Generated bundle index. Do not edit.
  */
 
-export { APIS, AdminService, ApiModule, BASE_PATH, COLLECTION_FORMATS, Configuration, HistoryService, ImageService, OrderDto, OrderService, OrdersControllerService, OrdersService, PersonDto, PrintService, PrintersService, SuppliesTransitionService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, TaskService, TenantService, TenantsService, ToStockTransitionService, provideApi };
+export { APIS, AbsentArticlesService, AdminService, ApiModule, BASE_PATH, COLLECTION_FORMATS, Configuration, HelperService, HistoryService, ImageService, OrderDto, OrderService, OrdersControllerService, OrdersService, PersonDto, PrintService, PrintersService, SuppliesTransitionService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, TaskService, TenantService, TenantsService, ToStockTransitionService, provideApi };
 //# sourceMappingURL=wh-open-client.mjs.map
