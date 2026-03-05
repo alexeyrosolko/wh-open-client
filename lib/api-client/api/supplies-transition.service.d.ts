@@ -11,12 +11,13 @@ export declare class SuppliesTransitionService extends BaseService {
     /**
      * Добавить переход поставок
      * Создать переход для набора поставок и выполнить проверку состояния с добавлением в склад
-     * @endpoint post /warehouse/{warehouseCode}/transition/supply
+     * @endpoint post /api/warehouse/{warehouseCode}/transition/supply
      * @param warehouseCode
      * @param supplyTransitionDto
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
+     * @deprecated
      */
     addSuppliesTransition(warehouseCode: string, supplyTransitionDto: SupplyTransitionDto, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*';
@@ -29,31 +30,6 @@ export declare class SuppliesTransitionService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
     addSuppliesTransition(warehouseCode: string, supplyTransitionDto: SupplyTransitionDto, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
-    /**
-     * Добавить переход поставок
-     * Создать переход для набора поставок и выполнить проверку состояния с добавлением в склад
-     * @endpoint post /api/warehouse/{warehouseCode}/transition/supply
-     * @param warehouseCode
-     * @param supplyTransitionDto
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    addSuppliesTransition1(warehouseCode: string, supplyTransitionDto: SupplyTransitionDto, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    addSuppliesTransition1(warehouseCode: string, supplyTransitionDto: SupplyTransitionDto, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    addSuppliesTransition1(warehouseCode: string, supplyTransitionDto: SupplyTransitionDto, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*';
         context?: HttpContext;
         transferCache?: boolean;

@@ -11,6 +11,8 @@ import { AccountHistoryDto } from './account-history-dto';
 export interface TransitionHistoryDto {
     id?: string;
     person?: string;
+    warehouseCode?: string;
+    articleCode?: string;
     debet?: AccountHistoryDto;
     credit?: AccountHistoryDto;
     quantity?: number;

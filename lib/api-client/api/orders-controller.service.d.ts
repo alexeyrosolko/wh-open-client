@@ -8,7 +8,7 @@ export declare class OrdersControllerService extends BaseService {
     protected httpClient: HttpClient;
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
     /**
-     * @endpoint get /warehouse/{warehouseCode}/order/count
+     * @endpoint get /api/warehouse/{warehouseCode}/order/count
      * @param warehouseCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -25,28 +25,6 @@ export declare class OrdersControllerService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
     getCount2(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCountDto>>;
-    /**
-     * @endpoint get /api/warehouse/{warehouseCode}/order/count
-     * @param warehouseCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    getCount3(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCountDto>;
-    getCount3(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCountDto>>;
-    getCount3(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*';
         context?: HttpContext;
         transferCache?: boolean;

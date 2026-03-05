@@ -3,7 +3,9 @@ import { Observable } from 'rxjs';
 import { Pageable } from '../model/pageable';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListTransitionHistoryDto } from '../model/response-list-transition-history-dto';
+import { ResponseListTransitionHistoryFlatDto } from '../model/response-list-transition-history-flat-dto';
 import { TransitionFilterDto } from '../model/transition-filter-dto';
+import { TransitionFilterFlatDto } from '../model/transition-filter-flat-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
@@ -55,6 +57,55 @@ export declare class HistoryService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
     getTransitionHistoryCount(transitionFilterDto: TransitionFilterDto, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseCountDto>>;
+    /**
+     * Получить историю переходов
+     * Получить список всех переходов со статусами и фильтрацией
+     * @endpoint post /api/transition/history/flat
+     * @param pageable
+     * @param transitionFilterFlatDto
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    getTransitionHistoryFlat(pageable: Pageable, transitionFilterFlatDto: TransitionFilterFlatDto, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseListTransitionHistoryFlatDto>;
+    getTransitionHistoryFlat(pageable: Pageable, transitionFilterFlatDto: TransitionFilterFlatDto, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseListTransitionHistoryFlatDto>>;
+    getTransitionHistoryFlat(pageable: Pageable, transitionFilterFlatDto: TransitionFilterFlatDto, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseListTransitionHistoryFlatDto>>;
+    /**
+     * Получить количество записей истории переходов
+     * Получить количество записей истории переходов с применением фильтров
+     * @endpoint post /api/transition/history/flat/count
+     * @param transitionFilterFlatDto
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    getTransitionHistoryFlatCount(transitionFilterFlatDto: TransitionFilterFlatDto, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseCountDto>;
+    getTransitionHistoryFlatCount(transitionFilterFlatDto: TransitionFilterFlatDto, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseCountDto>>;
+    getTransitionHistoryFlatCount(transitionFilterFlatDto: TransitionFilterFlatDto, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;

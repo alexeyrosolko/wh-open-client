@@ -7,12 +7,17 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AccountFilterDto } from './account-filter-dto';
-export interface TransitionFilterDto {
+export interface TransitionFilterFlatDto {
     warehouseCode?: string;
-    all?: AccountFilterDto;
-    debet?: AccountFilterDto;
-    credit?: AccountFilterDto;
+    allSupplyCode?: string;
+    allOrderCode?: string;
+    allShelfCode?: string;
+    debetSupplyCode?: string;
+    debetOrderCode?: string;
+    debetShelfCode?: string;
+    creditSupplyCode?: string;
+    creditOrderCode?: string;
+    creditShelfCode?: string;
     articleCode?: string;
     quantity?: number;
     price?: number;
