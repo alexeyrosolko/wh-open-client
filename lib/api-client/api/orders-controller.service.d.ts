@@ -15,17 +15,17 @@ export declare class OrdersControllerService extends BaseService {
      * @param options additional options
      */
     getCount2(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCountDto>;
     getCount2(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
     getCount2(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;

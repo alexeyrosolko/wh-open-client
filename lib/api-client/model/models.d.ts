@@ -85,7 +85,6 @@ export * from './transition-filter-dto';
 export * from './transition-filter-flat-dto';
 export * from './transition-history-dto';
 export * from './transition-history-flat-dto';
-export * from './upload-supply-upload-records-csv-request';
 export * from './warehouse-dto';
 export * from './wh-admin-dto';
 export * from './wh-admin-is-present-dto';

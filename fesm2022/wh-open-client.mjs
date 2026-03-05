@@ -426,7 +426,8 @@ class AbsentArticlesService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -462,7 +463,8 @@ class AbsentArticlesService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -534,7 +536,8 @@ class AdminService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -579,7 +582,8 @@ class AdminService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -615,7 +619,8 @@ class AdminService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -654,7 +659,8 @@ class AdminService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -688,7 +694,8 @@ class AdminService extends BaseService {
     isAdminPresent(observe = 'body', reportProgress = false, options) {
         let localVarHeaders = this.defaultHeaders;
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -724,7 +731,8 @@ class AdminService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -782,6 +790,1159 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImpo
  * Do not edit the class manually.
  */
 /* tslint:disable:no-unused-variable member-ordering */
+class ArticleService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    getArticleByCode(articleCode, observe = 'body', reportProgress = false, options) {
+        if (articleCode === null || articleCode === undefined) {
+            throw new Error('Required parameter articleCode was null or undefined when calling getArticleByCode.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/sparepart/${this.configuration.encodeParam({ name: "articleCode", value: articleCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getArticleByCode1(warehouseCode, articleCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getArticleByCode1.');
+        }
+        if (articleCode === null || articleCode === undefined) {
+            throw new Error('Required parameter articleCode was null or undefined when calling getArticleByCode1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/sparepart/${this.configuration.encodeParam({ name: "articleCode", value: articleCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getArticleByCode2(articleCode, observe = 'body', reportProgress = false, options) {
+        if (articleCode === null || articleCode === undefined) {
+            throw new Error('Required parameter articleCode was null or undefined when calling getArticleByCode2.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/article/${this.configuration.encodeParam({ name: "articleCode", value: articleCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ArticleService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ArticleService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ArticleService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class ArticlesService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    addArticle(warehouseCode, articleDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling addArticle.');
+        }
+        if (articleDto === null || articleDto === undefined) {
+            throw new Error('Required parameter articleDto was null or undefined when calling addArticle.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/sparepart`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: articleDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    addArticle1(articleDto, observe = 'body', reportProgress = false, options) {
+        if (articleDto === null || articleDto === undefined) {
+            throw new Error('Required parameter articleDto was null or undefined when calling addArticle1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/sparepart`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: articleDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countArticles(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/sparepart/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countArticles1(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countArticles1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/sparepart/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countSearchArticles(articleCode, observe = 'body', reportProgress = false, options) {
+        if (articleCode === null || articleCode === undefined) {
+            throw new Error('Required parameter articleCode was null or undefined when calling countSearchArticles.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/sparepart/${this.configuration.encodeParam({ name: "articleCode", value: articleCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countSearchArticles1(warehouseCode, articleCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countSearchArticles1.');
+        }
+        if (articleCode === null || articleCode === undefined) {
+            throw new Error('Required parameter articleCode was null or undefined when calling countSearchArticles1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/sparepart/${this.configuration.encodeParam({ name: "articleCode", value: articleCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    downloadArticlesCsv(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'text/plain'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/sparepart/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    downloadArticlesCsv1(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadArticlesCsv1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'text/plain'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/sparepart/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getArticlesByWarehouse(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getArticlesByWarehouse.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getArticlesByWarehouse.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/sparepart`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getArticlesByWarehouse1(pageable, observe = 'body', reportProgress = false, options) {
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getArticlesByWarehouse1.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/sparepart`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    searchArticles(warehouseCode, articleCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling searchArticles.');
+        }
+        if (articleCode === null || articleCode === undefined) {
+            throw new Error('Required parameter articleCode was null or undefined when calling searchArticles.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/sparepart/${this.configuration.encodeParam({ name: "articleCode", value: articleCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    searchArticles1(articleCode, observe = 'body', reportProgress = false, options) {
+        if (articleCode === null || articleCode === undefined) {
+            throw new Error('Required parameter articleCode was null or undefined when calling searchArticles1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/sparepart/${this.configuration.encodeParam({ name: "articleCode", value: articleCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    uploadArticlesCsv(file, observe = 'body', reportProgress = false, options) {
+        if (file === null || file === undefined) {
+            throw new Error('Required parameter file was null or undefined when calling uploadArticlesCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'multipart/form-data'
+        ];
+        const canConsumeForm = this.canConsumeForm(consumes);
+        let localVarFormParams;
+        let localVarUseForm = false;
+        let localVarConvertFormParamsToString = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
+        if (localVarUseForm) {
+            localVarFormParams = new FormData();
+        }
+        else {
+            localVarFormParams = new HttpParams({ encoder: this.encoder });
+        }
+        if (file !== undefined) {
+            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/sparepart/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    uploadArticlesCsv1(warehouseCode, file, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadArticlesCsv1.');
+        }
+        if (file === null || file === undefined) {
+            throw new Error('Required parameter file was null or undefined when calling uploadArticlesCsv1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'multipart/form-data'
+        ];
+        const canConsumeForm = this.canConsumeForm(consumes);
+        let localVarFormParams;
+        let localVarUseForm = false;
+        let localVarConvertFormParamsToString = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
+        if (localVarUseForm) {
+            localVarFormParams = new FormData();
+        }
+        else {
+            localVarFormParams = new HttpParams({ encoder: this.encoder });
+        }
+        if (file !== undefined) {
+            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/sparepart/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ArticlesService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ArticlesService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ArticlesService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class HelloWorldService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    getHelloWorld(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/helloworld`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getHelloWorld1(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/hello`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getHelloWorld2(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/helloworld`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getHelloWorld3(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/hello`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getHelloWorldIds(ids, observe = 'body', reportProgress = false, options) {
+        if (ids === null || ids === undefined) {
+            throw new Error('Required parameter ids was null or undefined when calling getHelloWorldIds.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'ids', ids, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/hello/ids`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getHelloWorldIds1(ids, observe = 'body', reportProgress = false, options) {
+        if (ids === null || ids === undefined) {
+            throw new Error('Required parameter ids was null or undefined when calling getHelloWorldIds1.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'ids', ids, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/helloworld/ids`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getHelloWorldIds2(ids, observe = 'body', reportProgress = false, options) {
+        if (ids === null || ids === undefined) {
+            throw new Error('Required parameter ids was null or undefined when calling getHelloWorldIds2.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'ids', ids, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/hello/ids`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getHelloWorldIds3(ids, observe = 'body', reportProgress = false, options) {
+        if (ids === null || ids === undefined) {
+            throw new Error('Required parameter ids was null or undefined when calling getHelloWorldIds3.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'ids', ids, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/helloworld/ids`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: HelloWorldService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: HelloWorldService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: HelloWorldService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
 class HelperService extends BaseService {
     httpClient;
     constructor(httpClient, basePath, configuration) {
@@ -797,7 +1958,8 @@ class HelperService extends BaseService {
             localVarHeaders = localVarHeaders.set('Authorization', String(authorization));
         }
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'text/plain'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -833,7 +1995,8 @@ class HelperService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'text/plain'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -1212,11 +2375,277 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImpo
  * Do not edit the class manually.
  */
 /* tslint:disable:no-unused-variable member-ordering */
+class LoginService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    login(loginDto, observe = 'body', reportProgress = false, options) {
+        if (loginDto === null || loginDto === undefined) {
+            throw new Error('Required parameter loginDto was null or undefined when calling login.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/login`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: loginDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: LoginService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: LoginService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: LoginService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class ManagersService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    createManager(managerDto, observe = 'body', reportProgress = false, options) {
+        if (managerDto === null || managerDto === undefined) {
+            throw new Error('Required parameter managerDto was null or undefined when calling createManager.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/manager`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: managerDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    createManager1(managerDto, observe = 'body', reportProgress = false, options) {
+        if (managerDto === null || managerDto === undefined) {
+            throw new Error('Required parameter managerDto was null or undefined when calling createManager1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/managers`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: managerDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ManagersService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ManagersService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ManagersService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
 class OrderService extends BaseService {
     httpClient;
     constructor(httpClient, basePath, configuration) {
         super(basePath, configuration);
         this.httpClient = httpClient;
+    }
+    addOrderUploadRecord(warehouseCode, orderCode, orderUploadRecordDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling addOrderUploadRecord.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling addOrderUploadRecord.');
+        }
+        if (orderUploadRecordDto === null || orderUploadRecordDto === undefined) {
+            throw new Error('Required parameter orderUploadRecordDto was null or undefined when calling addOrderUploadRecord.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: orderUploadRecordDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
     }
     changeOrderState(warehouseCode, orderCode, expectedState, newState, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
@@ -1235,7 +2664,8 @@ class OrderService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -1266,10 +2696,892 @@ class OrderService extends BaseService {
             reportProgress: reportProgress
         });
     }
+    checkOrderUploadRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling checkOrderUploadRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling checkOrderUploadRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/checking`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    clearOrderRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling clearOrderRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling clearOrderRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    clearOrderUploadRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling clearOrderUploadRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling clearOrderUploadRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countOrderRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countOrderRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling countOrderRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countOrderUploadRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countOrderUploadRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling countOrderUploadRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    deleteOrder(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling deleteOrder.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling deleteOrder.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    downloadOrderRecordsCsv(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadOrderRecordsCsv.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling downloadOrderRecordsCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'text/plain'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/part/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    downloadOrderUploadRecordsCsv(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadOrderUploadRecordsCsv.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling downloadOrderUploadRecordsCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'text/plain'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getOrderByCode(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderByCode.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getOrderByCode.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getOrderRecordByArticle(warehouseCode, orderCode, articleCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderRecordByArticle.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getOrderRecordByArticle.');
+        }
+        if (articleCode === null || articleCode === undefined) {
+            throw new Error('Required parameter articleCode was null or undefined when calling getOrderRecordByArticle.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/sparepart/${this.configuration.encodeParam({ name: "articleCode", value: articleCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getOrderRecords(warehouseCode, orderCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getOrderRecords.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getOrderRecords.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getOrderUploadRecords(warehouseCode, orderCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderUploadRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getOrderUploadRecords.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getOrderUploadRecords.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    updateOrderState(warehouseCode, orderCode, orderDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling updateOrderState.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling updateOrderState.');
+        }
+        if (orderDto === null || orderDto === undefined) {
+            throw new Error('Required parameter orderDto was null or undefined when calling updateOrderState.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/state`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('put', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: orderDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    uploadOrderRecordsCsv(warehouseCode, orderCode, file, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadOrderRecordsCsv.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling uploadOrderRecordsCsv.');
+        }
+        if (file === null || file === undefined) {
+            throw new Error('Required parameter file was null or undefined when calling uploadOrderRecordsCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'multipart/form-data'
+        ];
+        const canConsumeForm = this.canConsumeForm(consumes);
+        let localVarFormParams;
+        let localVarUseForm = false;
+        let localVarConvertFormParamsToString = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
+        if (localVarUseForm) {
+            localVarFormParams = new FormData();
+        }
+        else {
+            localVarFormParams = new HttpParams({ encoder: this.encoder });
+        }
+        if (file !== undefined) {
+            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    uploadOrderRecordsCsv1(warehouseCode, orderCode, file, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadOrderRecordsCsv1.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling uploadOrderRecordsCsv1.');
+        }
+        if (file === null || file === undefined) {
+            throw new Error('Required parameter file was null or undefined when calling uploadOrderRecordsCsv1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'multipart/form-data'
+        ];
+        const canConsumeForm = this.canConsumeForm(consumes);
+        let localVarFormParams;
+        let localVarUseForm = false;
+        let localVarConvertFormParamsToString = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
+        if (localVarUseForm) {
+            localVarFormParams = new FormData();
+        }
+        else {
+            localVarFormParams = new HttpParams({ encoder: this.encoder });
+        }
+        if (file !== undefined) {
+            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/part/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: OrderService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: OrderService, providedIn: 'root' });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: OrderService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class OrderAbsendSparePartControllerService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    getCount1(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getCount1.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getCount1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absendsparepart/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getSupplyRecords2(warehouseCode, orderCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getSupplyRecords2.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getSupplyRecords2.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getSupplyRecords2.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absendsparepart`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    moveToSpareParts(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling moveToSpareParts.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling moveToSpareParts.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absendsparepart/movetospareparts`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: OrderAbsendSparePartControllerService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: OrderAbsendSparePartControllerService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: OrderAbsendSparePartControllerService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -1310,7 +3622,8 @@ class OrdersService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -1361,7 +3674,8 @@ class OrdersService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -1392,48 +3706,6 @@ class OrdersService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    deleteOrder(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling deleteOrder.');
-        }
-        if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling deleteOrder.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
     downloadOrdersCsv(warehouseCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling downloadOrdersCsv.');
@@ -1442,7 +3714,8 @@ class OrdersService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'text/plain'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -1473,48 +3746,6 @@ class OrdersService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getOrderByCode(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderByCode.');
-        }
-        if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling getOrderByCode.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
     getOrdersByWarehouse(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling getOrdersByWarehouse.');
@@ -1528,7 +3759,8 @@ class OrdersService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -1571,7 +3803,8 @@ class OrdersService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -1602,69 +3835,19 @@ class OrdersService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    updateOrderState(warehouseCode, orderCode, orderDto, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling updateOrderState.');
-        }
-        if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling updateOrderState.');
-        }
-        if (orderDto === null || orderDto === undefined) {
-            throw new Error('Required parameter orderDto was null or undefined when calling updateOrderState.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        // to determine the Content-Type header
-        const consumes = [
-            'application/json'
-        ];
-        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/state`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('put', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            body: orderDto,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
-    uploadOrdersCsv(warehouseCode, uploadSupplyUploadRecordsCsvRequest, observe = 'body', reportProgress = false, options) {
+    uploadOrdersCsv(warehouseCode, file, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling uploadOrdersCsv.');
         }
+        if (file === null || file === undefined) {
+            throw new Error('Required parameter file was null or undefined when calling uploadOrdersCsv.');
+        }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -1673,11 +3856,23 @@ class OrdersService extends BaseService {
         const localVarTransferCache = options?.transferCache ?? true;
         // to determine the Content-Type header
         const consumes = [
-            'application/json'
+            'multipart/form-data'
         ];
-        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        const canConsumeForm = this.canConsumeForm(consumes);
+        let localVarFormParams;
+        let localVarUseForm = false;
+        let localVarConvertFormParamsToString = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
+        if (localVarUseForm) {
+            localVarFormParams = new FormData();
+        }
+        else {
+            localVarFormParams = new HttpParams({ encoder: this.encoder });
+        }
+        if (file !== undefined) {
+            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
         }
         let responseType_ = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -1695,7 +3890,7 @@ class OrdersService extends BaseService {
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
-            body: uploadSupplyUploadRecordsCsvRequest,
+            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
@@ -1743,7 +3938,8 @@ class OrdersControllerService extends BaseService {
         }
         let localVarHeaders = this.defaultHeaders;
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -1778,6 +3974,662 @@ class OrdersControllerService extends BaseService {
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: OrdersControllerService, providedIn: 'root' });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: OrdersControllerService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class PersonService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    createPerson(personDto, observe = 'body', reportProgress = false, options) {
+        if (personDto === null || personDto === undefined) {
+            throw new Error('Required parameter personDto was null or undefined when calling createPerson.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/persons`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: personDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    createPerson1(personDto, observe = 'body', reportProgress = false, options) {
+        if (personDto === null || personDto === undefined) {
+            throw new Error('Required parameter personDto was null or undefined when calling createPerson1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/person`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: personDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    deletePerson(login, observe = 'body', reportProgress = false, options) {
+        if (login === null || login === undefined) {
+            throw new Error('Required parameter login was null or undefined when calling deletePerson.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/person/${this.configuration.encodeParam({ name: "login", value: login, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getAllPersons(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/persons`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getAllPersons1(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/person`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getPersonByLogin(login, observe = 'body', reportProgress = false, options) {
+        if (login === null || login === undefined) {
+            throw new Error('Required parameter login was null or undefined when calling getPersonByLogin.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/person/${this.configuration.encodeParam({ name: "login", value: login, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getPersonsByCurrentTenant(pageable, observe = 'body', reportProgress = false, options) {
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getPersonsByCurrentTenant.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/persons/tenant`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getPersonsByCurrentTenant1(pageable, observe = 'body', reportProgress = false, options) {
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getPersonsByCurrentTenant1.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/person/tenant`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getPersonsCount(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/person/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getPersonsCount1(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/persons/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getPersonsCountByLogin(login, observe = 'body', reportProgress = false, options) {
+        if (login === null || login === undefined) {
+            throw new Error('Required parameter login was null or undefined when calling getPersonsCountByLogin.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/persons/${this.configuration.encodeParam({ name: "login", value: login, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getPersonsCountByLogin1(login, observe = 'body', reportProgress = false, options) {
+        if (login === null || login === undefined) {
+            throw new Error('Required parameter login was null or undefined when calling getPersonsCountByLogin1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/person/${this.configuration.encodeParam({ name: "login", value: login, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    searchPersonsByLogin(login, observe = 'body', reportProgress = false, options) {
+        if (login === null || login === undefined) {
+            throw new Error('Required parameter login was null or undefined when calling searchPersonsByLogin.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/persons/${this.configuration.encodeParam({ name: "login", value: login, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    searchPersonsByLogin1(login, observe = 'body', reportProgress = false, options) {
+        if (login === null || login === undefined) {
+            throw new Error('Required parameter login was null or undefined when calling searchPersonsByLogin1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/person/${this.configuration.encodeParam({ name: "login", value: login, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    updatePerson(login, personDto, observe = 'body', reportProgress = false, options) {
+        if (login === null || login === undefined) {
+            throw new Error('Required parameter login was null or undefined when calling updatePerson.');
+        }
+        if (personDto === null || personDto === undefined) {
+            throw new Error('Required parameter personDto was null or undefined when calling updatePerson.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/person/${this.configuration.encodeParam({ name: "login", value: login, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('put', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: personDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: PersonService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: PersonService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: PersonService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -1860,6 +4712,203 @@ class PrintService extends BaseService {
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: PrintService, providedIn: 'root' });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: PrintService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class PrintAgentService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    deleteAgentTask(taskId, observe = 'body', reportProgress = false, options) {
+        if (taskId === null || taskId === undefined) {
+            throw new Error('Required parameter taskId was null or undefined when calling deleteAgentTask.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'taskId', taskId, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/print/agent/tenant//printer/`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getImageAndDeleteImageTaskForPrinter(tenantCode, printerCode, observe = 'body', reportProgress = false, options) {
+        if (tenantCode === null || tenantCode === undefined) {
+            throw new Error('Required parameter tenantCode was null or undefined when calling getImageAndDeleteImageTaskForPrinter.');
+        }
+        if (printerCode === null || printerCode === undefined) {
+            throw new Error('Required parameter printerCode was null or undefined when calling getImageAndDeleteImageTaskForPrinter.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'image/png'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/print/agent/tenant/${this.configuration.encodeParam({ name: "tenantCode", value: tenantCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/printer/${this.configuration.encodeParam({ name: "printerCode", value: printerCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/image/delete`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getImageForPrinter(tenantCode, printerCode, observe = 'body', reportProgress = false, options) {
+        if (tenantCode === null || tenantCode === undefined) {
+            throw new Error('Required parameter tenantCode was null or undefined when calling getImageForPrinter.');
+        }
+        if (printerCode === null || printerCode === undefined) {
+            throw new Error('Required parameter printerCode was null or undefined when calling getImageForPrinter.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'image/png'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/print/agent/tenant/${this.configuration.encodeParam({ name: "tenantCode", value: tenantCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/printer/${this.configuration.encodeParam({ name: "printerCode", value: printerCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/image`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getImageTask(tenantCode, printerCode, observe = 'body', reportProgress = false, options) {
+        if (tenantCode === null || tenantCode === undefined) {
+            throw new Error('Required parameter tenantCode was null or undefined when calling getImageTask.');
+        }
+        if (printerCode === null || printerCode === undefined) {
+            throw new Error('Required parameter printerCode was null or undefined when calling getImageTask.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/print/agent/tenant/${this.configuration.encodeParam({ name: "tenantCode", value: tenantCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/printer/${this.configuration.encodeParam({ name: "printerCode", value: printerCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: PrintAgentService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: PrintAgentService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: PrintAgentService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -2043,6 +5092,819 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImpo
  * Do not edit the class manually.
  */
 /* tslint:disable:no-unused-variable member-ordering */
+class ShelfService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    addShelf(warehouseCode, shelfDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling addShelf.');
+        }
+        if (shelfDto === null || shelfDto === undefined) {
+            throw new Error('Required parameter shelfDto was null or undefined when calling addShelf.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: shelfDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countAllShelves(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countAllShelves.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countSearchShelvesByCode(warehouseCode, shelfCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countSearchShelvesByCode.');
+        }
+        if (shelfCode === null || shelfCode === undefined) {
+            throw new Error('Required parameter shelfCode was null or undefined when calling countSearchShelvesByCode.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/${this.configuration.encodeParam({ name: "shelfCode", value: shelfCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    downloadShelvesCsv(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadShelvesCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getAllShelvesByWarehouse(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getAllShelvesByWarehouse.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getAllShelvesByWarehouse.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getShelfByCode(warehouseCode, shelfCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getShelfByCode.');
+        }
+        if (shelfCode === null || shelfCode === undefined) {
+            throw new Error('Required parameter shelfCode was null or undefined when calling getShelfByCode.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/${this.configuration.encodeParam({ name: "shelfCode", value: shelfCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    moveAbsentShelvesToShelves(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling moveAbsentShelvesToShelves.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/absentshelves/movetoshelves`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    searchShelvesByCode(warehouseCode, shelfCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling searchShelvesByCode.');
+        }
+        if (shelfCode === null || shelfCode === undefined) {
+            throw new Error('Required parameter shelfCode was null or undefined when calling searchShelvesByCode.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/${this.configuration.encodeParam({ name: "shelfCode", value: shelfCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    uploadShelvesCsv(warehouseCode, file, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadShelvesCsv.');
+        }
+        if (file === null || file === undefined) {
+            throw new Error('Required parameter file was null or undefined when calling uploadShelvesCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'multipart/form-data'
+        ];
+        const canConsumeForm = this.canConsumeForm(consumes);
+        let localVarFormParams;
+        let localVarUseForm = false;
+        let localVarConvertFormParamsToString = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
+        if (localVarUseForm) {
+            localVarFormParams = new FormData();
+        }
+        else {
+            localVarFormParams = new HttpParams({ encoder: this.encoder });
+        }
+        if (file !== undefined) {
+            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    uploadShelvesCsvFromClipboard(warehouseCode, body, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadShelvesCsvFromClipboard.');
+        }
+        if (body === null || body === undefined) {
+            throw new Error('Required parameter body was null or undefined when calling uploadShelvesCsvFromClipboard.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/csv/clipboard`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: body,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ShelfService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ShelfService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: ShelfService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class SuppliesService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    addSupply(warehouseCode, supplyDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling addSupply.');
+        }
+        if (supplyDto === null || supplyDto === undefined) {
+            throw new Error('Required parameter supplyDto was null or undefined when calling addSupply.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: supplyDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countAllSupplies(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countAllSupplies.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    downloadSuppliesCsv(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadSuppliesCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'text/plain'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getSupplies(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getSupplies.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getSupplies.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getSuppliesByState(warehouseCode, state, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getSuppliesByState.');
+        }
+        if (state === null || state === undefined) {
+            throw new Error('Required parameter state was null or undefined when calling getSuppliesByState.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/state/${this.configuration.encodeParam({ name: "state", value: state, in: "path", style: "simple", explode: false, dataType: "'UPLOADING' | 'CHECKED_SUCCEDED' | 'CHECKED_FAILED' | 'TRANSITION' | 'TRANSITIONED' | 'CLOSED'", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    uploadSuppliesCsv(warehouseCode, file, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadSuppliesCsv.');
+        }
+        if (file === null || file === undefined) {
+            throw new Error('Required parameter file was null or undefined when calling uploadSuppliesCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'multipart/form-data'
+        ];
+        const canConsumeForm = this.canConsumeForm(consumes);
+        let localVarFormParams;
+        let localVarUseForm = false;
+        let localVarConvertFormParamsToString = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
+        if (localVarUseForm) {
+            localVarFormParams = new FormData();
+        }
+        else {
+            localVarFormParams = new HttpParams({ encoder: this.encoder });
+        }
+        if (file !== undefined) {
+            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: SuppliesService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: SuppliesService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: SuppliesService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
 class SuppliesTransitionService extends BaseService {
     httpClient;
     constructor(httpClient, basePath, configuration) {
@@ -2060,7 +5922,8 @@ class SuppliesTransitionService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2150,7 +6013,8 @@ class SupplyService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2181,6 +6045,135 @@ class SupplyService extends BaseService {
             reportProgress: reportProgress
         });
     }
+    clearSupplyRecords(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling clearSupplyRecords.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling clearSupplyRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countAbsentArticlesBySupply(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countAbsentArticlesBySupply.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling countAbsentArticlesBySupply.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absendsparepart/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countAbsentArticlesBySupply1(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countAbsentArticlesBySupply1.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling countAbsentArticlesBySupply1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absentsarticle/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
     countSupplyByCode(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling countSupplyByCode.');
@@ -2192,7 +6185,8 @@ class SupplyService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2223,6 +6217,49 @@ class SupplyService extends BaseService {
             reportProgress: reportProgress
         });
     }
+    countSupplyRecords(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countSupplyRecords.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling countSupplyRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
     deleteSupply(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling deleteSupply.');
@@ -2234,7 +6271,8 @@ class SupplyService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2265,6 +6303,147 @@ class SupplyService extends BaseService {
             reportProgress: reportProgress
         });
     }
+    downloadSupplyRecordsCsv(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadSupplyRecordsCsv.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling downloadSupplyRecordsCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'text/plain'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getAbsentArticlesBySupply(warehouseCode, supplyCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getAbsentArticlesBySupply.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling getAbsentArticlesBySupply.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getAbsentArticlesBySupply.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absendsparepart`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getAbsentArticlesBySupply1(warehouseCode, supplyCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getAbsentArticlesBySupply1.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling getAbsentArticlesBySupply1.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getAbsentArticlesBySupply1.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absentsarticle`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
     getSupplyByCode(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling getSupplyByCode.');
@@ -2276,7 +6455,8 @@ class SupplyService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2307,6 +6487,141 @@ class SupplyService extends BaseService {
             reportProgress: reportProgress
         });
     }
+    getSupplyRecords(warehouseCode, supplyCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getSupplyRecords.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling getSupplyRecords.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getSupplyRecords.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    moveAbsentArticlesToSpareParts(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling moveAbsentArticlesToSpareParts.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling moveAbsentArticlesToSpareParts.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absendsparepart/movetospareparts`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    moveAbsentArticlesToSpareParts1(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling moveAbsentArticlesToSpareParts1.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling moveAbsentArticlesToSpareParts1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absentsarticle/movetospareparts`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
     searchSupplies(warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling searchSupplies.');
@@ -2318,7 +6633,8 @@ class SupplyService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2341,6 +6657,73 @@ class SupplyService extends BaseService {
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    uploadSupplyRecordsCsv(warehouseCode, supplyCode, file, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadSupplyRecordsCsv.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling uploadSupplyRecordsCsv.');
+        }
+        if (file === null || file === undefined) {
+            throw new Error('Required parameter file was null or undefined when calling uploadSupplyRecordsCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'multipart/form-data'
+        ];
+        const canConsumeForm = this.canConsumeForm(consumes);
+        let localVarFormParams;
+        let localVarUseForm = false;
+        let localVarConvertFormParamsToString = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
+        if (localVarUseForm) {
+            localVarFormParams = new FormData();
+        }
+        else {
+            localVarFormParams = new HttpParams({ encoder: this.encoder });
+        }
+        if (file !== undefined) {
+            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
@@ -2393,7 +6776,8 @@ class SupplyTaskService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2465,7 +6849,8 @@ class SupplyTasksService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2501,7 +6886,8 @@ class SupplyTasksService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2793,7 +7179,8 @@ class SupplyUploadRecordService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2844,7 +7231,8 @@ class SupplyUploadRecordService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2886,7 +7274,8 @@ class SupplyUploadRecordService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'text/plain'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2928,7 +7317,8 @@ class SupplyUploadRecordService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -2970,7 +7360,8 @@ class SupplyUploadRecordService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'text/plain'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -3017,7 +7408,8 @@ class SupplyUploadRecordService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -3060,7 +7452,8 @@ class SupplyUploadRecordService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -3091,18 +7484,22 @@ class SupplyUploadRecordService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    uploadSupplyUploadRecordsCsv(warehouseCode, supplyCode, uploadSupplyUploadRecordsCsvRequest, observe = 'body', reportProgress = false, options) {
+    uploadSupplyUploadRecordsCsv(warehouseCode, supplyCode, file, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling uploadSupplyUploadRecordsCsv.');
         }
         if (supplyCode === null || supplyCode === undefined) {
             throw new Error('Required parameter supplyCode was null or undefined when calling uploadSupplyUploadRecordsCsv.');
         }
+        if (file === null || file === undefined) {
+            throw new Error('Required parameter file was null or undefined when calling uploadSupplyUploadRecordsCsv.');
+        }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -3111,11 +7508,23 @@ class SupplyUploadRecordService extends BaseService {
         const localVarTransferCache = options?.transferCache ?? true;
         // to determine the Content-Type header
         const consumes = [
-            'application/json'
+            'multipart/form-data'
         ];
-        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        const canConsumeForm = this.canConsumeForm(consumes);
+        let localVarFormParams;
+        let localVarUseForm = false;
+        let localVarConvertFormParamsToString = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
+        if (localVarUseForm) {
+            localVarFormParams = new FormData();
+        }
+        else {
+            localVarFormParams = new HttpParams({ encoder: this.encoder });
+        }
+        if (file !== undefined) {
+            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
         }
         let responseType_ = 'json';
         if (localVarHttpHeaderAcceptSelected) {
@@ -3133,7 +7542,7 @@ class SupplyUploadRecordService extends BaseService {
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
-            body: uploadSupplyUploadRecordsCsvRequest,
+            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
@@ -3156,7 +7565,8 @@ class SupplyUploadRecordService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -3200,6 +7610,109 @@ class SupplyUploadRecordService extends BaseService {
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: SupplyUploadRecordService, providedIn: 'root' });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: SupplyUploadRecordService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class SystemService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    getSystemSettings(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/system/settings`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getSystemSettings1(observe = 'body', reportProgress = false, options) {
+        let localVarHeaders = this.defaultHeaders;
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/system/settings`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: SystemService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: SystemService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: SystemService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -3768,7 +8281,8 @@ class ToStockTransitionService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -3819,7 +8333,8 @@ class ToStockTransitionService extends BaseService {
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'application/json'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -3876,7 +8391,196 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImpo
                     type: Optional
                 }] }] });
 
-const APIS = [AbsentArticlesService, AdminService, HelperService, HistoryService, ImageService, OrderService, OrdersService, OrdersControllerService, PrintService, PrintersService, SuppliesTransitionService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, TaskService, TenantService, TenantsService, ToStockTransitionService];
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class TransitionService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    addOutStockTransition(warehouseCode, outStockTransitionDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling addOutStockTransition.');
+        }
+        if (outStockTransitionDto === null || outStockTransitionDto === undefined) {
+            throw new Error('Required parameter outStockTransitionDto was null or undefined when calling addOutStockTransition.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/transition/out`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: outStockTransitionDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    createInsideStockTransition(warehouseCode, insideStockTransitionDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling createInsideStockTransition.');
+        }
+        if (insideStockTransitionDto === null || insideStockTransitionDto === undefined) {
+            throw new Error('Required parameter insideStockTransitionDto was null or undefined when calling createInsideStockTransition.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/transition/inside`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: insideStockTransitionDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    createInsideStockTransition1(warehouseCode, insideStockTransitionDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling createInsideStockTransition1.');
+        }
+        if (insideStockTransitionDto === null || insideStockTransitionDto === undefined) {
+            throw new Error('Required parameter insideStockTransitionDto was null or undefined when calling createInsideStockTransition1.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/transition/inside`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: insideStockTransitionDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: TransitionService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: TransitionService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: TransitionService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+const APIS = [AbsentArticlesService, AdminService, ArticleService, ArticlesService, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderService, OrderAbsendSparePartControllerService, OrdersService, OrdersControllerService, PersonService, PrintService, PrintAgentService, PrintersService, ShelfService, SuppliesService, SuppliesTransitionService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService];
 
 /**
  * OpenAPI definition
@@ -4311,16 +9015,6 @@ var SupplyDto;
  * Do not edit the class manually.
  */
 
-/**
- * OpenAPI definition
- *
- *
- *
- * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
- * https://openapi-generator.tech
- * Do not edit the class manually.
- */
-
 class ApiModule {
     static forRoot(configurationFactory) {
         return {
@@ -4377,5 +9071,5 @@ function provideApi(configOrBasePath) {
  * Generated bundle index. Do not edit.
  */
 
-export { APIS, AbsentArticlesService, AdminService, ApiModule, BASE_PATH, COLLECTION_FORMATS, Configuration, HelperService, HistoryService, ImageService, OrderDto, OrderService, OrdersControllerService, OrdersService, PersonDto, PrintService, PrintersService, SuppliesTransitionService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, TaskService, TenantService, TenantsService, ToStockTransitionService, provideApi };
+export { APIS, AbsentArticlesService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderAbsendSparePartControllerService, OrderDto, OrderService, OrdersControllerService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, SuppliesService, SuppliesTransitionService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, provideApi };
 //# sourceMappingURL=wh-open-client.mjs.map

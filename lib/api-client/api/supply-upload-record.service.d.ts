@@ -7,7 +7,6 @@ import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListSupplyUploadRecordDto } from '../model/response-list-supply-upload-record-dto';
 import { ResponseSupplyUploadRecordDto } from '../model/response-supply-upload-record-dto';
 import { SupplyUploadRecordDto } from '../model/supply-upload-record-dto';
-import { UploadSupplyUploadRecordsCsvRequest } from '../model/upload-supply-upload-records-csv-request';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
@@ -26,17 +25,17 @@ export declare class SupplyUploadRecordService extends BaseService {
      * @param options additional options
      */
     addSupplyUploadRecord(warehouseCode: string, supplyCode: string, supplyUploadRecordDto: SupplyUploadRecordDto, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseSupplyUploadRecordDto>;
     addSupplyUploadRecord(warehouseCode: string, supplyCode: string, supplyUploadRecordDto: SupplyUploadRecordDto, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseSupplyUploadRecordDto>>;
     addSupplyUploadRecord(warehouseCode: string, supplyCode: string, supplyUploadRecordDto: SupplyUploadRecordDto, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseSupplyUploadRecordDto>>;
@@ -51,17 +50,17 @@ export declare class SupplyUploadRecordService extends BaseService {
      * @param options additional options
      */
     clearSupplyUploadRecords(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
     clearSupplyUploadRecords(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
     clearSupplyUploadRecords(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;
@@ -76,17 +75,17 @@ export declare class SupplyUploadRecordService extends BaseService {
      * @param options additional options
      */
     copySupplyUploadRecordsToClipboard(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<string>;
     copySupplyUploadRecordsToClipboard(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
     copySupplyUploadRecordsToClipboard(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<string>>;
@@ -101,17 +100,17 @@ export declare class SupplyUploadRecordService extends BaseService {
      * @param options additional options
      */
     countSupplyUploadRecords(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCountDto>;
     countSupplyUploadRecords(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
     countSupplyUploadRecords(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
@@ -126,17 +125,17 @@ export declare class SupplyUploadRecordService extends BaseService {
      * @param options additional options
      */
     downloadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<string>;
     downloadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
     downloadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<string>>;
@@ -152,17 +151,17 @@ export declare class SupplyUploadRecordService extends BaseService {
      * @param options additional options
      */
     getSupplyUploadRecords(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseListSupplyUploadRecordDto>;
     getSupplyUploadRecords(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListSupplyUploadRecordDto>>;
     getSupplyUploadRecords(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListSupplyUploadRecordDto>>;
@@ -177,17 +176,17 @@ export declare class SupplyUploadRecordService extends BaseService {
      * @param options additional options
      */
     prepareAbsentArticlesForUpload(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseBooleanDto>;
     prepareAbsentArticlesForUpload(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseBooleanDto>>;
     prepareAbsentArticlesForUpload(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseBooleanDto>>;
@@ -197,23 +196,23 @@ export declare class SupplyUploadRecordService extends BaseService {
      * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/uploadrecord/csv
      * @param warehouseCode
      * @param supplyCode
-     * @param uploadSupplyUploadRecordsCsvRequest
+     * @param file
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    uploadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, uploadSupplyUploadRecordsCsvRequest?: UploadSupplyUploadRecordsCsvRequest, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+    uploadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, file: Blob, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
-    uploadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, uploadSupplyUploadRecordsCsvRequest?: UploadSupplyUploadRecordsCsvRequest, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+    uploadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, file: Blob, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, uploadSupplyUploadRecordsCsvRequest?: UploadSupplyUploadRecordsCsvRequest, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+    uploadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;
@@ -229,17 +228,17 @@ export declare class SupplyUploadRecordService extends BaseService {
      * @param options additional options
      */
     uploadSupplyUploadRecordsFromClipboard(warehouseCode: string, supplyCode: string, body: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
     uploadSupplyUploadRecordsFromClipboard(warehouseCode: string, supplyCode: string, body: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
     uploadSupplyUploadRecordsFromClipboard(warehouseCode: string, supplyCode: string, body: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;

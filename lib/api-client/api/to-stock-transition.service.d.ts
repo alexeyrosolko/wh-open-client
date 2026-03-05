@@ -19,17 +19,17 @@ export declare class ToStockTransitionService extends BaseService {
      * @param options additional options
      */
     addToStockTransition(warehouseCode: string, toStockTransitionDto: ToStockTransitionDto, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
     addToStockTransition(warehouseCode: string, toStockTransitionDto: ToStockTransitionDto, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
     addToStockTransition(warehouseCode: string, toStockTransitionDto: ToStockTransitionDto, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;
@@ -44,17 +44,17 @@ export declare class ToStockTransitionService extends BaseService {
      * @param options additional options
      */
     addToStockTransition1(warehouseCode: string, toStockTransitionDto: ToStockTransitionDto, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
     addToStockTransition1(warehouseCode: string, toStockTransitionDto: ToStockTransitionDto, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
     addToStockTransition1(warehouseCode: string, toStockTransitionDto: ToStockTransitionDto, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;

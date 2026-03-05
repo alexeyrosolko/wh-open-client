@@ -1,166 +1,165 @@
 import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { OrderDto } from '../model/order-dto';
 import { Pageable } from '../model/pageable';
 import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
-import { ResponseListOrderDto } from '../model/response-list-order-dto';
-import { ResponseOrderDto } from '../model/response-order-dto';
+import { ResponseListSupplyDto } from '../model/response-list-supply-dto';
+import { ResponseSupplyDto } from '../model/response-supply-dto';
+import { SupplyDto } from '../model/supply-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
-export declare class OrdersService extends BaseService {
+export declare class SuppliesService extends BaseService {
     protected httpClient: HttpClient;
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
     /**
-     * Добавить заказ для склада
-     * Создать новый заказ для склада
-     * @endpoint post /api/warehouse/{warehouseCode}/order
+     * Создать поставку
+     * Создать новую поставку на складе
+     * @endpoint post /api/warehouse/{warehouseCode}/supply
      * @param warehouseCode
-     * @param orderDto
+     * @param supplyDto
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    addOrder(warehouseCode: string, orderDto: OrderDto, observe?: 'body', reportProgress?: boolean, options?: {
+    addSupply(warehouseCode: string, supplyDto: SupplyDto, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<ResponseOrderDto>;
-    addOrder(warehouseCode: string, orderDto: OrderDto, observe?: 'response', reportProgress?: boolean, options?: {
+    }): Observable<ResponseSupplyDto>;
+    addSupply(warehouseCode: string, supplyDto: SupplyDto, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseOrderDto>>;
-    addOrder(warehouseCode: string, orderDto: OrderDto, observe?: 'events', reportProgress?: boolean, options?: {
+    }): Observable<HttpResponse<ResponseSupplyDto>>;
+    addSupply(warehouseCode: string, supplyDto: SupplyDto, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseOrderDto>>;
+    }): Observable<HttpEvent<ResponseSupplyDto>>;
     /**
-     * Посчитать заказы по коду
-     * Посчитать количество заказов, соответствующих шаблону кода
-     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/search/count
+     * Получить количество поставок
+     * Получить общее количество поставок на складе
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/count
      * @param warehouseCode
-     * @param orderCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    countOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    countAllSupplies(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCountDto>;
-    countOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    countAllSupplies(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
-    countOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    countAllSupplies(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
-     * Скачать CSV заказов
-     * Скачать CSV-файл с заказами склада
-     * @endpoint get /api/warehouse/{warehouseCode}/order/csv
+     * Скачать поставки в CSV формате
+     * Экспортировать данные поставок в CSV файл
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/csv
      * @param warehouseCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    downloadOrdersCsv(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    downloadSuppliesCsv(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<string>;
-    downloadOrdersCsv(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    downloadSuppliesCsv(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
-    downloadOrdersCsv(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    downloadSuppliesCsv(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<string>>;
     /**
-     * Получить заказы склада
-     * Вернуть список заказов для указанного склада
-     * @endpoint get /api/warehouse/{warehouseCode}/order
+     * Получить все поставки
+     * Получить список всех поставок текущего склада с пагинацией
+     * @endpoint get /api/warehouse/{warehouseCode}/supply
      * @param warehouseCode
      * @param pageable
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    getOrdersByWarehouse(warehouseCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
+    getSupplies(warehouseCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<ResponseListOrderDto>;
-    getOrdersByWarehouse(warehouseCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
+    }): Observable<ResponseListSupplyDto>;
+    getSupplies(warehouseCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListOrderDto>>;
-    getOrdersByWarehouse(warehouseCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
+    }): Observable<HttpResponse<ResponseListSupplyDto>>;
+    getSupplies(warehouseCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListOrderDto>>;
+    }): Observable<HttpEvent<ResponseListSupplyDto>>;
     /**
-     * Поиск заказов
-     * Поиск заказов по шаблону кода
-     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/search
+     * Получить поставки по статусу
+     * Получить список поставок с определённым статусом
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/state/{state}
      * @param warehouseCode
-     * @param orderCode
+     * @param state
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    searchOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    getSuppliesByState(warehouseCode: string, state: 'UPLOADING' | 'CHECKED_SUCCEDED' | 'CHECKED_FAILED' | 'TRANSITION' | 'TRANSITIONED' | 'CLOSED', observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<ResponseListOrderDto>;
-    searchOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    }): Observable<ResponseListSupplyDto>;
+    getSuppliesByState(warehouseCode: string, state: 'UPLOADING' | 'CHECKED_SUCCEDED' | 'CHECKED_FAILED' | 'TRANSITION' | 'TRANSITIONED' | 'CLOSED', observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListOrderDto>>;
-    searchOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    }): Observable<HttpResponse<ResponseListSupplyDto>>;
+    getSuppliesByState(warehouseCode: string, state: 'UPLOADING' | 'CHECKED_SUCCEDED' | 'CHECKED_FAILED' | 'TRANSITION' | 'TRANSITIONED' | 'CLOSED', observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListOrderDto>>;
+    }): Observable<HttpEvent<ResponseListSupplyDto>>;
     /**
-     * Загрузить заказы из CSV
-     * Загрузить список заказов из CSV-файла
-     * @endpoint post /api/warehouse/{warehouseCode}/order/csv
+     * Загрузить поставки из CSV файла
+     * Загрузить данные поставок из CSV файла
+     * @endpoint post /api/warehouse/{warehouseCode}/supply/csv
      * @param warehouseCode
      * @param file
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    uploadOrdersCsv(warehouseCode: string, file: Blob, observe?: 'body', reportProgress?: boolean, options?: {
+    uploadSuppliesCsv(warehouseCode: string, file: Blob, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
-    uploadOrdersCsv(warehouseCode: string, file: Blob, observe?: 'response', reportProgress?: boolean, options?: {
+    uploadSuppliesCsv(warehouseCode: string, file: Blob, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadOrdersCsv(warehouseCode: string, file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
+    uploadSuppliesCsv(warehouseCode: string, file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<OrdersService, [null, { optional: true; }, { optional: true; }]>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<OrdersService>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SuppliesService, [null, { optional: true; }, { optional: true; }]>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<SuppliesService>;
 }

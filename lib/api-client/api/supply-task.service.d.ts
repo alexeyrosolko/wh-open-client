@@ -18,17 +18,17 @@ export declare class SupplyTaskService extends BaseService {
      * @param options additional options
      */
     getSupplyTasksBySupplyCode(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseListTaskDto>;
     getSupplyTasksBySupplyCode(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListTaskDto>>;
     getSupplyTasksBySupplyCode(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListTaskDto>>;

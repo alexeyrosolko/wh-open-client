@@ -17,17 +17,17 @@ export declare class SupplyTasksService extends BaseService {
      * @param options additional options
      */
     getByWarehouse(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseListTaskDto>;
     getByWarehouse(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListTaskDto>>;
     getByWarehouse(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListTaskDto>>;
@@ -40,17 +40,17 @@ export declare class SupplyTasksService extends BaseService {
      * @param options additional options
      */
     getSupplyTasks(observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseListTaskDto>;
     getSupplyTasks(observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListTaskDto>>;
     getSupplyTasks(observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListTaskDto>>;

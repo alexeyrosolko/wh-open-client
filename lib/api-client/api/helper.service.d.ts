@@ -16,17 +16,17 @@ export declare class HelperService extends BaseService {
      * @param options additional options
      */
     getAuthorization(authorization: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<string>;
     getAuthorization(authorization: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
     getAuthorization(authorization: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<string>>;
@@ -39,17 +39,17 @@ export declare class HelperService extends BaseService {
      * @param options additional options
      */
     helloWorld(observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<string>;
     helloWorld(observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
     helloWorld(observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<string>>;
