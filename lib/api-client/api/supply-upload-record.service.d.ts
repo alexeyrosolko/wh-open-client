@@ -1,7 +1,6 @@
 import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pageable } from '../model/pageable';
-import { ResponseBooleanDto } from '../model/response-boolean-dto';
 import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListSupplyUploadRecordDto } from '../model/response-list-supply-upload-record-dto';
@@ -165,31 +164,6 @@ export declare class SupplyUploadRecordService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListSupplyUploadRecordDto>>;
-    /**
-     * Подготовить отсутствующие позиции
-     * Выполнить проверку/подготовку отсутствующих позиций перед загрузкой или проверкой
-     * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/uploadrecord/checking
-     * @param warehouseCode
-     * @param supplyCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    prepareAbsentArticlesForUpload(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseBooleanDto>;
-    prepareAbsentArticlesForUpload(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseBooleanDto>>;
-    prepareAbsentArticlesForUpload(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseBooleanDto>>;
     /**
      * Загрузить записи поставки из CSV
      * Загрузить список записей поставки из CSV-файла и сохранить их для указанной поставки
