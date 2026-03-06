@@ -7,9 +7,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { WarehouseUploadRecord } from './warehouse-upload-record';
 import { Metadata } from './metadata';
-export interface ResponseListWarehouseUploadRecord {
+import { WarehouseUploadRecordDto } from './warehouse-upload-record-dto';
+export interface ResponseListWarehouseUploadRecordDto {
     metadata?: Metadata;
-    payload?: Array<WarehouseUploadRecord>;
+    payload?: Array<WarehouseUploadRecordDto>;
 }

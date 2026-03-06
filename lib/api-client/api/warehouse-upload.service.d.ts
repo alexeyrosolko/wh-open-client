@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Pageable } from '../model/pageable';
 import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
-import { ResponseListWarehouseUploadRecord } from '../model/response-list-warehouse-upload-record';
+import { ResponseListWarehouseUploadRecordDto } from '../model/response-list-warehouse-upload-record-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
@@ -72,17 +72,17 @@ export declare class WarehouseUploadService extends BaseService {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<ResponseListWarehouseUploadRecord>;
+    }): Observable<ResponseListWarehouseUploadRecordDto>;
     getWarehouseRecords(warehouseCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListWarehouseUploadRecord>>;
+    }): Observable<HttpResponse<ResponseListWarehouseUploadRecordDto>>;
     getWarehouseRecords(warehouseCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListWarehouseUploadRecord>>;
+    }): Observable<HttpEvent<ResponseListWarehouseUploadRecordDto>>;
     /**
      * Загрузить записи склада из CSV
      * Загрузить записи склада из CSV файла

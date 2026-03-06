@@ -7,12 +7,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Tenant } from './tenant';
-export interface Article {
-    id?: string;
-    tenant?: Tenant;
-    code?: string;
-    name?: string;
+export interface WarehouseUploadRecordDto {
+    warehouseCode?: string;
     vendor?: string;
-    article?: Article;
+    shelfCode?: string;
+    shelfName?: string;
+    quantity: number;
+    price?: number;
+    sparePartCode?: string;
+    sparePartName?: string;
 }
