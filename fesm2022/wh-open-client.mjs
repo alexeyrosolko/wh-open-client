@@ -3,14 +3,6 @@ import { InjectionToken, Injectable, Optional, Inject, NgModule, SkipSelf, makeE
 import * as i1 from '@angular/common/http';
 import { HttpParams, HttpHeaders, HttpContext } from '@angular/common/http';
 
-const BASE_PATH = new InjectionToken('basePath');
-const COLLECTION_FORMATS = {
-    'csv': ',',
-    'tsv': '   ',
-    'ssv': ' ',
-    'pipes': '|'
-};
-
 /**
  * Custom HttpParameterCodec
  * Workaround for https://github.com/angular/angular/issues/18261
@@ -43,6 +35,139 @@ class IdentityHttpParameterCodec {
         return v;
     }
 }
+
+var QueryParamStyle;
+(function (QueryParamStyle) {
+    QueryParamStyle[QueryParamStyle["Json"] = 0] = "Json";
+    QueryParamStyle[QueryParamStyle["Form"] = 1] = "Form";
+    QueryParamStyle[QueryParamStyle["DeepObject"] = 2] = "DeepObject";
+    QueryParamStyle[QueryParamStyle["SpaceDelimited"] = 3] = "SpaceDelimited";
+    QueryParamStyle[QueryParamStyle["PipeDelimited"] = 4] = "PipeDelimited";
+})(QueryParamStyle || (QueryParamStyle = {}));
+class OpenApiHttpParams {
+    params = new Map();
+    defaults;
+    encoder;
+    /**
+     * @param encoder  Parameter serializer
+     * @param defaults Global defaults used when a specific parameter has no explicit options.
+     *                 By OpenAPI default, explode is true for query params with style=form.
+     */
+    constructor(encoder, defaults) {
+        this.encoder = encoder || new CustomHttpParameterCodec();
+        this.defaults = {
+            explode: defaults?.explode ?? true,
+            delimiter: defaults?.delimiter ?? ",",
+        };
+    }
+    resolveOptions(local) {
+        return {
+            explode: local?.explode ?? this.defaults.explode,
+            delimiter: local?.delimiter ?? this.defaults.delimiter,
+        };
+    }
+    /**
+     * Replace the parameter's values and (optionally) its options.
+     * Options are stored per-parameter (not global).
+     */
+    set(key, values, options) {
+        const arr = Array.isArray(values) ? values.slice() : [values];
+        const opts = this.resolveOptions(options);
+        this.params.set(key, { values: arr, options: opts });
+        return this;
+    }
+    /**
+     * Append a single value to the parameter. If the parameter didn't exist it will be created
+     * and use resolved options (global defaults merged with any provided options).
+     */
+    append(key, value, options) {
+        const entry = this.params.get(key);
+        if (entry) {
+            // If new options provided, override the stored options for subsequent serialization
+            if (options) {
+                entry.options = this.resolveOptions({ ...entry.options, ...options });
+            }
+            entry.values.push(value);
+        }
+        else {
+            this.set(key, [value], options);
+        }
+        return this;
+    }
+    /**
+     * Serialize to a query string according to per-parameter OpenAPI options.
+     * - If explode=true for that parameter → repeated key=value pairs (each value encoded).
+     * - If explode=false for that parameter → single key=value where values are individually encoded
+     *   and joined using the configured delimiter. The delimiter character is inserted AS-IS
+     *   (not percent-encoded).
+     */
+    toString() {
+        const records = this.toRecord();
+        const parts = [];
+        for (const key in records) {
+            parts.push(`${key}=${records[key]}`);
+        }
+        return parts.join("&");
+    }
+    /**
+     * Return parameters as a plain record.
+     * - If a parameter has exactly one value, returns that value directly.
+     * - If a parameter has multiple values, returns a readonly array of values.
+     */
+    toRecord() {
+        const parts = {};
+        for (const [key, entry] of this.params.entries()) {
+            const encodedKey = this.encoder.encodeKey(key);
+            if (entry.options.explode) {
+                parts[encodedKey] = entry.values.map((v) => this.encoder.encodeValue(v));
+            }
+            else {
+                const encodedValues = entry.values.map((v) => this.encoder.encodeValue(v));
+                // join with the delimiter *unencoded*
+                parts[encodedKey] = encodedValues.join(entry.options.delimiter);
+            }
+        }
+        return parts;
+    }
+    /**
+     * Return an Angular's HttpParams with an identity parameter codec as the parameters are already encoded.
+     */
+    toHttpParams() {
+        const records = this.toRecord();
+        let httpParams = new HttpParams({ encoder: new IdentityHttpParameterCodec() });
+        return httpParams.appendAll(records);
+    }
+}
+function concatHttpParamsObject(httpParams, key, item, delimiter) {
+    let keyAndValues = [];
+    for (const k in item) {
+        keyAndValues.push(k);
+        const value = item[k];
+        if (Array.isArray(value)) {
+            keyAndValues.push(...value.map(convertToString));
+        }
+        else {
+            keyAndValues.push(convertToString(value));
+        }
+    }
+    return httpParams.set(key, keyAndValues, { explode: false, delimiter: delimiter });
+}
+function convertToString(value) {
+    if (value instanceof Date) {
+        return value.toISOString();
+    }
+    else {
+        return value.toString();
+    }
+}
+
+const BASE_PATH = new InjectionToken('basePath');
+const COLLECTION_FORMATS = {
+    'csv': ',',
+    'tsv': '   ',
+    'ssv': ' ',
+    'pipes': '|'
+};
 
 class Configuration {
     /**
@@ -189,131 +314,6 @@ class Configuration {
     }
 }
 
-var QueryParamStyle;
-(function (QueryParamStyle) {
-    QueryParamStyle[QueryParamStyle["Json"] = 0] = "Json";
-    QueryParamStyle[QueryParamStyle["Form"] = 1] = "Form";
-    QueryParamStyle[QueryParamStyle["DeepObject"] = 2] = "DeepObject";
-    QueryParamStyle[QueryParamStyle["SpaceDelimited"] = 3] = "SpaceDelimited";
-    QueryParamStyle[QueryParamStyle["PipeDelimited"] = 4] = "PipeDelimited";
-})(QueryParamStyle || (QueryParamStyle = {}));
-class OpenApiHttpParams {
-    params = new Map();
-    defaults;
-    encoder;
-    /**
-     * @param encoder  Parameter serializer
-     * @param defaults Global defaults used when a specific parameter has no explicit options.
-     *                 By OpenAPI default, explode is true for query params with style=form.
-     */
-    constructor(encoder, defaults) {
-        this.encoder = encoder || new CustomHttpParameterCodec();
-        this.defaults = {
-            explode: defaults?.explode ?? true,
-            delimiter: defaults?.delimiter ?? ",",
-        };
-    }
-    resolveOptions(local) {
-        return {
-            explode: local?.explode ?? this.defaults.explode,
-            delimiter: local?.delimiter ?? this.defaults.delimiter,
-        };
-    }
-    /**
-     * Replace the parameter's values and (optionally) its options.
-     * Options are stored per-parameter (not global).
-     */
-    set(key, values, options) {
-        const arr = Array.isArray(values) ? values.slice() : [values];
-        const opts = this.resolveOptions(options);
-        this.params.set(key, { values: arr, options: opts });
-        return this;
-    }
-    /**
-     * Append a single value to the parameter. If the parameter didn't exist it will be created
-     * and use resolved options (global defaults merged with any provided options).
-     */
-    append(key, value, options) {
-        const entry = this.params.get(key);
-        if (entry) {
-            // If new options provided, override the stored options for subsequent serialization
-            if (options) {
-                entry.options = this.resolveOptions({ ...entry.options, ...options });
-            }
-            entry.values.push(value);
-        }
-        else {
-            this.set(key, [value], options);
-        }
-        return this;
-    }
-    /**
-     * Serialize to a query string according to per-parameter OpenAPI options.
-     * - If explode=true for that parameter → repeated key=value pairs (each value encoded).
-     * - If explode=false for that parameter → single key=value where values are individually encoded
-     *   and joined using the configured delimiter. The delimiter character is inserted AS-IS
-     *   (not percent-encoded).
-     */
-    toString() {
-        const records = this.toRecord();
-        const parts = [];
-        for (const key in records) {
-            parts.push(`${key}=${records[key]}`);
-        }
-        return parts.join("&");
-    }
-    /**
-     * Return parameters as a plain record.
-     * - If a parameter has exactly one value, returns that value directly.
-     * - If a parameter has multiple values, returns a readonly array of values.
-     */
-    toRecord() {
-        const parts = {};
-        for (const [key, entry] of this.params.entries()) {
-            const encodedKey = this.encoder.encodeKey(key);
-            if (entry.options.explode) {
-                parts[encodedKey] = entry.values.map((v) => this.encoder.encodeValue(v));
-            }
-            else {
-                const encodedValues = entry.values.map((v) => this.encoder.encodeValue(v));
-                // join with the delimiter *unencoded*
-                parts[encodedKey] = encodedValues.join(entry.options.delimiter);
-            }
-        }
-        return parts;
-    }
-    /**
-     * Return an Angular's HttpParams with an identity parameter codec as the parameters are already encoded.
-     */
-    toHttpParams() {
-        const records = this.toRecord();
-        let httpParams = new HttpParams({ encoder: new IdentityHttpParameterCodec() });
-        return httpParams.appendAll(records);
-    }
-}
-function concatHttpParamsObject(httpParams, key, item, delimiter) {
-    let keyAndValues = [];
-    for (const k in item) {
-        keyAndValues.push(k);
-        const value = item[k];
-        if (Array.isArray(value)) {
-            keyAndValues.push(...value.map(convertToString));
-        }
-        else {
-            keyAndValues.push(convertToString(value));
-        }
-    }
-    return httpParams.set(key, keyAndValues, { explode: false, delimiter: delimiter });
-}
-function convertToString(value) {
-    if (value instanceof Date) {
-        return value.toISOString();
-    }
-    else {
-        return value.toString();
-    }
-}
-
 /**
  * OpenAPI definition
  *
@@ -421,7 +421,10 @@ class AbsentArticlesService extends BaseService {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
-    moveAbsentArticlesToArticles(observe = 'body', reportProgress = false, options) {
+    addWarehouseAbsentArticles(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling addWarehouseAbsentArticles.');
+        }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
@@ -446,7 +449,7 @@ class AbsentArticlesService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/sparepart/absentarticles/movetoarticles`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/article/absentarticles/move`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -458,7 +461,10 @@ class AbsentArticlesService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    moveAbsentArticlesToArticles1(observe = 'body', reportProgress = false, options) {
+    countWarehouseAbsentArticles(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countWarehouseAbsentArticles.');
+        }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
@@ -483,10 +489,57 @@ class AbsentArticlesService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse//sparepart/absentarticles/movetoarticles`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/article/absentarticles/count`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getWarehouseAbsentArticles(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getWarehouseAbsentArticles.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getWarehouseAbsentArticles.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'warehouseCode', warehouseCode, QueryParamStyle.Form, true);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse//article/absentarticles`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
@@ -499,6 +552,166 @@ class AbsentArticlesService extends BaseService {
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AbsentArticlesService, providedIn: 'root' });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AbsentArticlesService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class AbsentShelfService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    addWarehouseAbsentShelves(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling addWarehouseAbsentShelves.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/absentshelves/move`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countWarehouseAbsentShelves(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countWarehouseAbsentShelves.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/absentshelves/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getWarehouseAbsentShelves(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getWarehouseAbsentShelves.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getWarehouseAbsentShelves.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'warehouseCode', warehouseCode, QueryParamStyle.Form, true);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse//shelf/absentshelves`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AbsentShelfService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AbsentShelfService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImport: i0, type: AbsentShelfService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -5361,46 +5574,6 @@ class ShelfService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    moveAbsentShelvesToShelves(warehouseCode, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling moveAbsentShelvesToShelves.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/absentshelves/movetoshelves`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
     searchShelvesByCode(warehouseCode, shelfCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling searchShelvesByCode.');
@@ -8792,6 +8965,132 @@ class WarehouseUploadService extends BaseService {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
+    countWarehouseRecords(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countWarehouseRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    deleteWarehouseRecords(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling deleteWarehouseRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getWarehouseRecords(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getWarehouseRecords.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getWarehouseRecords.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
     uploadWarehouseRecordsCSV(warehouseCode, file, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling uploadWarehouseRecordsCSV.');
@@ -8873,7 +9172,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.14", ngImpo
                     type: Optional
                 }] }] });
 
-const APIS = [AbsentArticlesService, AdminService, ArticleService, ArticlesService, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderService, OrderAbsendSparePartControllerService, OrdersService, OrdersControllerService, PersonService, PrintService, PrintAgentService, PrintersService, ShelfService, SuppliesService, SuppliesTransitionService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, WarehouseService, WarehouseUploadService];
+const APIS = [AbsentArticlesService, AbsentShelfService, AdminService, ArticleService, ArticlesService, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderService, OrderAbsendSparePartControllerService, OrdersService, OrdersControllerService, PersonService, PrintService, PrintAgentService, PrintersService, ShelfService, SuppliesService, SuppliesTransitionService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, WarehouseService, WarehouseUploadService];
 
 /**
  * OpenAPI definition
@@ -8974,6 +9273,27 @@ const APIS = [AbsentArticlesService, AdminService, ArticleService, ArticlesServi
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+
+var Order;
+(function (Order) {
+    Order.StateEnum = {
+        Uploading: 'UPLOADING',
+        CheckedSucceded: 'CHECKED_SUCCEDED',
+        CheckedFailed: 'CHECKED_FAILED',
+        Transformed: 'TRANSFORMED',
+        CalculatedSucceded: 'CALCULATED_SUCCEDED',
+        CalculatedFailed: 'CALCULATED_FAILED',
+        ToTransitioningSucceded: 'TO_TRANSITIONING_SUCCEDED',
+        ToTransitioningFailed: 'TO_TRANSITIONING_FAILED',
+        Transitioning: 'TRANSITIONING',
+        Transitioned: 'TRANSITIONED',
+        Closed: 'CLOSED'
+    };
+    Order.FillTypeEnum = {
+        Manual: 'MANUAL',
+        File: 'FILE'
+    };
+})(Order || (Order = {}));
 
 /**
  * OpenAPI definition
@@ -9065,6 +9385,15 @@ var OrderDto;
  * Do not edit the class manually.
  */
 
+var Person;
+(function (Person) {
+    Person.RoleEnum = {
+        Admin: 'ADMIN',
+        Manager: 'MANAGER',
+        Employee: 'EMPLOYEE'
+    };
+})(Person || (Person = {}));
+
 /**
  * OpenAPI definition
  *
@@ -9152,6 +9481,22 @@ var PersonDto;
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+
+var Supply;
+(function (Supply) {
+    Supply.StateEnum = {
+        Uploading: 'UPLOADING',
+        CheckedSucceded: 'CHECKED_SUCCEDED',
+        CheckedFailed: 'CHECKED_FAILED',
+        Transition: 'TRANSITION',
+        Transitioned: 'TRANSITIONED',
+        Closed: 'CLOSED'
+    };
+    Supply.FillTypeEnum = {
+        Manual: 'MANUAL',
+        File: 'FILE'
+    };
+})(Supply || (Supply = {}));
 
 /**
  * OpenAPI definition
@@ -9278,6 +9623,16 @@ var SupplyDto;
  * Do not edit the class manually.
  */
 
+var Warehouse;
+(function (Warehouse) {
+    Warehouse.StateEnum = {
+        Uploading: 'UPLOADING',
+        CheckedSucceded: 'CHECKED_SUCCEDED',
+        CheckedFailed: 'CHECKED_FAILED',
+        Active: 'ACTIVE'
+    };
+})(Warehouse || (Warehouse = {}));
+
 /**
  * OpenAPI definition
  *
@@ -9364,5 +9719,5 @@ function provideApi(configOrBasePath) {
  * Generated bundle index. Do not edit.
  */
 
-export { APIS, AbsentArticlesService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderAbsendSparePartControllerService, OrderDto, OrderService, OrdersControllerService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, SuppliesService, SuppliesTransitionService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, WarehouseService, WarehouseUploadService, provideApi };
+export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, Order, OrderAbsendSparePartControllerService, OrderDto, OrderService, OrdersControllerService, OrdersService, Person, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, SuppliesService, SuppliesTransitionService, Supply, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, Warehouse, WarehouseService, WarehouseUploadService, provideApi };
 //# sourceMappingURL=wh-open-client.mjs.map

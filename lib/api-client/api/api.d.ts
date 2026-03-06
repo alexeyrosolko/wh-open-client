@@ -1,5 +1,7 @@
 export * from './absent-articles.service';
 import { AbsentArticlesService } from './absent-articles.service';
+export * from './absent-shelf.service';
+import { AbsentShelfService } from './absent-shelf.service';
 export * from './admin.service';
 import { AdminService } from './admin.service';
 export * from './article.service';
@@ -66,4 +68,4 @@ export * from './warehouse.service';
 import { WarehouseService } from './warehouse.service';
 export * from './warehouse-upload.service';
 import { WarehouseUploadService } from './warehouse-upload.service';
-export declare const APIS: (typeof AbsentArticlesService | typeof AdminService | typeof ArticleService | typeof ArticlesService | typeof HelloWorldService | typeof HelperService | typeof HistoryService | typeof ImageService | typeof LoginService | typeof ManagersService | typeof OrderService | typeof OrderAbsendSparePartControllerService | typeof OrdersService | typeof OrdersControllerService | typeof PersonService | typeof PrintService | typeof PrintAgentService | typeof PrintersService | typeof ShelfService | typeof SuppliesService | typeof SuppliesTransitionService | typeof SupplyService | typeof SupplyTaskService | typeof SupplyTasksService | typeof SupplyTransitionService | typeof SupplyUploadRecordService | typeof SystemService | typeof TaskService | typeof TenantService | typeof TenantsService | typeof ToStockTransitionService | typeof TransitionService | typeof WarehouseService | typeof WarehouseUploadService)[];
+export declare const APIS: (typeof AbsentArticlesService | typeof AbsentShelfService | typeof AdminService | typeof ArticleService | typeof ArticlesService | typeof HelloWorldService | typeof HelperService | typeof HistoryService | typeof ImageService | typeof LoginService | typeof ManagersService | typeof OrderService | typeof OrderAbsendSparePartControllerService | typeof OrdersService | typeof OrdersControllerService | typeof PersonService | typeof PrintService | typeof PrintAgentService | typeof PrintersService | typeof ShelfService | typeof SuppliesService | typeof SuppliesTransitionService | typeof SupplyService | typeof SupplyTaskService | typeof SupplyTasksService | typeof SupplyTransitionService | typeof SupplyUploadRecordService | typeof SystemService | typeof TaskService | typeof TenantService | typeof TenantsService | typeof ToStockTransitionService | typeof TransitionService | typeof WarehouseService | typeof WarehouseUploadService)[];

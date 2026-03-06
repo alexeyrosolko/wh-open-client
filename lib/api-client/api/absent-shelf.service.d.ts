@@ -3,86 +3,86 @@ import { Observable } from 'rxjs';
 import { Pageable } from '../model/pageable';
 import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
-import { ResponseListArticleDto } from '../model/response-list-article-dto';
+import { ResponseListShelfDto } from '../model/response-list-shelf-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
-export declare class AbsentArticlesService extends BaseService {
+export declare class AbsentShelfService extends BaseService {
     protected httpClient: HttpClient;
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
     /**
-     * Переместить отсутствующие товары в товары
-     * Переместить все отсутствующие товары/запчасти в основной список товаров
-     * @endpoint post /api/warehouse/{warehouseCode}/article/absentarticles/move
+     * Переместить отсутствующие полки в активные
+     * Переместить все отсутствующие полки в активный статус для конкретного склада
+     * @endpoint post /api/warehouse/{warehouseCode}/shelf/absentshelves/move
      * @param warehouseCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    addWarehouseAbsentArticles(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    addWarehouseAbsentShelves(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
-    addWarehouseAbsentArticles(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    addWarehouseAbsentShelves(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
-    addWarehouseAbsentArticles(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    addWarehouseAbsentShelves(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;
     /**
-     * Переместить отсутствующие товары в товары
-     * Переместить все отсутствующие товары/запчасти в основной список товаров
-     * @endpoint get /api/warehouse/{warehouseCode}/article/absentarticles/count
+     * Переместить отсутствующие полки в полки
+     * Переместить все отсутствующие полки/запчасти в основной список товаров
+     * @endpoint get /api/warehouse/{warehouseCode}/shelf/absentshelves/count
      * @param warehouseCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    countWarehouseAbsentArticles(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    countWarehouseAbsentShelves(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCountDto>;
-    countWarehouseAbsentArticles(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    countWarehouseAbsentShelves(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
-    countWarehouseAbsentArticles(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    countWarehouseAbsentShelves(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
-     * Переместить отсутствующие товары в товары
-     * Переместить все отсутствующие товары/запчасти в основной список товаров
-     * @endpoint get /api/warehouse/{warehouseCode}/article/absentarticles
+     * Переместить отсутствующие полки в полки
+     * Переместить все отсутствующие полки/запчасти в основной список товаров
+     * @endpoint get /api/warehouse/{warehouseCode}/shelf/absentshelves
      * @param warehouseCode
      * @param pageable
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    getWarehouseAbsentArticles(warehouseCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
+    getWarehouseAbsentShelves(warehouseCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<ResponseListArticleDto>;
-    getWarehouseAbsentArticles(warehouseCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
+    }): Observable<ResponseListShelfDto>;
+    getWarehouseAbsentShelves(warehouseCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListArticleDto>>;
-    getWarehouseAbsentArticles(warehouseCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
+    }): Observable<HttpResponse<ResponseListShelfDto>>;
+    getWarehouseAbsentShelves(warehouseCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListArticleDto>>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<AbsentArticlesService, [null, { optional: true; }, { optional: true; }]>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<AbsentArticlesService>;
+    }): Observable<HttpEvent<ResponseListShelfDto>>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<AbsentShelfService, [null, { optional: true; }, { optional: true; }]>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<AbsentShelfService>;
 }

@@ -161,30 +161,6 @@ export declare class ShelfService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseShelfDto>>;
     /**
-     * Переместить отсутствующие полки в активные
-     * Переместить все отсутствующие полки в активный статус для конкретного склада
-     * @endpoint post /api/warehouse/{warehouseCode}/shelf/absentshelves/movetoshelves
-     * @param warehouseCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    moveAbsentShelvesToShelves(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    moveAbsentShelvesToShelves(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    moveAbsentShelvesToShelves(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
-    /**
      * Поиск полок по коду
      * Выполнить поиск полок по коду (частичное совпадение)
      * @endpoint get /api/warehouse/{warehouseCode}/shelf/{shelfCode}/search
