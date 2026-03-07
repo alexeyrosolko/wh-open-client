@@ -1,5 +1,0 @@
-/*
- * Public API Surface of whui-client
- */
-export * from './lib/api-client';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL3dodWktY2xpZW50L3NyYy9wdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBRUgsY0FBYyxrQkFBa0IsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2Ygd2h1aS1jbGllbnRcbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL2xpYi9hcGktY2xpZW50JztcbiJdfQ==
