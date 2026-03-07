@@ -1,7 +1,6 @@
 import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pageable } from '../model/pageable';
-import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListSupplyDto } from '../model/response-list-supply-dto';
 import { ResponseSupplyDto } from '../model/response-supply-dto';
@@ -135,31 +134,6 @@ export declare class SuppliesService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListSupplyDto>>;
-    /**
-     * Загрузить поставки из CSV файла
-     * Загрузить данные поставок из CSV файла
-     * @endpoint post /api/warehouse/{warehouseCode}/supply/csv
-     * @param warehouseCode
-     * @param file
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    uploadSuppliesCsv(warehouseCode: string, file: Blob, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    uploadSuppliesCsv(warehouseCode: string, file: Blob, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadSuppliesCsv(warehouseCode: string, file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SuppliesService, [null, { optional: true; }, { optional: true; }]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SuppliesService>;
 }

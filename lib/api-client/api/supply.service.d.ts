@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { Pageable } from '../model/pageable';
 import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
-import { ResponseListSupplyAbsendArticleDto } from '../model/response-list-supply-absend-article-dto';
 import { ResponseListSupplyDto } from '../model/response-list-supply-dto';
 import { ResponseListSupplyRecordDto } from '../model/response-list-supply-record-dto';
 import { ResponseSupplyDto } from '../model/response-supply-dto';
@@ -227,20 +226,20 @@ export declare class SupplyService extends BaseService {
      * @param options additional options
      */
     getAbsentArticlesBySupply(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
+        httpHeaderAccept?: '*/*';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<ResponseListSupplyAbsendArticleDto>;
+    }): Observable<any>;
     getAbsentArticlesBySupply(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
+        httpHeaderAccept?: '*/*';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListSupplyAbsendArticleDto>>;
+    }): Observable<HttpResponse<any>>;
     getAbsentArticlesBySupply(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
+        httpHeaderAccept?: '*/*';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListSupplyAbsendArticleDto>>;
+    }): Observable<HttpEvent<any>>;
     /**
      * Получить отсутствующие товары в поставке
      * Получить список отсутствующих товаров в конкретной поставке с пагинацией
@@ -253,20 +252,20 @@ export declare class SupplyService extends BaseService {
      * @param options additional options
      */
     getAbsentArticlesBySupply1(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
+        httpHeaderAccept?: '*/*';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<ResponseListSupplyAbsendArticleDto>;
+    }): Observable<any>;
     getAbsentArticlesBySupply1(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
+        httpHeaderAccept?: '*/*';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListSupplyAbsendArticleDto>>;
+    }): Observable<HttpResponse<any>>;
     getAbsentArticlesBySupply1(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
+        httpHeaderAccept?: '*/*';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListSupplyAbsendArticleDto>>;
+    }): Observable<HttpEvent<any>>;
     /**
      * Получить поставку по коду
      * Вернуть информацию о поставке по коду склада и коду поставки
