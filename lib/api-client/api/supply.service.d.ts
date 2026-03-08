@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Pageable } from '../model/pageable';
 import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
+import { ResponseListSupplyAbsendArticleDto } from '../model/response-list-supply-absend-article-dto';
 import { ResponseListSupplyDto } from '../model/response-list-supply-dto';
 import { ResponseListSupplyRecordDto } from '../model/response-list-supply-record-dto';
 import { ResponseSupplyDto } from '../model/response-supply-dto';
@@ -226,20 +227,20 @@ export declare class SupplyService extends BaseService {
      * @param options additional options
      */
     getAbsentArticlesBySupply(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<any>;
+    }): Observable<ResponseListSupplyAbsendArticleDto>;
     getAbsentArticlesBySupply(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<any>>;
+    }): Observable<HttpResponse<ResponseListSupplyAbsendArticleDto>>;
     getAbsentArticlesBySupply(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<any>>;
+    }): Observable<HttpEvent<ResponseListSupplyAbsendArticleDto>>;
     /**
      * Получить отсутствующие товары в поставке
      * Получить список отсутствующих товаров в конкретной поставке с пагинацией
@@ -252,20 +253,20 @@ export declare class SupplyService extends BaseService {
      * @param options additional options
      */
     getAbsentArticlesBySupply1(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<any>;
+    }): Observable<ResponseListSupplyAbsendArticleDto>;
     getAbsentArticlesBySupply1(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<any>>;
+    }): Observable<HttpResponse<ResponseListSupplyAbsendArticleDto>>;
     getAbsentArticlesBySupply1(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<any>>;
+    }): Observable<HttpEvent<ResponseListSupplyAbsendArticleDto>>;
     /**
      * Получить поставку по коду
      * Вернуть информацию о поставке по коду склада и коду поставки
@@ -392,32 +393,6 @@ export declare class SupplyService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListSupplyDto>>;
-    /**
-     * Загрузить записи разнесения из CSV файла
-     * Загрузить данные записей разнесения из CSV файла
-     * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/csv
-     * @param warehouseCode
-     * @param supplyCode
-     * @param file
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    uploadSupplyRecordsCsv(warehouseCode: string, supplyCode: string, file: Blob, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    uploadSupplyRecordsCsv(warehouseCode: string, supplyCode: string, file: Blob, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadSupplyRecordsCsv(warehouseCode: string, supplyCode: string, file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SupplyService, [null, { optional: true; }, { optional: true; }]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SupplyService>;
 }

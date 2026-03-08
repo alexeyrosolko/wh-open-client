@@ -7,14 +7,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export interface SupplyRecordDto {
+export interface SupplyAbsendArticleDto {
     warehouseCode?: string;
     supplyCode?: string;
-    /** @deprecated */
     vendor?: string;
-    price?: number;
-    quantity: number;
-    rest?: number;
     sparePartCode?: string;
     sparePartName?: string;
 }
