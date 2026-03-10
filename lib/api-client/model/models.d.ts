@@ -57,7 +57,6 @@ export * from './response-person-dto';
 export * from './response-print-task-dto';
 export * from './response-printer-dto';
 export * from './response-shelf-dto';
-export * from './response-stock-dto';
 export * from './response-string-dto';
 export * from './response-supply-dto';
 export * from './response-supply-upload-record-dto';

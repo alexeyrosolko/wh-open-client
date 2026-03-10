@@ -22,8 +22,8 @@ export declare namespace OrderDto {
         readonly Transformed: "TRANSFORMED";
         readonly CalculatedSucceded: "CALCULATED_SUCCEDED";
         readonly CalculatedFailed: "CALCULATED_FAILED";
-        readonly ToTransitioningSucceded: "TO_TRANSITIONING_SUCCEDED";
-        readonly ToTransitioningFailed: "TO_TRANSITIONING_FAILED";
+        readonly BlockedSucceded: "BLOCKED_SUCCEDED";
+        readonly BlockedFailed: "BLOCKED_FAILED";
         readonly Transitioning: "TRANSITIONING";
         readonly Transitioned: "TRANSITIONED";
         readonly Closed: "CLOSED";
