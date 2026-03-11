@@ -9,7 +9,6 @@ import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListOrderRecordDto } from '../model/response-list-order-record-dto';
 import { ResponseListOrderUploadRecordDto } from '../model/response-list-order-upload-record-dto';
 import { ResponseOrderDto } from '../model/response-order-dto';
-import { ResponseOrderRecordDto } from '../model/response-order-record-dto';
 import { ResponseOrderUploadRecordDto } from '../model/response-order-upload-record-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
@@ -296,32 +295,6 @@ export declare class OrderService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseOrderDto>>;
     /**
-     * Получить запись заказа по запчасти
-     * Получить запись заказа по коду запчасти
-     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/record/sparepart/{articleCode}
-     * @param warehouseCode
-     * @param orderCode
-     * @param articleCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    getOrderRecordByArticle(warehouseCode: string, orderCode: string, articleCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseOrderRecordDto>;
-    getOrderRecordByArticle(warehouseCode: string, orderCode: string, articleCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseOrderRecordDto>>;
-    getOrderRecordByArticle(warehouseCode: string, orderCode: string, articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseOrderRecordDto>>;
-    /**
      * Получить записи заказа
      * Получить список записей заказа с пагинацией
      * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/record
@@ -421,32 +394,6 @@ export declare class OrderService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
     uploadOrderRecordsCsv(warehouseCode: string, orderCode: string, file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
-    /**
-     * Загрузить записи заказа из CSV
-     * Загрузить данные записей заказа из CSV файла
-     * @endpoint post /api/warehouse/{warehouseCode}/order/{orderCode}/record/part/csv
-     * @param warehouseCode
-     * @param orderCode
-     * @param file
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    uploadOrderRecordsCsv1(warehouseCode: string, orderCode: string, file: Blob, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    uploadOrderRecordsCsv1(warehouseCode: string, orderCode: string, file: Blob, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadOrderRecordsCsv1(warehouseCode: string, orderCode: string, file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;

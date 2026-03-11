@@ -1,34 +1,37 @@
 import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ResponseCountDto } from '../model/response-count-dto';
+import { ResponseListTaskDto } from '../model/response-list-task-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
-export declare class OrdersControllerService extends BaseService {
+export declare class OrderTaskService extends BaseService {
     protected httpClient: HttpClient;
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
     /**
-     * @endpoint get /api/warehouse/{warehouseCode}/order/count
+     * getOrderTasksByOrderCode
+     * getOrderTasksByOrderCode
+     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/task
      * @param warehouseCode
+     * @param orderCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    getCount1(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    getOrderTasksByOrderCode(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<ResponseCountDto>;
-    getCount1(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    }): Observable<ResponseListTaskDto>;
+    getOrderTasksByOrderCode(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCountDto>>;
-    getCount1(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    }): Observable<HttpResponse<ResponseListTaskDto>>;
+    getOrderTasksByOrderCode(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCountDto>>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<OrdersControllerService, [null, { optional: true; }, { optional: true; }]>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<OrdersControllerService>;
+    }): Observable<HttpEvent<ResponseListTaskDto>>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<OrderTaskService, [null, { optional: true; }, { optional: true; }]>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<OrderTaskService>;
 }

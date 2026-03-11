@@ -6,10 +6,12 @@ import { ResponseListOrderAbsentArticleDto } from '../model/response-list-order-
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
-export declare class OrderAbsendSparePartControllerService extends BaseService {
+export declare class OrderUploadingService extends BaseService {
     protected httpClient: HttpClient;
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
     /**
+     * countOrderAbsentArticles
+     * countOrderAbsentArticles
      * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/absendsparepart/count
      * @param warehouseCode
      * @param orderCode
@@ -17,22 +19,24 @@ export declare class OrderAbsendSparePartControllerService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    getCount1(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    countOrderAbsentArticles(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCountDto>;
-    getCount1(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    countOrderAbsentArticles(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
-    getCount1(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    countOrderAbsentArticles(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
+     * getOrderAbsentArticles
+     * getOrderAbsentArticles
      * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/absendsparepart
      * @param warehouseCode
      * @param orderCode
@@ -41,21 +45,21 @@ export declare class OrderAbsendSparePartControllerService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    getSupplyRecords2(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
+    getOrderAbsentArticles(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseListOrderAbsentArticleDto>;
-    getSupplyRecords2(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
+    getOrderAbsentArticles(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListOrderAbsentArticleDto>>;
-    getSupplyRecords2(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
+    getOrderAbsentArticles(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListOrderAbsentArticleDto>>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<OrderAbsendSparePartControllerService, [null, { optional: true; }, { optional: true; }]>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<OrderAbsendSparePartControllerService>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<OrderUploadingService, [null, { optional: true; }, { optional: true; }]>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<OrderUploadingService>;
 }

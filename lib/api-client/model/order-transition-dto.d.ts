@@ -7,9 +7,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { OrderRecordDto } from './order-record-dto';
-import { Metadata } from './metadata';
-export interface ResponseOrderRecordDto {
-    metadata?: Metadata;
-    payload?: OrderRecordDto;
+export interface OrderTransitionDto {
+    warehouseCode: string;
+    orderCode: string;
+    shelfCode: string;
+    quantity?: number;
+    timestamp?: string;
+    sparePartCode: string;
 }

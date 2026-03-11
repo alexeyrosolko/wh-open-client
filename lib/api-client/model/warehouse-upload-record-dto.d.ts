@@ -10,10 +10,12 @@
 export interface WarehouseUploadRecordDto {
     warehouseCode?: string;
     vendor?: string;
+    articleCode?: string;
+    articleName?: string;
+    sparePartCode?: string;
+    sparePartName?: string;
     shelfCode?: string;
     shelfName?: string;
     quantity: number;
     price?: number;
-    sparePartCode?: string;
-    sparePartName?: string;
 }
