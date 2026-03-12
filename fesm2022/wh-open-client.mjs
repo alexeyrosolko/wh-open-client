@@ -509,7 +509,6 @@ class AbsentArticlesService extends BaseService {
             throw new Error('Required parameter pageable was null or undefined when calling getWarehouseAbsentArticles.');
         }
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'warehouseCode', warehouseCode, QueryParamStyle.Form, true);
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -535,7 +534,7 @@ class AbsentArticlesService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse//article/absentarticles`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/article/absentarticles`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -10170,6 +10169,35 @@ var SupplyDto;
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+var TransitionFilterFlatDto;
+(function (TransitionFilterFlatDto) {
+    TransitionFilterFlatDto.TransitionTypeEnum = {
+        ToWarehouseOutOutside: 'TO_WAREHOUSE_OUT_OUTSIDE',
+        ToOutsideFromWarehouse: 'TO_OUTSIDE_FROM_WAREHOUSE',
+        ToWarehouseOutSupply: 'TO_WAREHOUSE_OUT_SUPPLY',
+        ToSupplyFromwarehouse: 'TO_SUPPLY_FROMWAREHOUSE',
+        ToOrderFromWarehouse: 'TO_ORDER_FROM_WAREHOUSE',
+        ToOutsideFromOrder: 'TO_OUTSIDE_FROM_ORDER',
+        ToOrderFromOutside: 'TO_ORDER_FROM_OUTSIDE',
+        ToWarehouseFromOrder: 'TO_WAREHOUSE_FROM_ORDER',
+        ToWarehouseFromWarehouse: 'TO_WAREHOUSE_FROM_WAREHOUSE'
+    };
+})(TransitionFilterFlatDto || (TransitionFilterFlatDto = {}));
+
+var TransitionHistoryDto;
+(function (TransitionHistoryDto) {
+    TransitionHistoryDto.TransitionTypeEnum = {
+        ToWarehouseOutOutside: 'TO_WAREHOUSE_OUT_OUTSIDE',
+        ToOutsideFromWarehouse: 'TO_OUTSIDE_FROM_WAREHOUSE',
+        ToWarehouseOutSupply: 'TO_WAREHOUSE_OUT_SUPPLY',
+        ToSupplyFromwarehouse: 'TO_SUPPLY_FROMWAREHOUSE',
+        ToOrderFromWarehouse: 'TO_ORDER_FROM_WAREHOUSE',
+        ToOutsideFromOrder: 'TO_OUTSIDE_FROM_ORDER',
+        ToOrderFromOutside: 'TO_ORDER_FROM_OUTSIDE',
+        ToWarehouseFromOrder: 'TO_WAREHOUSE_FROM_ORDER',
+        ToWarehouseFromWarehouse: 'TO_WAREHOUSE_FROM_WAREHOUSE'
+    };
+})(TransitionHistoryDto || (TransitionHistoryDto = {}));
 
 /**
  * OpenAPI definition
@@ -10180,6 +10208,20 @@ var SupplyDto;
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+var TransitionHistoryFlatDto;
+(function (TransitionHistoryFlatDto) {
+    TransitionHistoryFlatDto.TransitionTypeEnum = {
+        ToWarehouseOutOutside: 'TO_WAREHOUSE_OUT_OUTSIDE',
+        ToOutsideFromWarehouse: 'TO_OUTSIDE_FROM_WAREHOUSE',
+        ToWarehouseOutSupply: 'TO_WAREHOUSE_OUT_SUPPLY',
+        ToSupplyFromwarehouse: 'TO_SUPPLY_FROMWAREHOUSE',
+        ToOrderFromWarehouse: 'TO_ORDER_FROM_WAREHOUSE',
+        ToOutsideFromOrder: 'TO_OUTSIDE_FROM_ORDER',
+        ToOrderFromOutside: 'TO_ORDER_FROM_OUTSIDE',
+        ToWarehouseFromOrder: 'TO_WAREHOUSE_FROM_ORDER',
+        ToWarehouseFromWarehouse: 'TO_WAREHOUSE_FROM_WAREHOUSE'
+    };
+})(TransitionHistoryFlatDto || (TransitionHistoryFlatDto = {}));
 
 /**
  * OpenAPI definition
@@ -10277,5 +10319,5 @@ function provideApi(configOrBasePath) {
  * Generated bundle index. Do not edit.
  */
 
-export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderDto, OrderService, OrderTaskService, OrderTransitionService, OrderUploadingService, OrdersControllerService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, StockService, SuppliesService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, WarehouseService, WarehouseUploadService, provideApi };
+export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderDto, OrderService, OrderTaskService, OrderTransitionService, OrderUploadingService, OrdersControllerService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, StockService, SuppliesService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionFilterFlatDto, TransitionHistoryDto, TransitionHistoryFlatDto, TransitionService, WarehouseService, WarehouseUploadService, provideApi };
 //# sourceMappingURL=wh-open-client.mjs.map

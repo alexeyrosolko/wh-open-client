@@ -23,4 +23,19 @@ export interface TransitionFilterFlatDto {
     price?: number;
     fromTime?: string;
     toTime?: string;
+    transitionType?: TransitionFilterFlatDto.TransitionTypeEnum;
+}
+export declare namespace TransitionFilterFlatDto {
+    const TransitionTypeEnum: {
+        readonly ToWarehouseOutOutside: "TO_WAREHOUSE_OUT_OUTSIDE";
+        readonly ToOutsideFromWarehouse: "TO_OUTSIDE_FROM_WAREHOUSE";
+        readonly ToWarehouseOutSupply: "TO_WAREHOUSE_OUT_SUPPLY";
+        readonly ToSupplyFromwarehouse: "TO_SUPPLY_FROMWAREHOUSE";
+        readonly ToOrderFromWarehouse: "TO_ORDER_FROM_WAREHOUSE";
+        readonly ToOutsideFromOrder: "TO_OUTSIDE_FROM_ORDER";
+        readonly ToOrderFromOutside: "TO_ORDER_FROM_OUTSIDE";
+        readonly ToWarehouseFromOrder: "TO_WAREHOUSE_FROM_ORDER";
+        readonly ToWarehouseFromWarehouse: "TO_WAREHOUSE_FROM_WAREHOUSE";
+    };
+    type TransitionTypeEnum = typeof TransitionTypeEnum[keyof typeof TransitionTypeEnum];
 }
