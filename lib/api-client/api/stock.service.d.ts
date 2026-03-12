@@ -84,8 +84,8 @@ export declare class StockService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
-     * Отчет по складу. Получить количество товара по коду запчасти
-     * Отчет по складу. Получить общее количество товара по коду запчасти на складе
+     * Отчет по складу. Получить количество товара по коду товара
+     * Отчет по складу. Получить общее количество товара по коду товара на складе
      * @endpoint get /api/warehouse/{warehouseCode}/stock/sparepart/{articleCode}/count
      * @param warehouseCode
      * @param articleCode
@@ -109,8 +109,8 @@ export declare class StockService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
-     * Отчет по складу. Получить количество товара по коду запчасти
-     * Отчет по складу. Получить общее количество товара по коду запчасти на складе
+     * Отчет по складу. Получить количество товара по коду товара
+     * Отчет по складу. Получить общее количество товара по коду товара на складе
      * @endpoint get /api/warehouse/{warehouseCode}/stock/article/{articleCode}/count
      * @param warehouseCode
      * @param articleCode
@@ -133,6 +133,81 @@ export declare class StockService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
+    /**
+     * Отчет по складу. Получить товары по коду полки в CSV
+     * Отчет по складу. Получить товары по коду полки в CSV
+     * @endpoint get /api/warehouse/{warehouseCode}/stock/shelf/{shelfCode}/csv
+     * @param warehouseCode
+     * @param shelfCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    downloadStockByShelfCode(warehouseCode: string, shelfCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<string>;
+    downloadStockByShelfCode(warehouseCode: string, shelfCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<string>>;
+    downloadStockByShelfCode(warehouseCode: string, shelfCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<string>>;
+    /**
+     * Отчет по складу. Получить товары по коду товара в CSV
+     * Отчет по складу. Получить товары по коду товара в CSV
+     * @endpoint get /api/warehouse/{warehouseCode}/stock/sparepart/{articleCode}/csv
+     * @param warehouseCode
+     * @param articleCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    downloadStockBySparePartCode(warehouseCode: string, articleCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<string>;
+    downloadStockBySparePartCode(warehouseCode: string, articleCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<string>>;
+    downloadStockBySparePartCode(warehouseCode: string, articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<string>>;
+    /**
+     * Отчет по складу. Получить товары по коду товара в CSV
+     * Отчет по складу. Получить товары по коду товара в CSV
+     * @endpoint get /api/warehouse/{warehouseCode}/stock/article/{articleCode}/csv
+     * @param warehouseCode
+     * @param articleCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    downloadStockBySparePartCode1(warehouseCode: string, articleCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<string>;
+    downloadStockBySparePartCode1(warehouseCode: string, articleCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<string>>;
+    downloadStockBySparePartCode1(warehouseCode: string, articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<string>>;
     /**
      * Отчет по складу. Скачать товар в CSV формате
      * Отчет по складу. Экспортировать данные товара со склада в CSV файл
@@ -209,8 +284,8 @@ export declare class StockService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListStockDto>>;
     /**
-     * Отчет по складу. Получить товар по коду запчасти
-     * Отчет по складу. Получить список товаров на всех полках склада по коду запчасти с пагинацией
+     * Отчет по складу. Получить товар по коду товара
+     * Отчет по складу. Получить список товаров на всех полках склада по коду товара с пагинацией
      * @endpoint get /api/warehouse/{warehouseCode}/stock/article/{articleCode}
      * @param warehouseCode
      * @param articleCode
@@ -235,8 +310,8 @@ export declare class StockService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListStockDto>>;
     /**
-     * Отчет по складу. Получить товар по коду запчасти
-     * Отчет по складу. Получить список товаров на всех полках склада по коду запчасти с пагинацией
+     * Отчет по складу. Получить товар по коду товара
+     * Отчет по складу. Получить список товаров на всех полках склада по коду товара с пагинацией
      * @endpoint get /api/warehouse/{warehouseCode}/stock/sparepart/{articleCode}
      * @param warehouseCode
      * @param articleCode
