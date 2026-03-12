@@ -5344,8 +5344,8 @@ paths:
     get:
       tags:
       - Stock
-      summary: Получить весь товар на складе
-      description: Получить список всего товара на складе с пагинацией
+      summary: Отчет по складу. Получить весь товар на складе
+      description: Отчет по складу. Получить список всего товара на складе с пагинацией
       operationId: getAllStock
       parameters:
       - name: warehouseCode
@@ -5440,8 +5440,9 @@ paths:
     get:
       tags:
       - Stock
-      summary: Получить количество товара по коду запчасти
-      description: Получить общее количество товара по коду запчасти на складе
+      summary: Отчет по складу. Получить количество товара по коду запчасти
+      description: Отчет по складу. Получить общее количество товара по коду запчасти
+        на складе
       operationId: countStockBySparePartCode
       parameters:
       - name: warehouseCode
@@ -5491,8 +5492,9 @@ paths:
     get:
       tags:
       - Stock
-      summary: Получить количество товара по коду запчасти
-      description: Получить общее количество товара по коду запчасти на складе
+      summary: Отчет по складу. Получить количество товара по коду запчасти
+      description: Отчет по складу. Получить общее количество товара по коду запчасти
+        на складе
       operationId: countStockBySparePartCode_1
       parameters:
       - name: warehouseCode
@@ -5542,9 +5544,9 @@ paths:
     get:
       tags:
       - Stock
-      summary: Получить товар по коду запчасти
-      description: Получить список товаров на всех полках склада по коду запчасти
-        с пагинацией
+      summary: Отчет по складу. Получить товар по коду запчасти
+      description: Отчет по складу. Получить список товаров на всех полках склада
+        по коду запчасти с пагинацией
       operationId: getStockBySparePartCode
       parameters:
       - name: warehouseCode
@@ -5599,9 +5601,9 @@ paths:
     get:
       tags:
       - Stock
-      summary: Получить товар по коду запчасти
-      description: Получить список товаров на всех полках склада по коду запчасти
-        с пагинацией
+      summary: Отчет по складу. Получить товар по коду запчасти
+      description: Отчет по складу. Получить список товаров на всех полках склада
+        по коду запчасти с пагинацией
       operationId: getStockBySparePartCode_1
       parameters:
       - name: warehouseCode
@@ -5656,8 +5658,9 @@ paths:
     get:
       tags:
       - Stock
-      summary: Получить товар по коду полки
-      description: Получить список товара на конкретной полке склада с пагинацией
+      summary: Отчет по складу. Получить товар по коду полки
+      description: Отчет по складу. Получить список товара на конкретной полке склада
+        с пагинацией
       operationId: getStockByShelfCode
       parameters:
       - name: warehouseCode
@@ -5712,8 +5715,9 @@ paths:
     get:
       tags:
       - Stock
-      summary: Получить количество товара по коду полки
-      description: Получить общее количество товара на конкретной полке
+      summary: Отчет по складу. Получить количество товара по коду полки
+      description: Отчет по складу. Получить общее количество товара на конкретной
+        полке
       operationId: countStockByShelfCode
       parameters:
       - name: warehouseCode
@@ -5763,8 +5767,8 @@ paths:
     get:
       tags:
       - Stock
-      summary: Скачать товар в CSV формате
-      description: Экспортировать данные товара со склада в CSV файл
+      summary: Отчет по складу. Скачать товар в CSV формате
+      description: Отчет по складу. Экспортировать данные товара со склада в CSV файл
       operationId: downloadStockCsv
       parameters:
       - name: warehouseCode
@@ -5809,8 +5813,8 @@ paths:
     get:
       tags:
       - Stock
-      summary: Получить общее количество товара
-      description: Получить общее количество товара на складе
+      summary: Отчет по складу. Получить общее количество товара
+      description: Отчет по складу. Получить общее количество товара на складе
       operationId: countAllStock
       parameters:
       - name: warehouseCode
