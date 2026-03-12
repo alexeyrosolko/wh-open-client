@@ -9,10 +9,13 @@
  */
 export interface MainBookDto {
     warehouseCode?: string;
+    sparePartCode?: string;
+    sparePartName?: string;
+    articleCode?: string;
+    articleName?: string;
     vendor?: string;
     quantity?: number;
     price?: number;
     commitTime?: string;
     timestamp?: string;
-    sparePartCode?: string;
 }
