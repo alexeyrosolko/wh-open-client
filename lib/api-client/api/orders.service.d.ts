@@ -38,6 +38,30 @@ export declare class OrdersService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseOrderDto>>;
     /**
+     * countOrders
+     * countOrders
+     * @endpoint get /api/warehouse/{warehouseCode}/order/count
+     * @param warehouseCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    countOrders(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseCountDto>;
+    countOrders(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseCountDto>>;
+    countOrders(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseCountDto>>;
+    /**
      * Посчитать заказы по коду
      * Посчитать количество заказов, соответствующих шаблону кода
      * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/search/count
