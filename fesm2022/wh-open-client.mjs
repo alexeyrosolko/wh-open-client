@@ -547,10 +547,10 @@ class AbsentArticlesService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: AbsentArticlesService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: AbsentArticlesService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: AbsentArticlesService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: AbsentArticlesService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: AbsentArticlesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: AbsentArticlesService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -668,7 +668,6 @@ class AbsentShelfService extends BaseService {
             throw new Error('Required parameter pageable was null or undefined when calling getWarehouseAbsentShelves.');
         }
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'warehouseCode', warehouseCode, QueryParamStyle.Form, true);
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -694,7 +693,7 @@ class AbsentShelfService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse//shelf/absentshelves`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/shelf/absentshelves`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -707,10 +706,10 @@ class AbsentShelfService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: AbsentShelfService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: AbsentShelfService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: AbsentShelfService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: AbsentShelfService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: AbsentShelfService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: AbsentShelfService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -975,10 +974,10 @@ class AdminService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: AdminService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: AdminService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: AdminService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: AdminService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: AdminService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: AdminService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -1131,10 +1130,10 @@ class ArticleService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ArticleService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ArticleService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ArticleService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ArticleService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ArticleService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ArticleService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -1799,10 +1798,10 @@ class ArticlesService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ArticlesService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ArticlesService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ArticlesService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ArticlesService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ArticlesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ArticlesService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -2128,10 +2127,10 @@ class HelloWorldService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: HelloWorldService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: HelloWorldService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: HelloWorldService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: HelloWorldService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: HelloWorldService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: HelloWorldService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -2239,10 +2238,10 @@ class HelperService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: HelperService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: HelperService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: HelperService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: HelperService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: HelperService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: HelperService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -2480,10 +2479,10 @@ class HistoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: HistoryService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: HistoryService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: HistoryService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: HistoryService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: HistoryService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: HistoryService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -2560,10 +2559,10 @@ class ImageService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ImageService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ImageService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ImageService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ImageService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ImageService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ImageService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -2640,10 +2639,10 @@ class LoginService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: LoginService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: LoginService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: LoginService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: LoginService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: LoginService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: LoginService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -2771,10 +2770,10 @@ class ManagersService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ManagersService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ManagersService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ManagersService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ManagersService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ManagersService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ManagersService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -2803,61 +2802,6 @@ class OrderService extends BaseService {
     constructor(httpClient, basePath, configuration) {
         super(basePath, configuration);
         this.httpClient = httpClient;
-    }
-    addOrderUploadRecord(warehouseCode, orderCode, orderUploadRecordDto, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling addOrderUploadRecord.');
-        }
-        if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling addOrderUploadRecord.');
-        }
-        if (orderUploadRecordDto === null || orderUploadRecordDto === undefined) {
-            throw new Error('Required parameter orderUploadRecordDto was null or undefined when calling addOrderUploadRecord.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        // to determine the Content-Type header
-        const consumes = [
-            'application/json'
-        ];
-        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            body: orderUploadRecordDto,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
     }
     changeOrderState(warehouseCode, orderCode, expectedState, newState, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
@@ -2897,49 +2841,6 @@ class OrderService extends BaseService {
             }
         }
         let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/state/from/${this.configuration.encodeParam({ name: "expectedState", value: expectedState, in: "path", style: "simple", explode: false, dataType: "'UPLOADING' | 'CHECKED_SUCCEDED' | 'CHECKED_FAILED' | 'TRANSFORMED' | 'CALCULATED_SUCCEDED' | 'CALCULATED_FAILED' | 'BLOCKED_SUCCEDED' | 'BLOCKED_FAILED' | 'TRANSITIONING' | 'TRANSITIONED' | 'CLOSED'", dataFormat: undefined })}/to/${this.configuration.encodeParam({ name: "newState", value: newState, in: "path", style: "simple", explode: false, dataType: "'UPLOADING' | 'CHECKED_SUCCEDED' | 'CHECKED_FAILED' | 'TRANSFORMED' | 'CALCULATED_SUCCEDED' | 'CALCULATED_FAILED' | 'BLOCKED_SUCCEDED' | 'BLOCKED_FAILED' | 'TRANSITIONING' | 'TRANSITIONED' | 'CLOSED'", dataFormat: undefined })}`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
-    checkOrderUploadRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling checkOrderUploadRecords.');
-        }
-        if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling checkOrderUploadRecords.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/checking`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2994,49 +2895,6 @@ class OrderService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    clearOrderUploadRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling clearOrderUploadRecords.');
-        }
-        if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling clearOrderUploadRecords.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
     countOrderRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling countOrderRecords.');
@@ -3069,49 +2927,6 @@ class OrderService extends BaseService {
             }
         }
         let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/count`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
-    countOrderUploadRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling countOrderUploadRecords.');
-        }
-        if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling countOrderUploadRecords.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/count`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -3198,49 +3013,6 @@ class OrderService extends BaseService {
             }
         }
         let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/part/csv`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
-    downloadOrderUploadRecordsCsv(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadOrderUploadRecordsCsv.');
-        }
-        if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling downloadOrderUploadRecordsCsv.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'text/plain'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/csv`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -3344,55 +3116,6 @@ class OrderService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getOrderUploadRecords(warehouseCode, orderCode, pageable, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderUploadRecords.');
-        }
-        if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling getOrderUploadRecords.');
-        }
-        if (pageable === null || pageable === undefined) {
-            throw new Error('Required parameter pageable was null or undefined when calling getOrderUploadRecords.');
-        }
-        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            params: localVarQueryParameters.toHttpParams(),
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
     updateOrderState(warehouseCode, orderCode, orderDto, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling updateOrderState.');
@@ -3448,15 +3171,45 @@ class OrderService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    uploadOrderRecordsCsv(warehouseCode, orderCode, file, observe = 'body', reportProgress = false, options) {
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class OrderAbsentRecordService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    countOrderAnsentRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadOrderRecordsCsv.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countOrderAnsentRecords.');
         }
         if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling uploadOrderRecordsCsv.');
-        }
-        if (file === null || file === undefined) {
-            throw new Error('Required parameter file was null or undefined when calling uploadOrderRecordsCsv.');
+            throw new Error('Required parameter orderCode was null or undefined when calling countOrderAnsentRecords.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -3470,26 +3223,6 @@ class OrderService extends BaseService {
         }
         const localVarHttpContext = options?.context ?? new HttpContext();
         const localVarTransferCache = options?.transferCache ?? true;
-        // to determine the Content-Type header
-        const consumes = [
-            'multipart/form-data'
-        ];
-        const canConsumeForm = this.canConsumeForm(consumes);
-        let localVarFormParams;
-        let localVarUseForm = false;
-        let localVarConvertFormParamsToString = false;
-        // use FormData to transmit files using content-type "multipart/form-data"
-        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
-        localVarUseForm = canConsumeForm;
-        if (localVarUseForm) {
-            localVarFormParams = new FormData();
-        }
-        else {
-            localVarFormParams = new HttpParams({ encoder: this.encoder });
-        }
-        if (file !== undefined) {
-            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
-        }
         let responseType_ = 'json';
         if (localVarHttpHeaderAcceptSelected) {
             if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
@@ -3502,11 +3235,10 @@ class OrderService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/csv`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absentrecord/count`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
-            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
@@ -3515,10 +3247,59 @@ class OrderService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderService, providedIn: 'root' });
+    getOrderAnsentRecords(warehouseCode, orderCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderAnsentRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getOrderAnsentRecords.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getOrderAnsentRecords.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/absentrecord`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderAbsentRecordService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderAbsentRecordService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderAbsentRecordService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -3591,10 +3372,10 @@ class OrderTaskService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderTaskService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderTaskService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderTaskService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderTaskService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderTaskService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderTaskService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -3722,10 +3503,386 @@ class OrderTransitionService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderTransitionService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderTransitionService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderTransitionService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderTransitionService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderTransitionService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderTransitionService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class OrderUploadService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    addOrderUploadRecord(warehouseCode, orderCode, orderUploadRecordDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling addOrderUploadRecord.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling addOrderUploadRecord.');
+        }
+        if (orderUploadRecordDto === null || orderUploadRecordDto === undefined) {
+            throw new Error('Required parameter orderUploadRecordDto was null or undefined when calling addOrderUploadRecord.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: orderUploadRecordDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    checkOrderUploadRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling checkOrderUploadRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling checkOrderUploadRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/checking`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    clearOrderUploadRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling clearOrderUploadRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling clearOrderUploadRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countOrderUploadRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countOrderUploadRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling countOrderUploadRecords.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    downloadOrderUploadRecordsCsv(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadOrderUploadRecordsCsv.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling downloadOrderUploadRecordsCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'text/plain'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getOrderUploadRecords(warehouseCode, orderCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderUploadRecords.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getOrderUploadRecords.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getOrderUploadRecords.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    uploadOrderRecordsCsv(warehouseCode, orderCode, file, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadOrderRecordsCsv.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling uploadOrderRecordsCsv.');
+        }
+        if (file === null || file === undefined) {
+            throw new Error('Required parameter file was null or undefined when calling uploadOrderRecordsCsv.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'multipart/form-data'
+        ];
+        const canConsumeForm = this.canConsumeForm(consumes);
+        let localVarFormParams;
+        let localVarUseForm = false;
+        let localVarConvertFormParamsToString = false;
+        // use FormData to transmit files using content-type "multipart/form-data"
+        // see https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
+        localVarUseForm = canConsumeForm;
+        if (localVarUseForm) {
+            localVarFormParams = new FormData();
+        }
+        else {
+            localVarFormParams = new HttpParams({ encoder: this.encoder });
+        }
+        if (file !== undefined) {
+            localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/csv`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: localVarConvertFormParamsToString ? localVarFormParams.toString() : localVarFormParams,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderUploadService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderUploadService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderUploadService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -3847,10 +4004,10 @@ class OrderUploadingService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderUploadingService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderUploadingService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderUploadingService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderUploadingService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrderUploadingService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrderUploadingService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -4055,12 +4212,12 @@ class OrdersService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getOrdersByWarehouse(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
+    getOrders(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrdersByWarehouse.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrders.');
         }
         if (pageable === null || pageable === undefined) {
-            throw new Error('Required parameter pageable was null or undefined when calling getOrdersByWarehouse.');
+            throw new Error('Required parameter pageable was null or undefined when calling getOrders.');
         }
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
@@ -4208,10 +4365,10 @@ class OrdersService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrdersService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrdersService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrdersService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrdersService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: OrdersService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: OrdersService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -4864,10 +5021,10 @@ class PersonService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PersonService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PersonService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PersonService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PersonService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PersonService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PersonService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -4946,10 +5103,10 @@ class PrintService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PrintService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PrintService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PrintService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PrintService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PrintService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PrintService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -5143,10 +5300,10 @@ class PrintAgentService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PrintAgentService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PrintAgentService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PrintAgentService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PrintAgentService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PrintAgentService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PrintAgentService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -5303,10 +5460,10 @@ class PrintersService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PrintersService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PrintersService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PrintersService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PrintersService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: PrintersService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: PrintersService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -5758,10 +5915,10 @@ class ShelfService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ShelfService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ShelfService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ShelfService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ShelfService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ShelfService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ShelfService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -6362,10 +6519,10 @@ class StockService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: StockService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: StockService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: StockService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: StockService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: StockService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: StockService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -6616,10 +6773,10 @@ class SuppliesService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SuppliesService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SuppliesService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SuppliesService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SuppliesService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SuppliesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SuppliesService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -7318,10 +7475,10 @@ class SupplyService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -7394,10 +7551,10 @@ class SupplyTaskService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyTaskService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyTaskService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyTaskService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyTaskService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyTaskService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyTaskService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -7587,10 +7744,10 @@ class SupplyTasksService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyTasksService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyTasksService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyTasksService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyTasksService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyTasksService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyTasksService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -7718,10 +7875,10 @@ class SupplyTransitionService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyTransitionService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyTransitionService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyTransitionService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyTransitionService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyTransitionService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyTransitionService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -8149,10 +8306,10 @@ class SupplyUploadRecordService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyUploadRecordService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyUploadRecordService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyUploadRecordService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyUploadRecordService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SupplyUploadRecordService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SupplyUploadRecordService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -8252,10 +8409,10 @@ class SystemService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SystemService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SystemService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SystemService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SystemService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: SystemService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: SystemService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -8389,10 +8546,10 @@ class TaskService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TaskService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TaskService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TaskService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TaskService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TaskService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TaskService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -8582,10 +8739,10 @@ class TenantService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TenantService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TenantService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TenantService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TenantService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TenantService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TenantService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -8780,10 +8937,10 @@ class TenantsService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TenantsService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TenantsService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TenantsService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TenantsService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TenantsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TenantsService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -8917,10 +9074,10 @@ class ToStockTransitionService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ToStockTransitionService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ToStockTransitionService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ToStockTransitionService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ToStockTransitionService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ToStockTransitionService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ToStockTransitionService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -9106,10 +9263,10 @@ class TransitionService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TransitionService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TransitionService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TransitionService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TransitionService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: TransitionService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: TransitionService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -9571,10 +9728,10 @@ class WarehouseService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: WarehouseService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: WarehouseService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: WarehouseService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: WarehouseService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: WarehouseService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: WarehouseService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -9846,10 +10003,10 @@ class WarehouseUploadService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: WarehouseUploadService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: WarehouseUploadService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: WarehouseUploadService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: WarehouseUploadService, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: WarehouseUploadService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: WarehouseUploadService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -9863,7 +10020,17 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImpo
                     type: Optional
                 }] }] });
 
-const APIS = [AbsentArticlesService, AbsentShelfService, AdminService, ArticleService, ArticlesService, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderService, OrderTaskService, OrderTransitionService, OrderUploadingService, OrdersService, PersonService, PrintService, PrintAgentService, PrintersService, ShelfService, StockService, SuppliesService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, WarehouseService, WarehouseUploadService];
+const APIS = [AbsentArticlesService, AbsentShelfService, AdminService, ArticleService, ArticlesService, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderService, OrderAbsentRecordService, OrderTaskService, OrderTransitionService, OrderUploadService, OrderUploadingService, OrdersService, PersonService, PrintService, PrintAgentService, PrintersService, ShelfService, StockService, SuppliesService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, WarehouseService, WarehouseUploadService];
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
 
 /**
  * OpenAPI definition
@@ -10377,11 +10544,11 @@ class ApiModule {
                 'See also https://github.com/angular/angular/issues/20575');
         }
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ApiModule, deps: [{ token: ApiModule, optional: true, skipSelf: true }, { token: i1.HttpClient, optional: true }], target: i0.ɵɵFactoryTarget.NgModule });
-    static ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "19.2.19", ngImport: i0, type: ApiModule });
-    static ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ApiModule });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ApiModule, deps: [{ token: ApiModule, optional: true, skipSelf: true }, { token: i1.HttpClient, optional: true }], target: i0.ɵɵFactoryTarget.NgModule });
+    static ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "19.2.20", ngImport: i0, type: ApiModule });
+    static ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ApiModule });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.19", ngImport: i0, type: ApiModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.20", ngImport: i0, type: ApiModule, decorators: [{
             type: NgModule,
             args: [{
                     imports: [],
@@ -10417,5 +10584,5 @@ function provideApi(configOrBasePath) {
  * Generated bundle index. Do not edit.
  */
 
-export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderDto, OrderService, OrderTaskService, OrderTransitionService, OrderUploadingService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, StockService, SuppliesService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionFilterFlatDto, TransitionHistoryDto, TransitionHistoryFlatDto, TransitionService, WarehouseService, WarehouseUploadService, provideApi };
+export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, ManagersService, OrderAbsentRecordService, OrderDto, OrderService, OrderTaskService, OrderTransitionService, OrderUploadService, OrderUploadingService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, StockService, SuppliesService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionFilterFlatDto, TransitionHistoryDto, TransitionHistoryFlatDto, TransitionService, WarehouseService, WarehouseUploadService, provideApi };
 //# sourceMappingURL=wh-open-client.mjs.map

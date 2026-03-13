@@ -120,17 +120,17 @@ export declare class OrdersService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    getOrdersByWarehouse(warehouseCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
+    getOrders(warehouseCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseListOrderDto>;
-    getOrdersByWarehouse(warehouseCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
+    getOrders(warehouseCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListOrderDto>>;
-    getOrdersByWarehouse(warehouseCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
+    getOrders(warehouseCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
