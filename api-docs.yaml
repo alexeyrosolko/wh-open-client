@@ -7171,6 +7171,309 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
+  /api/warehouse/{warehouseCode}/mainbook:
+    get:
+      tags:
+      - MainBook
+      summary: Получить главный журнал склада
+      description: Получить записи главного журнала склада с пагинацией
+      operationId: getMainBook
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageable
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/Pageable"
+      responses:
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseListMainBookDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/mainbook/csv:
+    get:
+      tags:
+      - MainBook
+      summary: Получить главный журнал склада в CSV
+      description: Получить записи главного журнала склада с пагинацией в CSV
+      operationId: downloadMainBook
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/mainbook/count:
+    get:
+      tags:
+      - MainBook
+      summary: Получить количество записей главного журнала
+      description: Получить количество записей в главном журнале для склада
+      operationId: countMainBook
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/article/{articleCode}/mainbook:
+    get:
+      tags:
+      - MainBook
+      summary: Получить главный журнал склада по коду товара в CSV
+      description: Получить записи главного журнала склада с пагинацией по коду товара
+        в CSV
+      operationId: getMainBookByArticle
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: articleCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageable
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/Pageable"
+      responses:
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseListMainBookDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/article/{articleCode}/mainbook/csv:
+    get:
+      tags:
+      - MainBook
+      summary: Получить главный журнал складап о коду товара в CSV
+      description: Получить записи главного журнала склада с пагинацией по коду товара
+        в CSV
+      operationId: downloadMainBookByArticle
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: articleCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/article/{articleCode}/mainbook/count:
+    get:
+      tags:
+      - MainBook
+      summary: Получить количество записей главного журнала по артикулу
+      description: Получить количество записей в главном журнале для склада  по артикулу
+      operationId: countMainBookByArticle
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: articleCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
   /api/warehouse/{warehouseCode}/article/absentarticles:
     get:
       tags:
@@ -9774,10 +10077,10 @@ components:
         transitionType:
           type: string
           enum:
-          - TO_WAREHOUSE_OUT_OUTSIDE
+          - TO_WAREHOUSE_FROM_OUTSIDE
           - TO_OUTSIDE_FROM_WAREHOUSE
-          - TO_WAREHOUSE_OUT_SUPPLY
-          - TO_SUPPLY_FROMWAREHOUSE
+          - TO_WAREHOUSE_FROM_SUPPLY
+          - TO_SUPPLY_FROM_WAREHOUSE
           - TO_ORDER_FROM_WAREHOUSE
           - TO_OUTSIDE_FROM_ORDER
           - TO_ORDER_FROM_OUTSIDE
@@ -9822,10 +10125,10 @@ components:
         transitionType:
           type: string
           enum:
-          - TO_WAREHOUSE_OUT_OUTSIDE
+          - TO_WAREHOUSE_FROM_OUTSIDE
           - TO_OUTSIDE_FROM_WAREHOUSE
-          - TO_WAREHOUSE_OUT_SUPPLY
-          - TO_SUPPLY_FROMWAREHOUSE
+          - TO_WAREHOUSE_FROM_SUPPLY
+          - TO_SUPPLY_FROM_WAREHOUSE
           - TO_ORDER_FROM_WAREHOUSE
           - TO_OUTSIDE_FROM_ORDER
           - TO_ORDER_FROM_OUTSIDE
@@ -9853,6 +10156,8 @@ components:
           type: string
         articleCode:
           type: string
+        articleName:
+          type: string
         quantity:
           type: integer
           format: int32
@@ -9861,6 +10166,8 @@ components:
         timestamp:
           type: string
           format: date-time
+        transitionType:
+          type: string
         debetSupplyId:
           type: string
           format: uuid
@@ -9903,18 +10210,6 @@ components:
           type: string
         creditShelfName:
           type: string
-        transitionType:
-          type: string
-          enum:
-          - TO_WAREHOUSE_OUT_OUTSIDE
-          - TO_OUTSIDE_FROM_WAREHOUSE
-          - TO_WAREHOUSE_OUT_SUPPLY
-          - TO_SUPPLY_FROMWAREHOUSE
-          - TO_ORDER_FROM_WAREHOUSE
-          - TO_OUTSIDE_FROM_ORDER
-          - TO_ORDER_FROM_OUTSIDE
-          - TO_WAREHOUSE_FROM_ORDER
-          - TO_WAREHOUSE_FROM_WAREHOUSE
     CountDto:
       type: object
       properties:
@@ -10250,13 +10545,19 @@ components:
           type: string
         shelfCode:
           type: string
+        articleCode:
+          type: string
+        articleName:
+          type: string
+        sparePartCode:
+          type: string
+        sparePartName:
+          type: string
         vendor:
           type: string
         quantity:
           type: integer
           format: int32
-        sparePartCode:
-          type: string
     ResponseListShelfWithQuantityDto:
       type: object
       properties:

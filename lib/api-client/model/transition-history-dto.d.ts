@@ -22,10 +22,10 @@ export interface TransitionHistoryDto {
 }
 export declare namespace TransitionHistoryDto {
     const TransitionTypeEnum: {
-        readonly ToWarehouseOutOutside: "TO_WAREHOUSE_OUT_OUTSIDE";
+        readonly ToWarehouseFromOutside: "TO_WAREHOUSE_FROM_OUTSIDE";
         readonly ToOutsideFromWarehouse: "TO_OUTSIDE_FROM_WAREHOUSE";
-        readonly ToWarehouseOutSupply: "TO_WAREHOUSE_OUT_SUPPLY";
-        readonly ToSupplyFromwarehouse: "TO_SUPPLY_FROMWAREHOUSE";
+        readonly ToWarehouseFromSupply: "TO_WAREHOUSE_FROM_SUPPLY";
+        readonly ToSupplyFromWarehouse: "TO_SUPPLY_FROM_WAREHOUSE";
         readonly ToOrderFromWarehouse: "TO_ORDER_FROM_WAREHOUSE";
         readonly ToOutsideFromOrder: "TO_OUTSIDE_FROM_ORDER";
         readonly ToOrderFromOutside: "TO_ORDER_FROM_OUTSIDE";
