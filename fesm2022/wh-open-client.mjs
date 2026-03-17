@@ -7507,10 +7507,15 @@ class SupplyTasksService extends BaseService {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
-    getByWarehouse(warehouseCode, observe = 'body', reportProgress = false, options) {
+    getByWarehouse(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling getByWarehouse.');
         }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getByWarehouse.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
@@ -7539,6 +7544,7 @@ class SupplyTasksService extends BaseService {
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
@@ -7547,7 +7553,12 @@ class SupplyTasksService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getSupplyTasks(observe = 'body', reportProgress = false, options) {
+    getSupplyTasks(pageable, observe = 'body', reportProgress = false, options) {
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getSupplyTasks.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
@@ -7576,6 +7587,7 @@ class SupplyTasksService extends BaseService {
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
@@ -7584,13 +7596,18 @@ class SupplyTasksService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getSupplyTasksByLogin(warehouseCode, login, observe = 'body', reportProgress = false, options) {
+    getSupplyTasksByLogin(warehouseCode, login, pageable, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling getSupplyTasksByLogin.');
         }
         if (login === null || login === undefined) {
             throw new Error('Required parameter login was null or undefined when calling getSupplyTasksByLogin.');
         }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getSupplyTasksByLogin.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
@@ -7619,6 +7636,7 @@ class SupplyTasksService extends BaseService {
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
@@ -7627,10 +7645,15 @@ class SupplyTasksService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getSupplyTasksByWarehouse(warehouseCode, observe = 'body', reportProgress = false, options) {
+    getSupplyTasksByWarehouse(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling getSupplyTasksByWarehouse.');
         }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getSupplyTasksByWarehouse.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
@@ -7659,6 +7682,7 @@ class SupplyTasksService extends BaseService {
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
