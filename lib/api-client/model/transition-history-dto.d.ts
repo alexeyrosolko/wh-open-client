@@ -10,6 +10,7 @@
 import { AccountHistoryDto } from './account-history-dto';
 export interface TransitionHistoryDto {
     id?: string;
+    rollback_transaction_id?: string;
     person?: string;
     warehouseCode?: string;
     articleCode?: string;
