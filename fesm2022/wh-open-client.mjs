@@ -1466,7 +1466,8 @@ class ExampleService extends BaseService {
         }
         let localVarHeaders = this.defaultHeaders;
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'text/plain'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
@@ -1503,7 +1504,8 @@ class ExampleService extends BaseService {
         }
         let localVarHeaders = this.defaultHeaders;
         const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*'
+            '*/*',
+            'text/plain'
         ]);
         if (localVarHttpHeaderAcceptSelected !== undefined) {
             localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);

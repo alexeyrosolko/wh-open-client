@@ -16,17 +16,17 @@ export declare class ExampleService extends BaseService {
      * @param options additional options
      */
     downloadExampleFile(file: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<string>;
     downloadExampleFile(file: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
     downloadExampleFile(file: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<string>>;
@@ -40,17 +40,17 @@ export declare class ExampleService extends BaseService {
      * @param options additional options
      */
     downloadExampleFile1(file: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<string>;
     downloadExampleFile1(file: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
     downloadExampleFile1(file: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
+        httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<string>>;
