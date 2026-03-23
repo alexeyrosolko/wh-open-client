@@ -59,31 +59,6 @@ export declare class TransitionService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;
-    /**
-     * Создать внутреннее перемещение товара
-     * Создать запись о перемещении товара между полками в пределах одного склада с добавлением в товаром остаток и печатью
-     * @endpoint post /warehouse/{warehouseCode}/transition/inside
-     * @param warehouseCode
-     * @param insideStockTransitionDto
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    createInsideStockTransition1(warehouseCode: string, insideStockTransitionDto: InsideStockTransitionDto, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    createInsideStockTransition1(warehouseCode: string, insideStockTransitionDto: InsideStockTransitionDto, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    createInsideStockTransition1(warehouseCode: string, insideStockTransitionDto: InsideStockTransitionDto, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<TransitionService, [null, { optional: true; }, { optional: true; }]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<TransitionService>;
 }

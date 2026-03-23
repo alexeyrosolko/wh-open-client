@@ -9,7 +9,7 @@ export declare class ExampleService extends BaseService {
     /**
      * Скачать файл примера
      * Скачать файл примера по названию
-     * @endpoint get /example/{file}
+     * @endpoint get /api/example/{file}
      * @param file
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -26,30 +26,6 @@ export declare class ExampleService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
     downloadExampleFile(file: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<string>>;
-    /**
-     * Скачать файл примера
-     * Скачать файл примера по названию
-     * @endpoint get /api/example/{file}
-     * @param file
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    downloadExampleFile1(file: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<string>;
-    downloadExampleFile1(file: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<string>>;
-    downloadExampleFile1(file: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;

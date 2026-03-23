@@ -110,7 +110,7 @@ export declare class SupplyTasksService extends BaseService {
     /**
      * Выборка задач на разнесение прихода по текущему кладовщику
      * Выборка задач на разнесение прихода по текущему кладовщику
-     * @endpoint get /api/warehouse/{warehouseCode}/task/login
+     * @endpoint get /api/warehouse/{warehouseCode}/task/task/login
      * @param warehouseCode
      * @param pageable
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
