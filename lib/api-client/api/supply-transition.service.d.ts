@@ -1,6 +1,9 @@
 import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Pageable } from '../model/pageable';
 import { ResponseCommonDto } from '../model/response-common-dto';
+import { ResponseCountDto } from '../model/response-count-dto';
+import { ResponseListSupplyRecordDto } from '../model/response-list-supply-record-dto';
 import { SupplyTransitionDto } from '../model/supply-transition-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
@@ -8,6 +11,31 @@ import * as i0 from "@angular/core";
 export declare class SupplyTransitionService extends BaseService {
     protected httpClient: HttpClient;
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
+    /**
+     * countSupplyRecordsWithoutPrice
+     * countSupplyRecordsWithoutPrice
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/transition/count
+     * @param warehouseCode
+     * @param supplyCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    countSupplyRecordsWithoutPrice(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseCountDto>;
+    countSupplyRecordsWithoutPrice(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseCountDto>>;
+    countSupplyRecordsWithoutPrice(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseCountDto>>;
     /**
      * Выполнить операцию разнесения в приходе
      * Выполнить операцию разнесения в приходе
@@ -34,6 +62,58 @@ export declare class SupplyTransitionService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;
+    /**
+     * getSupplyRecordsWithoutPrice
+     * getSupplyRecordsWithoutPrice
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/transition
+     * @param warehouseCode
+     * @param supplyCode
+     * @param pageable
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    getSupplyRecordsWithoutPrice(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseListSupplyRecordDto>;
+    getSupplyRecordsWithoutPrice(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseListSupplyRecordDto>>;
+    getSupplyRecordsWithoutPrice(warehouseCode: string, supplyCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseListSupplyRecordDto>>;
+    /**
+     * getSupplyRecordsWithoutPriceRest
+     * getSupplyRecordsWithoutPriceRest
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/transition/sparepart/{articleCode}/rest
+     * @param warehouseCode
+     * @param supplyCode
+     * @param articleCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    getSupplyRecordsWithoutPriceRest(warehouseCode: string, supplyCode: string, articleCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseCountDto>;
+    getSupplyRecordsWithoutPriceRest(warehouseCode: string, supplyCode: string, articleCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseCountDto>>;
+    getSupplyRecordsWithoutPriceRest(warehouseCode: string, supplyCode: string, articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseCountDto>>;
     /**
      * Откатить последнее разнесение выполненное текущим пользователем
      * Откатить последнее разнесение выполненное текущим пользователем
