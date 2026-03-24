@@ -9229,6 +9229,11 @@ components:
           type: string
         state:
           type: string
+          enum:
+          - UPLOADING
+          - CHECKED_SUCCEDED
+          - CHECKED_FAILED
+          - ACTIVE
     ResponseWarehouseDto:
       type: object
       properties:
@@ -9526,7 +9531,13 @@ components:
     TransitionFilterDto:
       type: object
       properties:
+        tenantCode:
+          type: string
+        login:
+          type: string
         warehouseCode:
+          type: string
+        articleCode:
           type: string
         all:
           $ref: "#/components/schemas/AccountFilterDto"
@@ -9534,8 +9545,6 @@ components:
           $ref: "#/components/schemas/AccountFilterDto"
         credit:
           $ref: "#/components/schemas/AccountFilterDto"
-        articleCode:
-          type: string
         quantity:
           type: integer
           format: int32

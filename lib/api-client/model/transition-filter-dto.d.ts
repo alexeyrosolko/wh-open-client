@@ -9,11 +9,13 @@
  */
 import { AccountFilterDto } from './account-filter-dto';
 export interface TransitionFilterDto {
+    tenantCode?: string;
+    login?: string;
     warehouseCode?: string;
+    articleCode?: string;
     all?: AccountFilterDto;
     debet?: AccountFilterDto;
     credit?: AccountFilterDto;
-    articleCode?: string;
     quantity?: number;
     price?: number;
     fromTime?: string;

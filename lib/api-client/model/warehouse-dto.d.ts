@@ -11,5 +11,14 @@ export interface WarehouseDto {
     name: string;
     code: string;
     tenant?: string;
-    state?: string;
+    state?: WarehouseDto.StateEnum;
+}
+export declare namespace WarehouseDto {
+    const StateEnum: {
+        readonly Uploading: "UPLOADING";
+        readonly CheckedSucceded: "CHECKED_SUCCEDED";
+        readonly CheckedFailed: "CHECKED_FAILED";
+        readonly Active: "ACTIVE";
+    };
+    type StateEnum = typeof StateEnum[keyof typeof StateEnum];
 }

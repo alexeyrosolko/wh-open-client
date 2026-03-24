@@ -10383,6 +10383,15 @@ var TransitionHistoryDto;
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+var WarehouseDto;
+(function (WarehouseDto) {
+    WarehouseDto.StateEnum = {
+        Uploading: 'UPLOADING',
+        CheckedSucceded: 'CHECKED_SUCCEDED',
+        CheckedFailed: 'CHECKED_FAILED',
+        Active: 'ACTIVE'
+    };
+})(WarehouseDto || (WarehouseDto = {}));
 
 /**
  * OpenAPI definition
@@ -10470,5 +10479,5 @@ function provideApi(configOrBasePath) {
  * Generated bundle index. Do not edit.
  */
 
-export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, ExampleService, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, MainBookService, ManagersService, OrderAbsentRecordService, OrderDto, OrderService, OrderTaskService, OrderTransitionService, OrderUploadService, OrderUploadingService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, StockService, SuppliesService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionFilterFlatDto, TransitionHistoryDto, TransitionService, WarehouseService, WarehouseUploadService, provideApi };
+export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, ExampleService, HelloWorldService, HelperService, HistoryService, ImageService, LoginService, MainBookService, ManagersService, OrderAbsentRecordService, OrderDto, OrderService, OrderTaskService, OrderTransitionService, OrderUploadService, OrderUploadingService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, StockService, SuppliesService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionFilterFlatDto, TransitionHistoryDto, TransitionService, WarehouseDto, WarehouseService, WarehouseUploadService, provideApi };
 //# sourceMappingURL=wh-open-client.mjs.map
