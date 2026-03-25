@@ -13,6 +13,31 @@ export declare class PersonService extends BaseService {
     protected httpClient: HttpClient;
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
     /**
+     * changePassword
+     * changePassword
+     * @endpoint put /api/person/{login}/password
+     * @param login
+     * @param personDto
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    changePassword(login: string, personDto: PersonDto, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponsePersonDto>;
+    changePassword(login: string, personDto: PersonDto, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponsePersonDto>>;
+    changePassword(login: string, personDto: PersonDto, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponsePersonDto>>;
+    /**
      * countPersons
      * countPersons
      * @endpoint get /api/person/count
