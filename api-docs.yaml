@@ -114,63 +114,6 @@ paths:
                 $ref: "#/components/schemas/ResponseCommonDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/order/{orderCode}/state:
-    put:
-      tags:
-      - Order
-      summary: Обновить состояние заказа
-      description: Обновить состояние существующего заказа
-      operationId: updateOrderState
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: orderCode
-        in: path
-        required: true
-        schema:
-          type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/OrderDto"
-        required: true
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseOrderDto"
-      security:
-      - bearerAuth: []
   /api/person/{login}:
     get:
       tags:
@@ -2395,57 +2338,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-      security:
-      - bearerAuth: []
-  /api/warehouse/{warehouseCode}/order/{orderCode}/uploadrecord/checking:
-    post:
-      tags:
-      - OrderUpload
-      summary: Проверить отсутствующие запчасти
-      description: Проверить отсутствующие запчасти для заказа
-      operationId: checkOrderUploadRecords
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: orderCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseBooleanDto"
       security:
       - bearerAuth: []
   /api/warehouse/{warehouseCode}/order/{orderCode}/state/from/{expectedState}/to/{newState}:
@@ -6460,6 +6352,113 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/transformed:
+    get:
+      tags:
+      - OrderTransformedRecords
+      summary: Получить записи заказа
+      description: Получить список записей заказа с пагинацией
+      operationId: getOrderRecords
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageable
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/Pageable"
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListOrderTransformedRecordDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/transformed/count:
+    get:
+      tags:
+      - OrderTransformedRecords
+      summary: Количество записей заказа
+      description: Получить количество записей заказа
+      operationId: countOrderRecords
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
   /api/warehouse/{warehouseCode}/order/{orderCode}/task:
     get:
       tags:
@@ -6616,10 +6615,10 @@ paths:
   /api/warehouse/{warehouseCode}/order/{orderCode}/record:
     get:
       tags:
-      - Order
+      - OrderRecords
       summary: Получить записи заказа
       description: Получить список записей заказа с пагинацией
-      operationId: getOrderRecords
+      operationId: getOrderRecords_1
       parameters:
       - name: warehouseCode
         in: path
@@ -6671,7 +6670,7 @@ paths:
       - bearerAuth: []
     delete:
       tags:
-      - Order
+      - OrderRecords
       summary: Очистить записи заказа
       description: Удалить все записи заказа
       operationId: clearOrderRecords
@@ -6722,7 +6721,7 @@ paths:
   /api/warehouse/{warehouseCode}/order/{orderCode}/record/part/csv:
     get:
       tags:
-      - Order
+      - OrderRecords
       summary: Скачать записи заказа в CSV
       description: Экспортировать записи заказа в CSV
       operationId: downloadOrderRecordsCsv
@@ -6773,10 +6772,10 @@ paths:
   /api/warehouse/{warehouseCode}/order/{orderCode}/record/count:
     get:
       tags:
-      - Order
+      - OrderRecords
       summary: Количество записей заказа
       description: Получить количество записей заказа
-      operationId: countOrderRecords
+      operationId: countOrderRecords_1
       parameters:
       - name: warehouseCode
         in: path
@@ -6931,7 +6930,7 @@ paths:
   /api/warehouse/{warehouseCode}/order/{orderCode}/absendsparepart:
     get:
       tags:
-      - OrderUploading
+      - OrderUploadAbsentArticle
       summary: getOrderAbsentArticles
       description: getOrderAbsentArticles
       operationId: getOrderAbsentArticles
@@ -6987,7 +6986,7 @@ paths:
   /api/warehouse/{warehouseCode}/order/{orderCode}/absendsparepart/count:
     get:
       tags:
-      - OrderUploading
+      - OrderUploadAbsentArticle
       summary: countOrderAbsentArticles
       description: countOrderAbsentArticles
       operationId: countOrderAbsentArticles
@@ -9182,46 +9181,6 @@ components:
           $ref: "#/components/schemas/Metadata"
         payload:
           $ref: "#/components/schemas/CommonDto"
-    OrderDto:
-      required:
-      - code
-      - name
-      - state
-      - warehouseCode
-      type: object
-      properties:
-        warehouseCode:
-          type: string
-        code:
-          type: string
-        name:
-          type: string
-        state:
-          type: string
-          enum:
-          - UPLOADING
-          - CHECKED_SUCCEDED
-          - CHECKED_FAILED
-          - TRANSFORMED
-          - CALCULATED_SUCCEDED
-          - CALCULATED_FAILED
-          - BLOCKED_SUCCEDED
-          - BLOCKED_FAILED
-          - TRANSITIONING
-          - TRANSITIONED
-          - CLOSED
-        fillType:
-          type: string
-          enum:
-          - MANUAL
-          - FILE
-    ResponseOrderDto:
-      type: object
-      properties:
-        metadata:
-          $ref: "#/components/schemas/Metadata"
-        payload:
-          $ref: "#/components/schemas/OrderDto"
     PersonDto:
       required:
       - csvExportDelimiter
@@ -9407,6 +9366,39 @@ components:
           format: date-time
         sparePartCode:
           type: string
+    OrderDto:
+      required:
+      - code
+      - name
+      - state
+      - warehouseCode
+      type: object
+      properties:
+        warehouseCode:
+          type: string
+        code:
+          type: string
+        name:
+          type: string
+        state:
+          type: string
+          enum:
+          - UPLOADING
+          - CHECKED_SUCCEDED
+          - CHECKED_FAILED
+          - TRANSFORMED
+          - CALCULATED_SUCCEDED
+          - CALCULATED_FAILED
+          - BLOCKED_SUCCEDED
+          - BLOCKED_FAILED
+          - TRANSITIONING
+          - TRANSITIONED
+          - CLOSED
+        fillType:
+          type: string
+          enum:
+          - MANUAL
+          - FILE
     SupplyDto:
       required:
       - code
@@ -9537,14 +9529,19 @@ components:
           $ref: "#/components/schemas/Metadata"
         payload:
           $ref: "#/components/schemas/ShelfDto"
+    ResponseOrderDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          $ref: "#/components/schemas/OrderDto"
     OrderUploadRecordDto:
       type: object
       properties:
         warehouseCode:
           type: string
         orderCode:
-          type: string
-        vendor:
           type: string
         quantity:
           minimum: 1
@@ -9559,18 +9556,6 @@ components:
           $ref: "#/components/schemas/Metadata"
         payload:
           $ref: "#/components/schemas/OrderUploadRecordDto"
-    BooleanDto:
-      type: object
-      properties:
-        flag:
-          type: boolean
-    ResponseBooleanDto:
-      type: object
-      properties:
-        metadata:
-          $ref: "#/components/schemas/Metadata"
-        payload:
-          $ref: "#/components/schemas/BooleanDto"
     AccountFilterDto:
       type: object
       properties:
@@ -9680,12 +9665,13 @@ components:
         rollback_transaction_id:
           type: string
           format: uuid
-        person:
+        login:
           type: string
-          format: uuid
         warehouseCode:
           type: string
         articleCode:
+          type: string
+        articleName:
           type: string
         debet:
           $ref: "#/components/schemas/AccountHistoryDto"
@@ -9715,6 +9701,8 @@ components:
       type: object
       properties:
         warehouseCode:
+          type: string
+        login:
           type: string
         allSupplyCode:
           type: string
@@ -9777,9 +9765,8 @@ components:
         rollback_transaction_id:
           type: string
           format: uuid
-        person:
+        login:
           type: string
-          format: uuid
         warehouseCode:
           type: string
         articleCode:
@@ -10198,6 +10185,32 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OrderUploadRecordDto"
+    OrderTransformedRecordDto:
+      type: object
+      properties:
+        warehouseCode:
+          type: string
+        orderCode:
+          type: string
+        vendor:
+          type: string
+        quantity:
+          minimum: 1
+          type: integer
+          format: int32
+        sparePartCode:
+          type: string
+        sparePartName:
+          type: string
+    ResponseListOrderTransformedRecordDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          type: array
+          items:
+            $ref: "#/components/schemas/OrderTransformedRecordDto"
     OrderRecordDto:
       type: object
       properties:
@@ -10215,6 +10228,8 @@ components:
           type: integer
           format: int32
         sparePartCode:
+          type: string
+        sparePartName:
           type: string
     ResponseListOrderRecordDto:
       type: object

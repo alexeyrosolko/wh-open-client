@@ -10,7 +10,6 @@
 export interface OrderUploadRecordDto {
     warehouseCode?: string;
     orderCode?: string;
-    vendor?: string;
     quantity?: number;
     sparePartCode?: string;
 }

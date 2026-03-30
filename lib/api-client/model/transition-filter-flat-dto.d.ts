@@ -9,6 +9,7 @@
  */
 export interface TransitionFilterFlatDto {
     warehouseCode?: string;
+    login?: string;
     allSupplyCode?: string;
     allOrderCode?: string;
     allShelfCode?: string;

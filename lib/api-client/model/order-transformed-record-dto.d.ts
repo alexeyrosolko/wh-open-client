@@ -7,6 +7,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export interface BooleanDto {
-    flag?: boolean;
+export interface OrderTransformedRecordDto {
+    warehouseCode?: string;
+    orderCode?: string;
+    vendor?: string;
+    quantity?: number;
+    sparePartCode?: string;
+    sparePartName?: string;
 }

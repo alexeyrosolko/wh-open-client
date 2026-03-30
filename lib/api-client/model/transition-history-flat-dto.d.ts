@@ -10,7 +10,7 @@
 export interface TransitionHistoryFlatDto {
     id?: string;
     rollback_transaction_id?: string;
-    person?: string;
+    login?: string;
     warehouseCode?: string;
     articleCode?: string;
     articleName?: string;

@@ -14,4 +14,5 @@ export interface OrderRecordDto {
     quantity?: number;
     rest?: number;
     sparePartCode?: string;
+    sparePartName?: string;
 }

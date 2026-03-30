@@ -2,7 +2,6 @@ import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/commo
 import { Observable } from 'rxjs';
 import { OrderUploadRecordDto } from '../model/order-upload-record-dto';
 import { Pageable } from '../model/pageable';
-import { ResponseBooleanDto } from '../model/response-boolean-dto';
 import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListOrderUploadRecordDto } from '../model/response-list-order-upload-record-dto';
@@ -39,31 +38,6 @@ export declare class OrderUploadService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseOrderUploadRecordDto>>;
-    /**
-     * Проверить отсутствующие запчасти
-     * Проверить отсутствующие запчасти для заказа
-     * @endpoint post /api/warehouse/{warehouseCode}/order/{orderCode}/uploadrecord/checking
-     * @param warehouseCode
-     * @param orderCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    checkOrderUploadRecords(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseBooleanDto>;
-    checkOrderUploadRecords(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseBooleanDto>>;
-    checkOrderUploadRecords(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseBooleanDto>>;
     /**
      * Очистить записи загрузки заказа
      * Удалить все записи загрузки заказа

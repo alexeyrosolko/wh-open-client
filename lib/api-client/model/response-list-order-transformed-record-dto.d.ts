@@ -7,9 +7,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { BooleanDto } from './boolean-dto';
+import { OrderTransformedRecordDto } from './order-transformed-record-dto';
 import { Metadata } from './metadata';
-export interface ResponseBooleanDto {
+export interface ResponseListOrderTransformedRecordDto {
     metadata?: Metadata;
-    payload?: BooleanDto;
+    payload?: Array<OrderTransformedRecordDto>;
 }
