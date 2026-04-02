@@ -45,17 +45,17 @@ export declare class OrderRecordsService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    countOrderRecords1(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    countOrderRecords(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCountDto>;
-    countOrderRecords1(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    countOrderRecords(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
-    countOrderRecords1(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    countOrderRecords(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
@@ -96,17 +96,17 @@ export declare class OrderRecordsService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    getOrderRecords1(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
+    getOrderRecords(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseListOrderRecordDto>;
-    getOrderRecords1(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
+    getOrderRecords(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListOrderRecordDto>>;
-    getOrderRecords1(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
+    getOrderRecords(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;

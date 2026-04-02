@@ -2985,12 +2985,12 @@ class OrderRecordsService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    countOrderRecords1(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+    countOrderRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling countOrderRecords1.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countOrderRecords.');
         }
         if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling countOrderRecords1.');
+            throw new Error('Required parameter orderCode was null or undefined when calling countOrderRecords.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -3071,15 +3071,15 @@ class OrderRecordsService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getOrderRecords1(warehouseCode, orderCode, pageable, observe = 'body', reportProgress = false, options) {
+    getOrderRecords(warehouseCode, orderCode, pageable, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderRecords1.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderRecords.');
         }
         if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling getOrderRecords1.');
+            throw new Error('Required parameter orderCode was null or undefined when calling getOrderRecords.');
         }
         if (pageable === null || pageable === undefined) {
-            throw new Error('Required parameter pageable was null or undefined when calling getOrderRecords1.');
+            throw new Error('Required parameter pageable was null or undefined when calling getOrderRecords.');
         }
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
@@ -3229,12 +3229,12 @@ class OrderTransformedRecordsService extends BaseService {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
-    countOrderRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+    countOrderTransformedRecords(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling countOrderRecords.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countOrderTransformedRecords.');
         }
         if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling countOrderRecords.');
+            throw new Error('Required parameter orderCode was null or undefined when calling countOrderTransformedRecords.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -3272,15 +3272,15 @@ class OrderTransformedRecordsService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getOrderRecords(warehouseCode, orderCode, pageable, observe = 'body', reportProgress = false, options) {
+    getOrderTransformedRecords(warehouseCode, orderCode, pageable, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderRecords.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderTransformedRecords.');
         }
         if (orderCode === null || orderCode === undefined) {
-            throw new Error('Required parameter orderCode was null or undefined when calling getOrderRecords.');
+            throw new Error('Required parameter orderCode was null or undefined when calling getOrderTransformedRecords.');
         }
         if (pageable === null || pageable === undefined) {
-            throw new Error('Required parameter pageable was null or undefined when calling getOrderRecords.');
+            throw new Error('Required parameter pageable was null or undefined when calling getOrderTransformedRecords.');
         }
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);

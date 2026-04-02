@@ -6358,7 +6358,7 @@ paths:
       - OrderTransformedRecords
       summary: Получить записи заказа
       description: Получить список записей заказа с пагинацией
-      operationId: getOrderRecords
+      operationId: getOrderTransformedRecords
       parameters:
       - name: warehouseCode
         in: path
@@ -6414,7 +6414,7 @@ paths:
       - OrderTransformedRecords
       summary: Количество записей заказа
       description: Получить количество записей заказа
-      operationId: countOrderRecords
+      operationId: countOrderTransformedRecords
       parameters:
       - name: warehouseCode
         in: path
@@ -6618,7 +6618,7 @@ paths:
       - OrderRecords
       summary: Получить записи заказа
       description: Получить список записей заказа с пагинацией
-      operationId: getOrderRecords_1
+      operationId: getOrderRecords
       parameters:
       - name: warehouseCode
         in: path
@@ -6775,7 +6775,7 @@ paths:
       - OrderRecords
       summary: Количество записей заказа
       description: Получить количество записей заказа
-      operationId: countOrderRecords_1
+      operationId: countOrderRecords
       parameters:
       - name: warehouseCode
         in: path
