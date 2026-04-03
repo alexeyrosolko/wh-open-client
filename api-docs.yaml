@@ -31,8 +31,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -43,8 +43,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -82,8 +82,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -94,8 +94,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -128,8 +128,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -140,8 +140,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -179,8 +179,8 @@ paths:
               $ref: "#/components/schemas/PersonDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -191,8 +191,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -224,8 +224,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -236,8 +236,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -276,8 +276,8 @@ paths:
               $ref: "#/components/schemas/PersonDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -288,8 +288,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -322,8 +322,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -334,8 +334,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -367,8 +367,8 @@ paths:
               $ref: "#/components/schemas/WarehouseDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -379,8 +379,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -424,8 +424,8 @@ paths:
                   type: string
                   format: binary
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -436,8 +436,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -476,8 +476,8 @@ paths:
               type: string
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -488,8 +488,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -529,8 +529,8 @@ paths:
               $ref: "#/components/schemas/ToStockTransitionDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -541,8 +541,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -586,8 +586,8 @@ paths:
               $ref: "#/components/schemas/SupplyTransitionDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -598,8 +598,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -638,8 +638,8 @@ paths:
               $ref: "#/components/schemas/OutStockTransitionDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -650,8 +650,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -695,8 +695,8 @@ paths:
               $ref: "#/components/schemas/OrderTransitionDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -707,8 +707,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -748,8 +748,8 @@ paths:
               $ref: "#/components/schemas/InsideStockTransitionDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -760,8 +760,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -799,8 +799,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -811,8 +811,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -850,8 +850,8 @@ paths:
               $ref: "#/components/schemas/TaskDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -862,8 +862,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -901,8 +901,8 @@ paths:
               $ref: "#/components/schemas/TaskDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -913,8 +913,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -952,8 +952,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -964,8 +964,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1003,8 +1003,8 @@ paths:
               $ref: "#/components/schemas/SupplyDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1015,8 +1015,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1059,8 +1059,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1071,8 +1071,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1115,8 +1115,8 @@ paths:
               $ref: "#/components/schemas/SupplyUploadRecordDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1127,8 +1127,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1165,8 +1165,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1177,8 +1177,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1216,8 +1216,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1228,8 +1228,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1278,8 +1278,8 @@ paths:
                   type: string
                   format: binary
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1290,8 +1290,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1329,8 +1329,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1341,8 +1341,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1385,8 +1385,8 @@ paths:
               type: string
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1397,8 +1397,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1461,8 +1461,8 @@ paths:
           - TRANSITIONED
           - CLOSED
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1473,8 +1473,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1512,8 +1512,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1524,8 +1524,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1563,8 +1563,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1575,8 +1575,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1629,8 +1629,8 @@ paths:
           - CHECKED_FAILED
           - ACTIVE
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1641,8 +1641,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1680,8 +1680,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1692,8 +1692,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1731,8 +1731,8 @@ paths:
               $ref: "#/components/schemas/ShelfDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1743,8 +1743,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1777,8 +1777,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1789,8 +1789,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1833,8 +1833,8 @@ paths:
                   type: string
                   format: binary
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1845,8 +1845,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1885,8 +1885,8 @@ paths:
               type: string
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1897,8 +1897,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1932,8 +1932,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1944,8 +1944,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1983,8 +1983,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1995,8 +1995,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2034,8 +2034,8 @@ paths:
               $ref: "#/components/schemas/OrderDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2046,8 +2046,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2090,8 +2090,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2102,8 +2102,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2146,8 +2146,8 @@ paths:
               $ref: "#/components/schemas/OrderUploadRecordDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2158,8 +2158,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2196,8 +2196,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2208,8 +2208,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2247,8 +2247,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2259,8 +2259,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2308,8 +2308,8 @@ paths:
                   type: string
                   format: binary
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2320,8 +2320,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2393,8 +2393,8 @@ paths:
           - TRANSITIONED
           - CLOSED
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2405,8 +2405,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2439,8 +2439,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2451,8 +2451,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2495,8 +2495,8 @@ paths:
                   type: string
                   format: binary
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2507,8 +2507,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2542,8 +2542,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2554,8 +2554,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2582,8 +2582,8 @@ paths:
       description: Экспортировать данные складов в CSV файл
       operationId: downloadWarehousesCsv
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2594,8 +2594,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2632,8 +2632,8 @@ paths:
                   type: string
                   format: binary
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2644,8 +2644,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2684,8 +2684,8 @@ paths:
               $ref: "#/components/schemas/TransitionFilterDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2696,8 +2696,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2736,8 +2736,8 @@ paths:
               $ref: "#/components/schemas/TransitionFilterFlatDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2748,8 +2748,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2782,8 +2782,8 @@ paths:
               $ref: "#/components/schemas/TransitionFilterFlatDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2794,8 +2794,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2828,8 +2828,8 @@ paths:
               $ref: "#/components/schemas/TransitionFilterDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2840,8 +2840,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2894,8 +2894,8 @@ paths:
           items:
             type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2906,8 +2906,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2939,8 +2939,8 @@ paths:
               $ref: "#/components/schemas/TenantDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2951,8 +2951,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2986,8 +2986,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2998,8 +2998,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3031,8 +3031,8 @@ paths:
               $ref: "#/components/schemas/ArticleDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3043,8 +3043,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3071,8 +3071,8 @@ paths:
       description: Скачать список всех запчастей/товаров в формате CSV
       operationId: downloadArticlesCsv
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3083,8 +3083,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3121,8 +3121,8 @@ paths:
                   type: string
                   format: binary
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3133,8 +3133,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3167,8 +3167,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3179,8 +3179,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3210,8 +3210,8 @@ paths:
               $ref: "#/components/schemas/PrinterDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3222,8 +3222,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3257,8 +3257,8 @@ paths:
               $ref: "#/components/schemas/PrintTaskDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3269,8 +3269,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3297,8 +3297,8 @@ paths:
       description: Получить список всех пользователей системы
       operationId: getAllPersons
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3309,8 +3309,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3342,8 +3342,8 @@ paths:
               $ref: "#/components/schemas/PersonDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3354,8 +3354,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3382,8 +3382,8 @@ paths:
       description: Получить список всех пользователей системы
       operationId: getAllPersons_1
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3394,8 +3394,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3427,8 +3427,8 @@ paths:
               $ref: "#/components/schemas/PersonDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3439,8 +3439,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3473,8 +3473,8 @@ paths:
               $ref: "#/components/schemas/ManagerDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3485,8 +3485,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3519,8 +3519,8 @@ paths:
               $ref: "#/components/schemas/ManagerDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3531,8 +3531,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3566,8 +3566,8 @@ paths:
               $ref: "#/components/schemas/LoginDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3578,8 +3578,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3612,8 +3612,8 @@ paths:
               - $ref: "#/components/schemas/PrintSringPayload"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3624,8 +3624,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3651,8 +3651,8 @@ paths:
       description: Получить администратора системы
       operationId: getAdmin
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3663,8 +3663,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3696,8 +3696,8 @@ paths:
               $ref: "#/components/schemas/WhAdminDto"
         required: true
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3708,8 +3708,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3735,8 +3735,8 @@ paths:
       description: Удаление администратора системы
       operationId: deleteAdmin
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3747,8 +3747,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3781,8 +3781,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3793,8 +3793,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3826,8 +3826,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3838,8 +3838,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3877,8 +3877,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3889,8 +3889,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3922,8 +3922,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3934,8 +3934,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3968,8 +3968,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3980,8 +3980,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4019,8 +4019,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4031,8 +4031,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4075,8 +4075,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4087,8 +4087,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4126,8 +4126,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4138,8 +4138,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4176,8 +4176,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4188,8 +4188,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4227,8 +4227,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4239,8 +4239,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4278,8 +4278,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4290,8 +4290,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4329,8 +4329,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4341,8 +4341,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4380,8 +4380,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4392,8 +4392,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4437,8 +4437,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4449,8 +4449,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4487,8 +4487,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4499,8 +4499,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4543,8 +4543,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4555,8 +4555,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4597,8 +4597,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4609,8 +4609,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4646,8 +4646,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4658,8 +4658,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4695,8 +4695,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4707,8 +4707,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4746,8 +4746,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4758,8 +4758,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4797,8 +4797,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4809,8 +4809,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4848,8 +4848,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4860,8 +4860,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4904,8 +4904,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4916,8 +4916,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4960,8 +4960,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4972,8 +4972,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5018,8 +5018,8 @@ paths:
           - TRANSITIONED
           - CLOSED
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5030,8 +5030,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5064,8 +5064,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5076,8 +5076,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5110,8 +5110,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5122,8 +5122,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5161,8 +5161,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5173,8 +5173,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5206,8 +5206,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5218,8 +5218,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5257,8 +5257,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5269,8 +5269,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5308,8 +5308,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5320,8 +5320,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5360,8 +5360,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5372,8 +5372,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5412,8 +5412,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5424,8 +5424,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5469,8 +5469,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5481,8 +5481,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5526,8 +5526,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5538,8 +5538,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5583,8 +5583,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5595,8 +5595,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5634,8 +5634,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5646,8 +5646,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5686,8 +5686,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5698,8 +5698,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5732,8 +5732,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5744,8 +5744,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5778,8 +5778,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5790,8 +5790,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5829,8 +5829,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5841,8 +5841,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5880,8 +5880,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5892,8 +5892,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5931,8 +5931,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5943,8 +5943,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5977,8 +5977,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5989,8 +5989,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6029,8 +6029,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6041,8 +6041,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6076,8 +6076,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6088,8 +6088,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6122,8 +6122,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6134,8 +6134,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6168,8 +6168,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6180,8 +6180,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6219,8 +6219,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6231,8 +6231,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6269,8 +6269,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6281,8 +6281,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6320,8 +6320,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6332,8 +6332,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6376,8 +6376,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6388,8 +6388,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6427,8 +6427,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6439,8 +6439,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6478,8 +6478,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6490,8 +6490,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6529,8 +6529,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6541,8 +6541,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6580,8 +6580,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6592,8 +6592,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6636,8 +6636,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6648,8 +6648,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6686,8 +6686,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6698,8 +6698,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6737,8 +6737,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6749,8 +6749,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6788,8 +6788,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6800,8 +6800,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6844,8 +6844,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6856,8 +6856,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6895,8 +6895,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6907,8 +6907,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6951,8 +6951,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6963,8 +6963,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7002,8 +7002,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7014,8 +7014,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7048,8 +7048,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7060,8 +7060,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7099,8 +7099,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7111,8 +7111,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7145,8 +7145,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7157,8 +7157,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7191,8 +7191,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7203,8 +7203,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7248,8 +7248,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7260,8 +7260,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7300,8 +7300,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7312,8 +7312,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7351,8 +7351,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7363,8 +7363,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7403,8 +7403,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7415,8 +7415,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7450,8 +7450,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7462,8 +7462,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7490,8 +7490,8 @@ paths:
       description: Получить общее количество складов в тенанте
       operationId: countAllWarehouses
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7502,8 +7502,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7537,8 +7537,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7549,8 +7549,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7583,8 +7583,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7595,8 +7595,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7630,8 +7630,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7642,8 +7642,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7677,8 +7677,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7689,8 +7689,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7717,8 +7717,8 @@ paths:
       description: Возвращает CSV файл со списком тенантов
       operationId: downloadTenantsCsv
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7729,8 +7729,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7757,8 +7757,8 @@ paths:
       description: Возвращает общее количество тенантов
       operationId: getTenantsCount
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7769,8 +7769,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7803,8 +7803,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7815,8 +7815,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7843,8 +7843,8 @@ paths:
       description: countSupplyTasks
       operationId: countSupplyTasks
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7855,8 +7855,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7884,8 +7884,8 @@ paths:
         и)"
       operationId: getSystemSettings
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7896,8 +7896,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7928,8 +7928,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7940,8 +7940,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7974,8 +7974,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7986,8 +7986,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8020,8 +8020,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8032,8 +8032,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8066,8 +8066,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8078,8 +8078,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8106,8 +8106,8 @@ paths:
       description: Получить общее количество запчастей/товаров в складе
       operationId: countArticles
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8118,8 +8118,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8146,8 +8146,8 @@ paths:
       description: Получить количество принтеров
       operationId: getPrintersCount
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8158,8 +8158,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8197,8 +8197,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8209,8 +8209,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8241,8 +8241,8 @@ paths:
           type: string
           format: uuid
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8253,8 +8253,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8292,8 +8292,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8304,8 +8304,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8343,8 +8343,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8355,8 +8355,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8388,8 +8388,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8400,8 +8400,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8434,8 +8434,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8446,8 +8446,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8481,8 +8481,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8493,8 +8493,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8528,8 +8528,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8540,8 +8540,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8574,8 +8574,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8586,8 +8586,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8620,8 +8620,8 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8632,8 +8632,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8660,8 +8660,8 @@ paths:
       description: countPersons
       operationId: countPersons
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8672,8 +8672,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8700,8 +8700,8 @@ paths:
       description: countPersons
       operationId: countPersons_1
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8712,8 +8712,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8750,8 +8750,8 @@ paths:
           items:
             type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8762,8 +8762,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8798,8 +8798,8 @@ paths:
           items:
             type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8810,8 +8810,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8836,8 +8836,8 @@ paths:
       description: Возвращает простую строку 'Hello World!'
       operationId: getHelloWorld
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8848,8 +8848,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8874,8 +8874,8 @@ paths:
       description: Возвращает простую строку 'Hello World!'
       operationId: getHelloWorld_1
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8886,8 +8886,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8918,8 +8918,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8930,8 +8930,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8956,8 +8956,8 @@ paths:
       description: helloWorld
       operationId: helloWorld
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8968,8 +8968,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9002,8 +9002,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9014,8 +9014,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9042,8 +9042,8 @@ paths:
       description: Проверка на существование администратора системы
       operationId: isAdminPresent
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9054,8 +9054,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9086,8 +9086,8 @@ paths:
         schema:
           type: string
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9098,8 +9098,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9124,8 +9124,8 @@ paths:
       description: truncateAllTables
       operationId: truncateAllTables
       responses:
-        "404":
-          description: Not Found
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9136,8 +9136,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "401":
-          description: Unauthorized
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -10227,9 +10227,17 @@ components:
         rest:
           type: integer
           format: int32
+        articleCode:
+          type: string
+        articleName:
+          type: string
         sparePartCode:
           type: string
         sparePartName:
+          type: string
+        shelfCode:
+          type: string
+        shelfName:
           type: string
     ResponseListOrderRecordDto:
       type: object
