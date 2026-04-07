@@ -6718,6 +6718,164 @@ paths:
                 $ref: "#/components/schemas/ResponseCommonDto"
       security:
       - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/record/untransitioned:
+    get:
+      tags:
+      - OrderRecords
+      summary: getOrderUntransitionedRecords
+      description: getOrderUntransitionedRecords
+      operationId: getOrderUntransitionedRecords
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageable
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/Pageable"
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListOrderUntransitionedRecordDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/record/untransitioned/part/csv:
+    get:
+      tags:
+      - OrderRecords
+      summary: Скачать записи заказа в CSV
+      description: Экспортировать записи заказа в CSV
+      operationId: downloadOrderUntransitionedRecordsCsv
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/record/untransitioned/count:
+    get:
+      tags:
+      - OrderRecords
+      summary: Количество записей заказа
+      description: Получить количество записей заказа
+      operationId: countOrderUntransitionedRecords
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
   /api/warehouse/{warehouseCode}/order/{orderCode}/record/part/csv:
     get:
       tags:
@@ -9399,6 +9557,12 @@ components:
           enum:
           - MANUAL
           - FILE
+        transitionType:
+          type: string
+          enum:
+          - UNDEFINED
+          - FULL
+          - PARTIAL
     SupplyDto:
       required:
       - code
@@ -9688,15 +9852,9 @@ components:
         transitionType:
           type: string
           enum:
-          - TO_WAREHOUSE_FROM_OUTSIDE
-          - TO_OUTSIDE_FROM_WAREHOUSE
-          - TO_WAREHOUSE_FROM_SUPPLY
-          - TO_SUPPLY_FROM_WAREHOUSE
-          - TO_ORDER_FROM_WAREHOUSE
-          - TO_OUTSIDE_FROM_ORDER
-          - TO_ORDER_FROM_OUTSIDE
-          - TO_WAREHOUSE_FROM_ORDER
-          - TO_WAREHOUSE_FROM_WAREHOUSE
+          - UNDEFINED
+          - FULL
+          - PARTIAL
     TransitionFilterFlatDto:
       type: object
       properties:
@@ -9738,15 +9896,9 @@ components:
         transitionType:
           type: string
           enum:
-          - TO_WAREHOUSE_FROM_OUTSIDE
-          - TO_OUTSIDE_FROM_WAREHOUSE
-          - TO_WAREHOUSE_FROM_SUPPLY
-          - TO_SUPPLY_FROM_WAREHOUSE
-          - TO_ORDER_FROM_WAREHOUSE
-          - TO_OUTSIDE_FROM_ORDER
-          - TO_ORDER_FROM_OUTSIDE
-          - TO_WAREHOUSE_FROM_ORDER
-          - TO_WAREHOUSE_FROM_WAREHOUSE
+          - UNDEFINED
+          - FULL
+          - PARTIAL
     ResponseListTransitionHistoryFlatDto:
       type: object
       properties:
@@ -10248,6 +10400,39 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OrderRecordDto"
+    OrderUntransitionedRecordDto:
+      type: object
+      properties:
+        warehouseCode:
+          type: string
+        orderCode:
+          type: string
+        vendor:
+          type: string
+        rest:
+          type: integer
+          format: int32
+        articleCode:
+          type: string
+        articleName:
+          type: string
+        sparePartCode:
+          type: string
+        sparePartName:
+          type: string
+        shelfCode:
+          type: string
+        shelfName:
+          type: string
+    ResponseListOrderUntransitionedRecordDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          type: array
+          items:
+            $ref: "#/components/schemas/OrderUntransitionedRecordDto"
     OrderAbsentRecordDto:
       type: object
       properties:

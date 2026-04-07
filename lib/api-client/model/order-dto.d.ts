@@ -13,6 +13,7 @@ export interface OrderDto {
     name: string;
     state: OrderDto.StateEnum;
     fillType?: OrderDto.FillTypeEnum;
+    transitionType?: OrderDto.TransitionTypeEnum;
 }
 export declare namespace OrderDto {
     const StateEnum: {
@@ -34,4 +35,10 @@ export declare namespace OrderDto {
         readonly File: "FILE";
     };
     type FillTypeEnum = typeof FillTypeEnum[keyof typeof FillTypeEnum];
+    const TransitionTypeEnum: {
+        readonly Undefined: "UNDEFINED";
+        readonly Full: "FULL";
+        readonly Partial: "PARTIAL";
+    };
+    type TransitionTypeEnum = typeof TransitionTypeEnum[keyof typeof TransitionTypeEnum];
 }

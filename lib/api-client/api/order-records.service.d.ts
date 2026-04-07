@@ -4,6 +4,7 @@ import { Pageable } from '../model/pageable';
 import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListOrderRecordDto } from '../model/response-list-order-record-dto';
+import { ResponseListOrderUntransitionedRecordDto } from '../model/response-list-order-untransitioned-record-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
@@ -61,6 +62,31 @@ export declare class OrderRecordsService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
+     * Количество записей заказа
+     * Получить количество записей заказа
+     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/record/untransitioned/count
+     * @param warehouseCode
+     * @param orderCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    countOrderUntransitionedRecords(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseCountDto>;
+    countOrderUntransitionedRecords(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseCountDto>>;
+    countOrderUntransitionedRecords(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseCountDto>>;
+    /**
      * Скачать записи заказа в CSV
      * Экспортировать записи заказа в CSV
      * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/record/part/csv
@@ -81,6 +107,31 @@ export declare class OrderRecordsService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
     downloadOrderRecordsCsv(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<string>>;
+    /**
+     * Скачать записи заказа в CSV
+     * Экспортировать записи заказа в CSV
+     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/record/untransitioned/part/csv
+     * @param warehouseCode
+     * @param orderCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    downloadOrderUntransitionedRecordsCsv(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<string>;
+    downloadOrderUntransitionedRecordsCsv(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<string>>;
+    downloadOrderUntransitionedRecordsCsv(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
@@ -111,6 +162,32 @@ export declare class OrderRecordsService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListOrderRecordDto>>;
+    /**
+     * getOrderUntransitionedRecords
+     * getOrderUntransitionedRecords
+     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/record/untransitioned
+     * @param warehouseCode
+     * @param orderCode
+     * @param pageable
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    getOrderUntransitionedRecords(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseListOrderUntransitionedRecordDto>;
+    getOrderUntransitionedRecords(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseListOrderUntransitionedRecordDto>>;
+    getOrderUntransitionedRecords(warehouseCode: string, orderCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseListOrderUntransitionedRecordDto>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<OrderRecordsService, [null, { optional: true; }, { optional: true; }]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<OrderRecordsService>;
 }
