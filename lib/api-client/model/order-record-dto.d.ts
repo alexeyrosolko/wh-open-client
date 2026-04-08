@@ -13,6 +13,7 @@ export interface OrderRecordDto {
     vendor?: string;
     quantity?: number;
     rest?: number;
+    untransitionedRest?: number;
     articleCode?: string;
     articleName?: string;
     sparePartCode?: string;

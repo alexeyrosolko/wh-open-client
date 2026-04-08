@@ -10589,18 +10589,30 @@ var SupplyDto;
 var TransitionFilterFlatDto;
 (function (TransitionFilterFlatDto) {
     TransitionFilterFlatDto.TransitionTypeEnum = {
-        Undefined: 'UNDEFINED',
-        Full: 'FULL',
-        Partial: 'PARTIAL'
+        ToWarehouseFromOutside: 'TO_WAREHOUSE_FROM_OUTSIDE',
+        ToOutsideFromWarehouse: 'TO_OUTSIDE_FROM_WAREHOUSE',
+        ToWarehouseFromSupply: 'TO_WAREHOUSE_FROM_SUPPLY',
+        ToSupplyFromWarehouse: 'TO_SUPPLY_FROM_WAREHOUSE',
+        ToOrderFromWarehouse: 'TO_ORDER_FROM_WAREHOUSE',
+        ToOutsideFromOrder: 'TO_OUTSIDE_FROM_ORDER',
+        ToOrderFromOutside: 'TO_ORDER_FROM_OUTSIDE',
+        ToWarehouseFromOrder: 'TO_WAREHOUSE_FROM_ORDER',
+        ToWarehouseFromWarehouse: 'TO_WAREHOUSE_FROM_WAREHOUSE'
     };
 })(TransitionFilterFlatDto || (TransitionFilterFlatDto = {}));
 
 var TransitionHistoryDto;
 (function (TransitionHistoryDto) {
     TransitionHistoryDto.TransitionTypeEnum = {
-        Undefined: 'UNDEFINED',
-        Full: 'FULL',
-        Partial: 'PARTIAL'
+        ToWarehouseFromOutside: 'TO_WAREHOUSE_FROM_OUTSIDE',
+        ToOutsideFromWarehouse: 'TO_OUTSIDE_FROM_WAREHOUSE',
+        ToWarehouseFromSupply: 'TO_WAREHOUSE_FROM_SUPPLY',
+        ToSupplyFromWarehouse: 'TO_SUPPLY_FROM_WAREHOUSE',
+        ToOrderFromWarehouse: 'TO_ORDER_FROM_WAREHOUSE',
+        ToOutsideFromOrder: 'TO_OUTSIDE_FROM_ORDER',
+        ToOrderFromOutside: 'TO_ORDER_FROM_OUTSIDE',
+        ToWarehouseFromOrder: 'TO_WAREHOUSE_FROM_ORDER',
+        ToWarehouseFromWarehouse: 'TO_WAREHOUSE_FROM_WAREHOUSE'
     };
 })(TransitionHistoryDto || (TransitionHistoryDto = {}));
 

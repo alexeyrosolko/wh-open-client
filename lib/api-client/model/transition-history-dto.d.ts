@@ -24,9 +24,15 @@ export interface TransitionHistoryDto {
 }
 export declare namespace TransitionHistoryDto {
     const TransitionTypeEnum: {
-        readonly Undefined: "UNDEFINED";
-        readonly Full: "FULL";
-        readonly Partial: "PARTIAL";
+        readonly ToWarehouseFromOutside: "TO_WAREHOUSE_FROM_OUTSIDE";
+        readonly ToOutsideFromWarehouse: "TO_OUTSIDE_FROM_WAREHOUSE";
+        readonly ToWarehouseFromSupply: "TO_WAREHOUSE_FROM_SUPPLY";
+        readonly ToSupplyFromWarehouse: "TO_SUPPLY_FROM_WAREHOUSE";
+        readonly ToOrderFromWarehouse: "TO_ORDER_FROM_WAREHOUSE";
+        readonly ToOutsideFromOrder: "TO_OUTSIDE_FROM_ORDER";
+        readonly ToOrderFromOutside: "TO_ORDER_FROM_OUTSIDE";
+        readonly ToWarehouseFromOrder: "TO_WAREHOUSE_FROM_ORDER";
+        readonly ToWarehouseFromWarehouse: "TO_WAREHOUSE_FROM_WAREHOUSE";
     };
     type TransitionTypeEnum = typeof TransitionTypeEnum[keyof typeof TransitionTypeEnum];
 }
