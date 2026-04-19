@@ -31,14 +31,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -49,8 +49,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -82,14 +82,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -100,8 +100,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -128,14 +128,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -146,8 +146,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -179,14 +179,14 @@ paths:
               $ref: "#/components/schemas/PersonDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -197,8 +197,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -224,14 +224,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -242,8 +242,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -276,14 +276,14 @@ paths:
               $ref: "#/components/schemas/PersonDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -294,8 +294,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -322,14 +322,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -340,8 +340,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -367,14 +367,14 @@ paths:
               $ref: "#/components/schemas/WarehouseDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -385,8 +385,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -424,14 +424,14 @@ paths:
                   type: string
                   format: binary
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -442,8 +442,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -476,14 +476,14 @@ paths:
               type: string
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -494,8 +494,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -529,14 +529,14 @@ paths:
               $ref: "#/components/schemas/ToStockTransitionDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -547,8 +547,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -586,14 +586,14 @@ paths:
               $ref: "#/components/schemas/SupplyTransitionDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -604,8 +604,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -638,14 +638,14 @@ paths:
               $ref: "#/components/schemas/OutStockTransitionDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -656,8 +656,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -695,14 +695,14 @@ paths:
               $ref: "#/components/schemas/OrderTransitionDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -713,8 +713,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -748,14 +748,14 @@ paths:
               $ref: "#/components/schemas/InsideStockTransitionDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -766,8 +766,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -799,14 +799,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -817,8 +817,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -850,14 +850,14 @@ paths:
               $ref: "#/components/schemas/TaskDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -868,8 +868,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -901,14 +901,14 @@ paths:
               $ref: "#/components/schemas/TaskDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -919,8 +919,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -952,14 +952,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -970,8 +970,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1003,14 +1003,14 @@ paths:
               $ref: "#/components/schemas/SupplyDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1021,8 +1021,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1059,14 +1059,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1077,8 +1077,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1115,14 +1115,14 @@ paths:
               $ref: "#/components/schemas/SupplyUploadRecordDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1133,8 +1133,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1165,14 +1165,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1183,8 +1183,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1216,14 +1216,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1234,8 +1234,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1278,14 +1278,14 @@ paths:
                   type: string
                   format: binary
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1296,8 +1296,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1329,14 +1329,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1347,8 +1347,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1385,14 +1385,14 @@ paths:
               type: string
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1403,8 +1403,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1461,14 +1461,14 @@ paths:
           - TRANSITIONED
           - CLOSED
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1479,8 +1479,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1512,14 +1512,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1530,8 +1530,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1563,14 +1563,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1581,8 +1581,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1629,14 +1629,14 @@ paths:
           - CHECKED_FAILED
           - ACTIVE
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1647,8 +1647,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1680,14 +1680,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1698,8 +1698,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1731,14 +1731,14 @@ paths:
               $ref: "#/components/schemas/ShelfDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1749,8 +1749,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1777,14 +1777,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1795,8 +1795,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1833,14 +1833,14 @@ paths:
                   type: string
                   format: binary
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1851,8 +1851,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1885,14 +1885,14 @@ paths:
               type: string
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1903,8 +1903,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1932,14 +1932,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -1950,8 +1950,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -1983,14 +1983,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2001,8 +2001,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2034,14 +2034,14 @@ paths:
               $ref: "#/components/schemas/OrderDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2052,8 +2052,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2090,14 +2090,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2108,8 +2108,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2146,14 +2146,14 @@ paths:
               $ref: "#/components/schemas/OrderUploadRecordDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2164,8 +2164,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2196,14 +2196,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2214,8 +2214,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2247,14 +2247,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2265,8 +2265,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2308,14 +2308,14 @@ paths:
                   type: string
                   format: binary
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2326,8 +2326,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2393,14 +2393,14 @@ paths:
           - TRANSITIONED
           - CLOSED
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2411,8 +2411,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2439,14 +2439,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2457,8 +2457,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2495,14 +2495,14 @@ paths:
                   type: string
                   format: binary
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2513,8 +2513,60 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/csv/clipboard:
+    post:
+      tags:
+      - Orders
+      summary: Загрузить заказы из буфера обмена
+      description: Загрузить список заказов из строки буфера обмена
+      operationId: uploadOrdersCsvFromClipboard
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+        required: true
+      responses:
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
         "400":
           description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2542,14 +2594,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2560,8 +2612,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2582,14 +2634,14 @@ paths:
       description: Экспортировать данные складов в CSV файл
       operationId: downloadWarehousesCsv
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2600,8 +2652,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2632,14 +2684,14 @@ paths:
                   type: string
                   format: binary
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2650,8 +2702,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2684,14 +2736,14 @@ paths:
               $ref: "#/components/schemas/TransitionFilterDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2702,8 +2754,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2736,14 +2788,14 @@ paths:
               $ref: "#/components/schemas/TransitionFilterFlatDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2754,8 +2806,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2782,14 +2834,14 @@ paths:
               $ref: "#/components/schemas/TransitionFilterFlatDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2800,8 +2852,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2828,14 +2880,14 @@ paths:
               $ref: "#/components/schemas/TransitionFilterDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2846,8 +2898,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2894,14 +2946,14 @@ paths:
           items:
             type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2912,8 +2964,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2939,14 +2991,14 @@ paths:
               $ref: "#/components/schemas/TenantDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -2957,8 +3009,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -2986,14 +3038,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3004,8 +3056,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3031,14 +3083,14 @@ paths:
               $ref: "#/components/schemas/ArticleDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3049,8 +3101,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3071,14 +3123,14 @@ paths:
       description: Скачать список всех запчастей/товаров в формате CSV
       operationId: downloadArticlesCsv
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3089,8 +3141,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3121,14 +3173,14 @@ paths:
                   type: string
                   format: binary
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3139,8 +3191,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3167,14 +3219,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3185,8 +3237,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3210,14 +3262,14 @@ paths:
               $ref: "#/components/schemas/PrinterDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3228,8 +3280,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3257,14 +3309,14 @@ paths:
               $ref: "#/components/schemas/PrintTaskDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3275,8 +3327,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3297,14 +3349,14 @@ paths:
       description: Получить список всех пользователей системы
       operationId: getAllPersons
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3315,8 +3367,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3342,14 +3394,14 @@ paths:
               $ref: "#/components/schemas/PersonDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3360,8 +3412,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3382,14 +3434,14 @@ paths:
       description: Получить список всех пользователей системы
       operationId: getAllPersons_1
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3400,8 +3452,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3427,14 +3479,14 @@ paths:
               $ref: "#/components/schemas/PersonDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3445,8 +3497,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3473,14 +3525,14 @@ paths:
               $ref: "#/components/schemas/ManagerDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3491,8 +3543,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3519,14 +3571,14 @@ paths:
               $ref: "#/components/schemas/ManagerDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3537,8 +3589,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3566,14 +3618,14 @@ paths:
               $ref: "#/components/schemas/LoginDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3584,8 +3636,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3612,14 +3664,14 @@ paths:
               - $ref: "#/components/schemas/PrintSringPayload"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3630,8 +3682,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3651,14 +3703,14 @@ paths:
       description: Получить администратора системы
       operationId: getAdmin
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3669,8 +3721,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3696,14 +3748,14 @@ paths:
               $ref: "#/components/schemas/WhAdminDto"
         required: true
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3714,8 +3766,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3735,14 +3787,14 @@ paths:
       description: Удаление администратора системы
       operationId: deleteAdmin
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3753,8 +3805,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3781,14 +3833,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3799,8 +3851,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3826,14 +3878,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3844,8 +3896,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3877,14 +3929,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3895,8 +3947,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3922,14 +3974,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3940,8 +3992,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -3968,14 +4020,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -3986,8 +4038,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4019,14 +4071,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4037,8 +4089,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4075,14 +4127,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4093,8 +4145,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4126,14 +4178,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4144,8 +4196,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4176,14 +4228,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4194,8 +4246,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4227,14 +4279,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4245,8 +4297,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4278,14 +4330,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4296,8 +4348,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4329,14 +4381,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4347,8 +4399,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4380,14 +4432,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4398,8 +4450,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4437,14 +4489,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4455,8 +4507,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4487,14 +4539,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4505,8 +4557,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4543,14 +4595,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4561,8 +4613,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4597,14 +4649,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4615,8 +4667,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4646,14 +4698,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4664,8 +4716,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4695,14 +4747,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4713,8 +4765,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4746,14 +4798,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4764,8 +4816,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4797,14 +4849,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4815,8 +4867,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4848,14 +4900,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4866,8 +4918,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4904,14 +4956,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4922,8 +4974,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -4960,14 +5012,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -4978,8 +5030,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5018,14 +5070,14 @@ paths:
           - TRANSITIONED
           - CLOSED
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5036,8 +5088,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5064,14 +5116,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5082,8 +5134,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5110,14 +5162,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5128,8 +5180,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5161,14 +5213,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5179,8 +5231,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5206,14 +5258,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5224,8 +5276,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5257,14 +5309,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5275,8 +5327,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5308,14 +5360,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5326,8 +5378,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5360,14 +5412,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5378,8 +5430,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5412,14 +5464,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5430,8 +5482,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5469,14 +5521,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5487,8 +5539,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5526,14 +5578,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5544,8 +5596,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5583,14 +5635,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5601,8 +5653,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5634,14 +5686,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5652,8 +5704,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5686,14 +5738,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5704,8 +5756,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5732,14 +5784,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5750,8 +5802,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5778,14 +5830,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5796,8 +5848,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5829,14 +5881,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5847,8 +5899,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5880,14 +5932,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5898,8 +5950,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5931,14 +5983,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5949,8 +6001,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -5977,14 +6029,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5995,8 +6047,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6029,14 +6081,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6047,8 +6099,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6076,14 +6128,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6094,8 +6146,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6122,14 +6174,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6140,8 +6192,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6168,14 +6220,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6186,8 +6238,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6219,14 +6271,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6237,8 +6289,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6269,14 +6321,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6287,8 +6339,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6320,14 +6372,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6338,8 +6390,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6376,14 +6428,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6394,8 +6446,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6427,14 +6479,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6445,8 +6497,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6478,14 +6530,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6496,8 +6548,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6529,14 +6581,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6547,8 +6599,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6580,14 +6632,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6598,8 +6650,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6636,14 +6688,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6654,8 +6706,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6686,14 +6738,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6704,8 +6756,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6742,14 +6794,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6760,8 +6812,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6793,14 +6845,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6811,8 +6863,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6844,14 +6896,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6862,8 +6914,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6895,14 +6947,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6913,8 +6965,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -6946,14 +6998,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -6964,8 +7016,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7002,14 +7054,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7020,8 +7072,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7053,14 +7105,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7071,8 +7123,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7109,14 +7161,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7127,8 +7179,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7160,14 +7212,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7178,8 +7230,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7206,14 +7258,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7224,8 +7276,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7257,14 +7309,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7275,8 +7327,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7303,14 +7355,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7321,8 +7373,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7349,14 +7401,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7367,8 +7419,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7406,14 +7458,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7424,8 +7476,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7458,14 +7510,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7476,8 +7528,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7509,14 +7561,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7527,8 +7579,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7561,14 +7613,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7579,8 +7631,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7608,14 +7660,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7626,8 +7678,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7648,14 +7700,14 @@ paths:
       description: Получить общее количество складов в тенанте
       operationId: countAllWarehouses
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7666,8 +7718,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7695,14 +7747,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7713,8 +7765,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7741,14 +7793,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7759,8 +7811,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7788,14 +7840,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7806,8 +7858,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7835,14 +7887,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7853,8 +7905,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7875,14 +7927,14 @@ paths:
       description: Возвращает CSV файл со списком тенантов
       operationId: downloadTenantsCsv
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7893,8 +7945,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7915,14 +7967,14 @@ paths:
       description: Возвращает общее количество тенантов
       operationId: getTenantsCount
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7933,8 +7985,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -7961,14 +8013,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -7979,8 +8031,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8001,14 +8053,14 @@ paths:
       description: countSupplyTasks
       operationId: countSupplyTasks
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8019,8 +8071,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8042,14 +8094,14 @@ paths:
         и)"
       operationId: getSystemSettings
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8060,8 +8112,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8086,14 +8138,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8104,8 +8156,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8132,14 +8184,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8150,8 +8202,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8178,14 +8230,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8196,8 +8248,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8224,14 +8276,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8242,8 +8294,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8264,14 +8316,14 @@ paths:
       description: Получить общее количество запчастей/товаров в складе
       operationId: countArticles
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8282,8 +8334,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8304,14 +8356,14 @@ paths:
       description: Получить количество принтеров
       operationId: getPrintersCount
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8322,8 +8374,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8355,14 +8407,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8373,8 +8425,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8399,14 +8451,14 @@ paths:
           type: string
           format: uuid
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8417,8 +8469,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8450,14 +8502,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8468,8 +8520,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8501,14 +8553,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8519,8 +8571,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8546,14 +8598,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8564,8 +8616,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8592,14 +8644,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8610,8 +8662,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8639,14 +8691,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8657,8 +8709,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8686,14 +8738,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8704,8 +8756,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8732,14 +8784,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8750,8 +8802,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8778,14 +8830,14 @@ paths:
         schema:
           $ref: "#/components/schemas/Pageable"
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8796,8 +8848,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8818,14 +8870,14 @@ paths:
       description: countPersons
       operationId: countPersons
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8836,8 +8888,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8858,14 +8910,14 @@ paths:
       description: countPersons
       operationId: countPersons_1
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8876,8 +8928,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8908,14 +8960,14 @@ paths:
           items:
             type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8926,8 +8978,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8956,14 +9008,14 @@ paths:
           items:
             type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -8974,8 +9026,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -8994,14 +9046,14 @@ paths:
       description: Возвращает простую строку 'Hello World!'
       operationId: getHelloWorld
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -9012,8 +9064,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9032,14 +9084,14 @@ paths:
       description: Возвращает простую строку 'Hello World!'
       operationId: getHelloWorld_1
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -9050,8 +9102,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9076,14 +9128,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -9094,8 +9146,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9114,14 +9166,14 @@ paths:
       description: helloWorld
       operationId: helloWorld
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -9132,8 +9184,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9160,14 +9212,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -9178,8 +9230,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9200,14 +9252,14 @@ paths:
       description: Проверка на существование администратора системы
       operationId: isAdminPresent
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -9218,8 +9270,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9244,14 +9296,14 @@ paths:
         schema:
           type: string
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -9262,8 +9314,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
@@ -9282,14 +9334,14 @@ paths:
       description: truncateAllTables
       operationId: truncateAllTables
       responses:
-        "401":
-          description: Unauthorized
+        "403":
+          description: Forbidden
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
@@ -9300,8 +9352,8 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "401":
+          description: Unauthorized
           content:
             '*/*':
               schema:
