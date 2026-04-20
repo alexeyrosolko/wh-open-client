@@ -4580,86 +4580,9 @@ class PersonService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    countPersons1(observe = 'body', reportProgress = false, options) {
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/persons/count`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
     countPersonsByLogin(login, observe = 'body', reportProgress = false, options) {
         if (login === null || login === undefined) {
             throw new Error('Required parameter login was null or undefined when calling countPersonsByLogin.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/persons/${this.configuration.encodeParam({ name: "login", value: login, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search/count`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
-    countPersonsByLogin1(login, observe = 'body', reportProgress = false, options) {
-        if (login === null || login === undefined) {
-            throw new Error('Required parameter login was null or undefined when calling countPersonsByLogin1.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -4700,55 +4623,6 @@ class PersonService extends BaseService {
     createPerson(personDto, observe = 'body', reportProgress = false, options) {
         if (personDto === null || personDto === undefined) {
             throw new Error('Required parameter personDto was null or undefined when calling createPerson.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        // to determine the Content-Type header
-        const consumes = [
-            'application/json'
-        ];
-        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/persons`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            body: personDto,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
-    createPerson1(personDto, observe = 'body', reportProgress = false, options) {
-        if (personDto === null || personDto === undefined) {
-            throw new Error('Required parameter personDto was null or undefined when calling createPerson1.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -4859,43 +4733,6 @@ class PersonService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/persons`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
-    getAllPersons1(observe = 'body', reportProgress = false, options) {
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
         let localVarPath = `/api/person`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
@@ -4978,49 +4815,6 @@ class PersonService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/persons/tenant`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            params: localVarQueryParameters.toHttpParams(),
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
-    getPersons1(pageable, observe = 'body', reportProgress = false, options) {
-        if (pageable === null || pageable === undefined) {
-            throw new Error('Required parameter pageable was null or undefined when calling getPersons1.');
-        }
-        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
         let localVarPath = `/api/person/tenant`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
@@ -5037,46 +4831,6 @@ class PersonService extends BaseService {
     searchPersonsByLogin(login, observe = 'body', reportProgress = false, options) {
         if (login === null || login === undefined) {
             throw new Error('Required parameter login was null or undefined when calling searchPersonsByLogin.');
-        }
-        let localVarHeaders = this.defaultHeaders;
-        // authentication (bearerAuth) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
-        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            '*/*',
-            'application/json'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-        const localVarHttpContext = options?.context ?? new HttpContext();
-        const localVarTransferCache = options?.transferCache ?? true;
-        let responseType_ = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            }
-            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            }
-            else {
-                responseType_ = 'blob';
-            }
-        }
-        let localVarPath = `/api/persons/${this.configuration.encodeParam({ name: "login", value: login, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
-            context: localVarHttpContext,
-            responseType: responseType_,
-            ...(withCredentials ? { withCredentials } : {}),
-            headers: localVarHeaders,
-            observe: observe,
-            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
-            reportProgress: reportProgress
-        });
-    }
-    searchPersonsByLogin1(login, observe = 'body', reportProgress = false, options) {
-        if (login === null || login === undefined) {
-            throw new Error('Required parameter login was null or undefined when calling searchPersonsByLogin1.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required

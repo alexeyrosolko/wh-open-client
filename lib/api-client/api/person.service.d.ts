@@ -61,32 +61,9 @@ export declare class PersonService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
-     * countPersons
-     * countPersons
-     * @endpoint get /api/persons/count
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    countPersons1(observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCountDto>;
-    countPersons1(observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCountDto>>;
-    countPersons1(observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCountDto>>;
-    /**
      * Получить количество пользователей по логину
      * Получить количество пользователей, найденных по логину
-     * @endpoint get /api/persons/{login}/search/count
+     * @endpoint get /api/person/{login}/search/count
      * @param login
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -108,33 +85,9 @@ export declare class PersonService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
-     * Получить количество пользователей по логину
-     * Получить количество пользователей, найденных по логину
-     * @endpoint get /api/person/{login}/search/count
-     * @param login
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    countPersonsByLogin1(login: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCountDto>;
-    countPersonsByLogin1(login: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCountDto>>;
-    countPersonsByLogin1(login: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCountDto>>;
-    /**
      * Создать пользователя
      * Создать нового пользователя
-     * @endpoint post /api/persons
+     * @endpoint post /api/person
      * @param personDto
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -151,30 +104,6 @@ export declare class PersonService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponsePersonDto>>;
     createPerson(personDto: PersonDto, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponsePersonDto>>;
-    /**
-     * Создать пользователя
-     * Создать нового пользователя
-     * @endpoint post /api/person
-     * @param personDto
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    createPerson1(personDto: PersonDto, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponsePersonDto>;
-    createPerson1(personDto: PersonDto, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponsePersonDto>>;
-    createPerson1(personDto: PersonDto, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
@@ -206,7 +135,7 @@ export declare class PersonService extends BaseService {
     /**
      * Получить всех пользователей
      * Получить список всех пользователей системы
-     * @endpoint get /api/persons
+     * @endpoint get /api/person
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
@@ -222,29 +151,6 @@ export declare class PersonService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListPersonDto>>;
     getAllPersons(observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListPersonDto>>;
-    /**
-     * Получить всех пользователей
-     * Получить список всех пользователей системы
-     * @endpoint get /api/person
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    getAllPersons1(observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseListPersonDto>;
-    getAllPersons1(observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListPersonDto>>;
-    getAllPersons1(observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
@@ -276,7 +182,7 @@ export declare class PersonService extends BaseService {
     /**
      * Выбрать пользователей текущего tenant
      * Выбрать пользователей текущего tenant
-     * @endpoint get /api/persons/tenant
+     * @endpoint get /api/person/tenant
      * @param pageable
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -298,33 +204,9 @@ export declare class PersonService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListPersonDto>>;
     /**
-     * Выбрать пользователей текущего tenant
-     * Выбрать пользователей текущего tenant
-     * @endpoint get /api/person/tenant
-     * @param pageable
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    getPersons1(pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseListPersonDto>;
-    getPersons1(pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListPersonDto>>;
-    getPersons1(pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListPersonDto>>;
-    /**
      * Поиск пользователей по логину
      * Получить список пользователей, соответствующих поисковому запросу по логину
-     * @endpoint get /api/persons/{login}/search
+     * @endpoint get /api/person/{login}/search
      * @param login
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -341,30 +223,6 @@ export declare class PersonService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListPersonDto>>;
     searchPersonsByLogin(login: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListPersonDto>>;
-    /**
-     * Поиск пользователей по логину
-     * Получить список пользователей, соответствующих поисковому запросу по логину
-     * @endpoint get /api/person/{login}/search
-     * @param login
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    searchPersonsByLogin1(login: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseListPersonDto>;
-    searchPersonsByLogin1(login: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListPersonDto>>;
-    searchPersonsByLogin1(login: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
