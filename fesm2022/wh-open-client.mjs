@@ -8331,7 +8331,13 @@ class SupplyUploadRecordService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    uploadSupplyUploadRecordsCsv(file, warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
+    uploadSupplyUploadRecordsCsv(warehouseCode, supplyCode, file, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadSupplyUploadRecordsCsv.');
+        }
+        if (supplyCode === null || supplyCode === undefined) {
+            throw new Error('Required parameter supplyCode was null or undefined when calling uploadSupplyUploadRecordsCsv.');
+        }
         if (file === null || file === undefined) {
             throw new Error('Required parameter file was null or undefined when calling uploadSupplyUploadRecordsCsv.');
         }
@@ -8364,12 +8370,6 @@ class SupplyUploadRecordService extends BaseService {
         else {
             localVarFormParams = new HttpParams({ encoder: this.encoder });
         }
-        if (warehouseCode !== undefined) {
-            localVarFormParams = localVarFormParams.append('warehouseCode', warehouseCode) || localVarFormParams;
-        }
-        if (supplyCode !== undefined) {
-            localVarFormParams = localVarFormParams.append('supplyCode', supplyCode) || localVarFormParams;
-        }
         if (file !== undefined) {
             localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
         }
@@ -8385,7 +8385,7 @@ class SupplyUploadRecordService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse//supply//uploadrecord/csv`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/csv`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
