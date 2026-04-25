@@ -168,24 +168,24 @@ export declare class SupplyUploadRecordService extends BaseService {
      * Загрузить записи поставки из CSV
      * Загрузить список записей поставки из CSV-файла и сохранить их для указанной поставки
      * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/uploadrecord/csv
+     * @param file
      * @param warehouseCode
      * @param supplyCode
-     * @param file
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    uploadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, file: Blob, observe?: 'body', reportProgress?: boolean, options?: {
+    uploadSupplyUploadRecordsCsv(file: Blob, warehouseCode?: string, supplyCode?: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
-    uploadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, file: Blob, observe?: 'response', reportProgress?: boolean, options?: {
+    uploadSupplyUploadRecordsCsv(file: Blob, warehouseCode?: string, supplyCode?: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadSupplyUploadRecordsCsv(warehouseCode: string, supplyCode: string, file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
+    uploadSupplyUploadRecordsCsv(file: Blob, warehouseCode?: string, supplyCode?: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;

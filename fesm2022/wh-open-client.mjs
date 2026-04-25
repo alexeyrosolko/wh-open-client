@@ -8331,13 +8331,7 @@ class SupplyUploadRecordService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    uploadSupplyUploadRecordsCsv(warehouseCode, supplyCode, file, observe = 'body', reportProgress = false, options) {
-        if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadSupplyUploadRecordsCsv.');
-        }
-        if (supplyCode === null || supplyCode === undefined) {
-            throw new Error('Required parameter supplyCode was null or undefined when calling uploadSupplyUploadRecordsCsv.');
-        }
+    uploadSupplyUploadRecordsCsv(file, warehouseCode, supplyCode, observe = 'body', reportProgress = false, options) {
         if (file === null || file === undefined) {
             throw new Error('Required parameter file was null or undefined when calling uploadSupplyUploadRecordsCsv.');
         }
@@ -8370,6 +8364,12 @@ class SupplyUploadRecordService extends BaseService {
         else {
             localVarFormParams = new HttpParams({ encoder: this.encoder });
         }
+        if (warehouseCode !== undefined) {
+            localVarFormParams = localVarFormParams.append('warehouseCode', warehouseCode) || localVarFormParams;
+        }
+        if (supplyCode !== undefined) {
+            localVarFormParams = localVarFormParams.append('supplyCode', supplyCode) || localVarFormParams;
+        }
         if (file !== undefined) {
             localVarFormParams = localVarFormParams.append('file', file) || localVarFormParams;
         }
@@ -8385,7 +8385,7 @@ class SupplyUploadRecordService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/supply/${this.configuration.encodeParam({ name: "supplyCode", value: supplyCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/csv`;
+        let localVarPath = `/api/warehouse//supply//uploadrecord/csv`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -9082,13 +9082,16 @@ class ToStockTransitionService extends BaseService {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
-    addToStockTransition(warehouseCode, toStockTransitionDto, observe = 'body', reportProgress = false, options) {
+    addToStockTransition(warehouseCode, transitionDto, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling addToStockTransition.');
         }
-        if (toStockTransitionDto === null || toStockTransitionDto === undefined) {
-            throw new Error('Required parameter toStockTransitionDto was null or undefined when calling addToStockTransition.');
+        if (transitionDto === null || transitionDto === undefined) {
+            throw new Error('Required parameter transitionDto was null or undefined when calling addToStockTransition.');
         }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'warehouseCode', warehouseCode, QueryParamStyle.Form, true);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'transitionDto', transitionDto, QueryParamStyle.Form, true);
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
@@ -9101,14 +9104,6 @@ class ToStockTransitionService extends BaseService {
         }
         const localVarHttpContext = options?.context ?? new HttpContext();
         const localVarTransferCache = options?.transferCache ?? true;
-        // to determine the Content-Type header
-        const consumes = [
-            'application/json'
-        ];
-        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
-        if (httpContentTypeSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
-        }
         let responseType_ = 'json';
         if (localVarHttpHeaderAcceptSelected) {
             if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
@@ -9121,11 +9116,11 @@ class ToStockTransitionService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/transition/to`;
+        let localVarPath = `/api/warehouse//transition/to`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
-            body: toStockTransitionDto,
+            params: localVarQueryParameters.toHttpParams(),
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,

@@ -13,22 +13,22 @@ export declare class ToStockTransitionService extends BaseService {
      * Создать операцию перехода на склад и добавить соответствующие действия по приёму
      * @endpoint post /api/warehouse/{warehouseCode}/transition/to
      * @param warehouseCode
-     * @param toStockTransitionDto
+     * @param transitionDto
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    addToStockTransition(warehouseCode: string, toStockTransitionDto: ToStockTransitionDto, observe?: 'body', reportProgress?: boolean, options?: {
+    addToStockTransition(warehouseCode: string, transitionDto: ToStockTransitionDto, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
-    addToStockTransition(warehouseCode: string, toStockTransitionDto: ToStockTransitionDto, observe?: 'response', reportProgress?: boolean, options?: {
+    addToStockTransition(warehouseCode: string, transitionDto: ToStockTransitionDto, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
-    addToStockTransition(warehouseCode: string, toStockTransitionDto: ToStockTransitionDto, observe?: 'events', reportProgress?: boolean, options?: {
+    addToStockTransition(warehouseCode: string, transitionDto: ToStockTransitionDto, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
