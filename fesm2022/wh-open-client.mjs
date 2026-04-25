@@ -3920,6 +3920,61 @@ class OrderUploadService extends BaseService {
             reportProgress: reportProgress
         });
     }
+    uploadOrderRecordsCsvFromClipboard(warehouseCode, orderCode, body, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling uploadOrderRecordsCsvFromClipboard.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling uploadOrderRecordsCsvFromClipboard.');
+        }
+        if (body === null || body === undefined) {
+            throw new Error('Required parameter body was null or undefined when calling uploadOrderRecordsCsvFromClipboard.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'text/plain'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/uploadrecord/csv/clipboard`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: body,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.21", ngImport: i0, type: OrderUploadService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.21", ngImport: i0, type: OrderUploadService, providedIn: 'root' });
 }

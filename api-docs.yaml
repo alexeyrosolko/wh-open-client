@@ -2501,6 +2501,63 @@ paths:
                 $ref: "#/components/schemas/ResponseCommonDto"
       security:
       - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/uploadrecord/csv/clipboard:
+    post:
+      tags:
+      - OrderUpload
+      summary: Загрузить записи заказа из буфера обмена
+      description: Загрузить данные записей заказа из буфера обмена в формате CSV
+      operationId: uploadOrderRecordsCsvFromClipboard
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+      security:
+      - bearerAuth: []
   /api/warehouse/{warehouseCode}/order/{orderCode}/state/from/{expectedState}/to/{newState}:
     post:
       tags:

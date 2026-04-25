@@ -165,6 +165,32 @@ export declare class OrderUploadService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;
+    /**
+     * Загрузить записи заказа из буфера обмена
+     * Загрузить данные записей заказа из буфера обмена в формате CSV
+     * @endpoint post /api/warehouse/{warehouseCode}/order/{orderCode}/uploadrecord/csv/clipboard
+     * @param warehouseCode
+     * @param orderCode
+     * @param body
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    uploadOrderRecordsCsvFromClipboard(warehouseCode: string, orderCode: string, body: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseCommonDto>;
+    uploadOrderRecordsCsvFromClipboard(warehouseCode: string, orderCode: string, body: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseCommonDto>>;
+    uploadOrderRecordsCsvFromClipboard(warehouseCode: string, orderCode: string, body: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseCommonDto>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<OrderUploadService, [null, { optional: true; }, { optional: true; }]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<OrderUploadService>;
 }
