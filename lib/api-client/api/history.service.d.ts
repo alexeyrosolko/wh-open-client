@@ -13,6 +13,30 @@ export declare class HistoryService extends BaseService {
     protected httpClient: HttpClient;
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
     /**
+     * Скачать историю переходов в CSV
+     * Скачать историю переходов в формате CSV с применением фильтров
+     * @endpoint post /api/transition/history/flat/csv
+     * @param transitionFilterFlatDto
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    downloadTransitionHistoryFlatCsv(transitionFilterFlatDto: TransitionFilterFlatDto, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<string>;
+    downloadTransitionHistoryFlatCsv(transitionFilterFlatDto: TransitionFilterFlatDto, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<string>>;
+    downloadTransitionHistoryFlatCsv(transitionFilterFlatDto: TransitionFilterFlatDto, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<string>>;
+    /**
      * Получить историю переходов
      * Получить список всех переходов со статусами и фильтрацией
      * @endpoint post /api/transition/history
