@@ -37,6 +37,29 @@ export declare class ArticlesService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseArticleDto>>;
     /**
+     * Скопировать запчасти/товары в буфер обмена
+     * Скопировать список запчастей/товаров в буфер обмена
+     * @endpoint get /api/sparepart/csv/clipboard
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    copyArticlesCsvToClipboard(observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<string>;
+    copyArticlesCsvToClipboard(observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<string>>;
+    copyArticlesCsvToClipboard(observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<string>>;
+    /**
      * Получить количество запчастей/товаров
      * Получить общее количество запчастей/товаров в складе
      * @endpoint get /api/sparepart/count
@@ -174,6 +197,30 @@ export declare class ArticlesService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
     uploadArticlesCsv(file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseCommonDto>>;
+    /**
+     * Загрузить запчасти/товары из буфера обмена
+     * Загрузить список запчастей/товаров из строки в буфере обмена
+     * @endpoint post /api/sparepart/csv/clipboard
+     * @param body
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    uploadArticlesCsvFromClipboard(body: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseCommonDto>;
+    uploadArticlesCsvFromClipboard(body: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseCommonDto>>;
+    uploadArticlesCsvFromClipboard(body: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;

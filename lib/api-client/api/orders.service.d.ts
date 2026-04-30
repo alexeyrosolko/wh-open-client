@@ -2,7 +2,6 @@ import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/commo
 import { Observable } from 'rxjs';
 import { OrderDto } from '../model/order-dto';
 import { Pageable } from '../model/pageable';
-import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListOrderDto } from '../model/response-list-order-dto';
 import { ResponseOrderDto } from '../model/response-order-dto';
@@ -160,56 +159,6 @@ export declare class OrdersService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListOrderDto>>;
-    /**
-     * Загрузить заказы из CSV
-     * Загрузить список заказов из CSV-файла
-     * @endpoint post /api/warehouse/{warehouseCode}/order/csv
-     * @param warehouseCode
-     * @param file
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    uploadOrdersCsv(warehouseCode: string, file: Blob, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    uploadOrdersCsv(warehouseCode: string, file: Blob, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadOrdersCsv(warehouseCode: string, file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
-    /**
-     * Загрузить заказы из буфера обмена
-     * Загрузить список заказов из строки буфера обмена
-     * @endpoint post /api/warehouse/{warehouseCode}/order/csv/clipboard
-     * @param warehouseCode
-     * @param body
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    uploadOrdersCsvFromClipboard(warehouseCode: string, body: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    uploadOrdersCsvFromClipboard(warehouseCode: string, body: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadOrdersCsvFromClipboard(warehouseCode: string, body: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<OrdersService, [null, { optional: true; }, { optional: true; }]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<OrdersService>;
 }

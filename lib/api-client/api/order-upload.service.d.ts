@@ -64,6 +64,31 @@ export declare class OrderUploadService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCommonDto>>;
     /**
+     * Скопировать записи заказа в буфер обмена
+     * Скопировать записи загрузки заказа в буфер обмена
+     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/uploadrecord/csv/clipboard
+     * @param warehouseCode
+     * @param orderCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    copyOrderUploadRecordsToClipboard(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<string>;
+    copyOrderUploadRecordsToClipboard(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<string>>;
+    copyOrderUploadRecordsToClipboard(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<string>>;
+    /**
      * Получить количество записей загрузки
      * Получить количество записей загрузки заказа
      * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/uploadrecord/count

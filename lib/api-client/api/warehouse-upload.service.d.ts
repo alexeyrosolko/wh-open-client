@@ -11,6 +11,30 @@ export declare class WarehouseUploadService extends BaseService {
     protected httpClient: HttpClient;
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
     /**
+     * Скопировать записи склада в буфер обмена
+     * Скопировать записи склада в буфер обмена
+     * @endpoint get /api/warehouse/{warehouseCode}/uploadrecord/csv/clipboard
+     * @param warehouseCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    copyWarehouseRecordsToClipboard(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<string>;
+    copyWarehouseRecordsToClipboard(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<string>>;
+    copyWarehouseRecordsToClipboard(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<string>>;
+    /**
      * countWarehouseRecords
      * countWarehouseRecords
      * @endpoint get /api/warehouse/{warehouseCode}/uploadrecord/count

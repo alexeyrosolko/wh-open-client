@@ -10,7 +10,7 @@ export declare class ArticleService extends BaseService {
     /**
      * Получить запчасть/товар по коду
      * Получить информацию о конкретной запчасти/товара по коду
-     * @endpoint get /api/sparepart/{articleCode}
+     * @endpoint get /api/article/{articleCode}
      * @param articleCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -27,30 +27,6 @@ export declare class ArticleService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseArticleDto>>;
     getArticleByCode(articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseArticleDto>>;
-    /**
-     * Получить запчасть/товар по коду
-     * Получить информацию о конкретной запчасти/товара по коду
-     * @endpoint get /api/article/{articleCode}
-     * @param articleCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    getArticleByCode1(articleCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseArticleDto>;
-    getArticleByCode1(articleCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseArticleDto>>;
-    getArticleByCode1(articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;

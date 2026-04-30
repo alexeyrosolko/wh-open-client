@@ -38,6 +38,30 @@ export declare class ShelfService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseShelfDto>>;
     /**
+     * Скопировать полки в буфер обмена
+     * Скопировать данные полок склада в буфер обмена
+     * @endpoint get /api/warehouse/{warehouseCode}/shelf/csv/clipboard
+     * @param warehouseCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    copyShelvesCsvToClipboard(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<string>;
+    copyShelvesCsvToClipboard(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<string>>;
+    copyShelvesCsvToClipboard(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'text/plain';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<string>>;
+    /**
      * Получить общее количество полок
      * Получить общее количество полок на складе
      * @endpoint get /api/warehouse/{warehouseCode}/shelf/count

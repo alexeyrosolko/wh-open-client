@@ -109,56 +109,6 @@ export declare class TurnoverService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListTurnoverRecordDto>>;
-    /**
-     * Загрузить записи оборота из CSV
-     * Загрузить записи оборота товара из CSV файла
-     * @endpoint post /api/warehouse/{warehouseCode}/report/turnover/csv
-     * @param warehouseCode
-     * @param file
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    uploadTurnoverRecordsCSV(warehouseCode: string, file: Blob, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    uploadTurnoverRecordsCSV(warehouseCode: string, file: Blob, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadTurnoverRecordsCSV(warehouseCode: string, file: Blob, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
-    /**
-     * Загрузить записи оборота из буфера обмена
-     * Загрузить записи оборота товара из буфера обмена
-     * @endpoint post /api/warehouse/{warehouseCode}/report/turnover/csv/clipboard
-     * @param warehouseCode
-     * @param body
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    uploadTurnoverRecordsFromClipboard(warehouseCode: string, body: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    uploadTurnoverRecordsFromClipboard(warehouseCode: string, body: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    uploadTurnoverRecordsFromClipboard(warehouseCode: string, body: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<TurnoverService, [null, { optional: true; }, { optional: true; }]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<TurnoverService>;
 }
