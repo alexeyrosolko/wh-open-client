@@ -563,7 +563,7 @@ paths:
       operationId: addToStockTransition
       parameters:
       - name: warehouseCode
-        in: query
+        in: path
         required: true
         schema:
           type: string

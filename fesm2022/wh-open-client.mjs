@@ -9152,7 +9152,6 @@ class ToStockTransitionService extends BaseService {
             throw new Error('Required parameter transitionDto was null or undefined when calling addToStockTransition.');
         }
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'warehouseCode', warehouseCode, QueryParamStyle.Form, true);
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'transitionDto', transitionDto, QueryParamStyle.Form, true);
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -9178,7 +9177,7 @@ class ToStockTransitionService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse//transition/to`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/transition/to`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
