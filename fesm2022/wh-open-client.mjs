@@ -9144,15 +9144,13 @@ class ToStockTransitionService extends BaseService {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
-    addToStockTransition(warehouseCode, transitionDto, observe = 'body', reportProgress = false, options) {
+    addToStockTransition(warehouseCode, toStockTransitionDto, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling addToStockTransition.');
         }
-        if (transitionDto === null || transitionDto === undefined) {
-            throw new Error('Required parameter transitionDto was null or undefined when calling addToStockTransition.');
+        if (toStockTransitionDto === null || toStockTransitionDto === undefined) {
+            throw new Error('Required parameter toStockTransitionDto was null or undefined when calling addToStockTransition.');
         }
-        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'transitionDto', transitionDto, QueryParamStyle.Form, true);
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
         localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
@@ -9165,6 +9163,14 @@ class ToStockTransitionService extends BaseService {
         }
         const localVarHttpContext = options?.context ?? new HttpContext();
         const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
         let responseType_ = 'json';
         if (localVarHttpHeaderAcceptSelected) {
             if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
@@ -9181,7 +9187,7 @@ class ToStockTransitionService extends BaseService {
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
-            params: localVarQueryParameters.toHttpParams(),
+            body: toStockTransitionDto,
             responseType: responseType_,
             ...(withCredentials ? { withCredentials } : {}),
             headers: localVarHeaders,
