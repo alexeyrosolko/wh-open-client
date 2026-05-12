@@ -1,6 +1,5 @@
 import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseOrderDto } from '../model/response-order-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
@@ -35,31 +34,6 @@ export declare class OrderService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseOrderDto>>;
-    /**
-     * Удалить заказ
-     * Удалить заказ по коду склада и коду заказа
-     * @endpoint delete /api/warehouse/{warehouseCode}/order/{orderCode}
-     * @param warehouseCode
-     * @param orderCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    deleteOrder(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    deleteOrder(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    deleteOrder(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
     /**
      * Получить заказ по коду
      * Вернуть заказ по коду склада и коду заказа

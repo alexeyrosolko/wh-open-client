@@ -1,7 +1,6 @@
 import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pageable } from '../model/pageable';
-import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListWarehouseDto } from '../model/response-list-warehouse-dto';
 import { ResponseWarehouseDto } from '../model/response-warehouse-dto';
@@ -40,7 +39,7 @@ export declare class WarehouseService extends BaseService {
     }): Observable<HttpEvent<ResponseWarehouseDto>>;
     /**
      * Получить количество складов
-     * Получить общее количество складов в тенанте
+     * [checked] Получить общее количество складов в тенанте
      * @endpoint get /api/warehouse/count
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -110,30 +109,6 @@ export declare class WarehouseService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseWarehouseDto>>;
     /**
-     * Удалить склад
-     * Удалить склад по коду
-     * @endpoint delete /api/warehouse/{warehouseCode}
-     * @param warehouseCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    deleteWarehouse(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    deleteWarehouse(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    deleteWarehouse(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
-    /**
      * Скачать склады в CSV формате
      * Экспортировать данные складов в CSV файл
      * @endpoint get /api/warehouse/csv
@@ -158,7 +133,7 @@ export declare class WarehouseService extends BaseService {
     }): Observable<HttpEvent<string>>;
     /**
      * Получить все склады тенанта
-     * Получить список всех складов текущего тенанта с пагинацией
+     * [checked] Получить список всех складов текущего тенанта с пагинацией
      * @endpoint get /api/warehouse
      * @param pageable
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.

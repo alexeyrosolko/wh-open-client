@@ -2,7 +2,6 @@ import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/commo
 import { Observable } from 'rxjs';
 import { Pageable } from '../model/pageable';
 import { PersonDto } from '../model/person-dto';
-import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListPersonDto } from '../model/response-list-person-dto';
 import { ResponsePersonDto } from '../model/response-person-dto';
@@ -109,32 +108,8 @@ export declare class PersonService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponsePersonDto>>;
     /**
-     * Удалить пользователя
-     * Удалить пользователя по логину
-     * @endpoint delete /api/person/{login}
-     * @param login
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    deletePerson(login: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    deletePerson(login: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    deletePerson(login: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
-    /**
      * Получить всех пользователей
-     * Получить список всех пользователей системы
+     * Получить список всех пользователей системы. Нужно при раздаче прав
      * @endpoint get /api/person
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
