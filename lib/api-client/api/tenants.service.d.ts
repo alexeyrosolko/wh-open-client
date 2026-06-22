@@ -35,29 +35,6 @@ export declare class TenantsService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseTenantDto>>;
     /**
-     * Скачать CSV файл тенантов
-     * Возвращает CSV файл со списком тенантов
-     * @endpoint get /api/tenant/csv
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    downloadTenantsCsv(observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<string>;
-    downloadTenantsCsv(observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<string>>;
-    downloadTenantsCsv(observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<string>>;
-    /**
      * Получить список тенантов
      * Возвращает список всех тенантов с пагинацией
      * @endpoint get /api/tenant

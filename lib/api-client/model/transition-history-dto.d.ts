@@ -21,6 +21,7 @@ export interface TransitionHistoryDto {
     price?: number;
     timestamp?: string;
     transitionType?: TransitionHistoryDto.TransitionTypeEnum;
+    transitionTypeRu?: string;
 }
 export declare namespace TransitionHistoryDto {
     const TransitionTypeEnum: {

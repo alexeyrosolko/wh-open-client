@@ -179,30 +179,6 @@ export declare class PersonService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListPersonDto>>;
     /**
-     * Поиск пользователей по логину
-     * Получить список пользователей, соответствующих поисковому запросу по логину
-     * @endpoint get /api/person/{login}/search
-     * @param login
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    searchPersonsByLogin(login: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseListPersonDto>;
-    searchPersonsByLogin(login: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListPersonDto>>;
-    searchPersonsByLogin(login: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListPersonDto>>;
-    /**
      * Обновить данные пользователя
      * Обновить информацию о пользователе. Проверяется право на редактирование
      * @endpoint put /api/person/{login}

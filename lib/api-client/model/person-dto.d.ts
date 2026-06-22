@@ -16,8 +16,6 @@ export interface PersonDto {
     csvImportDelimiter: string;
     csvExportDelimiter: string;
     gridPageSize: number;
-    /** @deprecated */
-    isManager?: boolean;
     role?: PersonDto.RoleEnum;
     printerCode?: string;
 }

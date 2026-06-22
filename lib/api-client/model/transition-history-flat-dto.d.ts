@@ -18,6 +18,7 @@ export interface TransitionHistoryFlatDto {
     price?: number;
     timestamp?: string;
     transitionType?: string;
+    transitionTypeRu?: string;
     debetSupplyId?: string;
     debetSupplyCode?: string;
     debetSupplyName?: string;

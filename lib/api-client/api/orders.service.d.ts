@@ -86,30 +86,6 @@ export declare class OrdersService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
-     * Скачать CSV заказов
-     * Скачать CSV-файл с заказами склада
-     * @endpoint get /api/warehouse/{warehouseCode}/order/csv
-     * @param warehouseCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    downloadOrdersCsv(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<string>;
-    downloadOrdersCsv(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<string>>;
-    downloadOrdersCsv(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<string>>;
-    /**
      * Получить заказы склада
      * Вернуть список заказов для указанного склада
      * @endpoint get /api/warehouse/{warehouseCode}/order

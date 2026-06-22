@@ -2630,6 +2630,176 @@ paths:
                 $ref: "#/components/schemas/ResponseOrderDto"
       security:
       - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventory:
+    get:
+      tags:
+      - Inventories
+      summary: Получить все инвентаризации
+      description: Получить список всех инвентаризаций текущего склада с пагинацией
+      operationId: getInventories
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageable
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/Pageable"
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListInventoryDto"
+      security:
+      - bearerAuth: []
+    post:
+      tags:
+      - Inventories
+      summary: Создать инвентаризацию
+      description: Создать новую инвентаризацию на складе
+      operationId: addInventory
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InventoryDto"
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseInventoryDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/state/from/{expectedState}/to/{newState}:
+    post:
+      tags:
+      - Inventory
+      summary: Изменить состояние инвентаризации
+      description: "Изменить состояние инвентаризации: выполнить переход из ожидае\
+        мого состояния в новое"
+      operationId: changeInventoryState
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: expectedState
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - UPLOADING
+          - CLOSED
+      - name: newState
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - UPLOADING
+          - CLOSED
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseInventoryDto"
+      security:
+      - bearerAuth: []
   /api/warehouse/{warehouseCode}/article/absentarticles/move:
     post:
       tags:
@@ -4172,56 +4342,6 @@ paths:
                 $ref: "#/components/schemas/ResponseSupplyDto"
       security:
       - bearerAuth: []
-    delete:
-      tags:
-      - Supply
-      summary: Удалить поставку
-      description: Удалить поставку по коду склада и коду поставки
-      operationId: deleteSupply
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: supplyCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-      security:
-      - bearerAuth: []
   /api/warehouse/{warehouseCode}/supply/{supplyCode}/uploadrecord/count:
     get:
       tags:
@@ -5004,52 +5124,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ResponseListSupplyAbsendArticleDto"
-      security:
-      - bearerAuth: []
-  /api/warehouse/{warehouseCode}/supply/csv:
-    get:
-      tags:
-      - Supplies
-      summary: Скачать поставки в CSV формате
-      description: Экспортировать данные поставок в CSV файл
-      operationId: downloadSuppliesCsv
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: string
       security:
       - bearerAuth: []
   /api/warehouse/{warehouseCode}/supply/count:
@@ -7195,52 +7269,6 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/order/csv:
-    get:
-      tags:
-      - Orders
-      summary: Скачать CSV заказов
-      description: Скачать CSV-файл с заказами склада
-      operationId: downloadOrdersCsv
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: string
-      security:
-      - bearerAuth: []
   /api/warehouse/{warehouseCode}/order/count:
     get:
       tags:
@@ -7391,6 +7419,465 @@ paths:
       summary: Получить количество записей главного журнала
       description: Получить количество записей в главном журнале для склада
       operationId: countMainBook
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}:
+    get:
+      tags:
+      - Inventory
+      summary: Получить инвентаризацию по коду
+      description: Вернуть информацию об инвентаризации по коду склада и коду инвентаризации
+      operationId: getInventoryByCode
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseInventoryDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/task:
+    get:
+      tags:
+      - InventoryTask
+      summary: Получить задачи по инвентаризации
+      description: Получить список задач для указанной инвентаризации на складе
+      operationId: getInventoryTasksByInventoryCode
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListTaskDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/search:
+    get:
+      tags:
+      - Inventory
+      summary: Поиск инвентаризаций
+      description: Найти список инвентаризаций по коду склада и шаблону кода инвентаризации
+      operationId: searchInventories
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListInventoryDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/search/count:
+    get:
+      tags:
+      - Inventory
+      summary: Посчитать инвентаризации по коду
+      description: "Вернуть количество инвентаризаций, соответствующих шаблону код\
+        а"
+      operationId: countInventoryByCode
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/record:
+    get:
+      tags:
+      - Inventory
+      summary: Получить записи инвентаризации
+      description: Получить список записей инвентаризации с пагинацией
+      operationId: getInventoryRecords
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageable
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/Pageable"
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListInventoryRecordDto"
+      security:
+      - bearerAuth: []
+    delete:
+      tags:
+      - Inventory
+      summary: Очистить записи инвентаризации
+      description: Удалить все записи инвентаризации
+      operationId: clearInventoryRecords
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/record/csv:
+    get:
+      tags:
+      - Inventory
+      summary: Скачать записи инвентаризации в CSV
+      description: Экспортировать записи инвентаризации в CSV файл
+      operationId: downloadInventoryRecordsCsv
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/record/count:
+    get:
+      tags:
+      - Inventory
+      summary: Получить количество записей инвентаризации
+      description: Получить общее количество записей в инвентаризации
+      operationId: countInventoryRecords
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventory/count:
+    get:
+      tags:
+      - Inventories
+      summary: Получить количество инвентаризаций
+      description: Получить общее количество инвентаризаций на складе
+      operationId: countAllInventories
       parameters:
       - name: warehouseCode
         in: path
@@ -7816,52 +8303,6 @@ paths:
                 $ref: "#/components/schemas/ResponseTenantDto"
       security:
       - bearerAuth: []
-    delete:
-      tags:
-      - Tenant
-      summary: Удалить тенант
-      description: Удаляет тенант по коду
-      operationId: deleteTenant
-      parameters:
-      - name: tenantCode
-        in: path
-        description: Код тенанта
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-      security:
-      - bearerAuth: []
   /api/tenant/{tenantCode}/search:
     get:
       tags:
@@ -7954,46 +8395,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ResponseCountDto"
-      security:
-      - bearerAuth: []
-  /api/tenant/csv:
-    get:
-      tags:
-      - Tenants
-      summary: Скачать CSV файл тенантов
-      description: Возвращает CSV файл со списком тенантов
-      operationId: downloadTenantsCsv
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: string
       security:
       - bearerAuth: []
   /api/tenant/count:
@@ -8529,53 +8930,6 @@ paths:
               schema:
                 type: string
                 format: byte
-  /api/person/{login}/search:
-    get:
-      tags:
-      - Person
-      summary: Поиск пользователей по логину
-      description: "Получить список пользователей, соответствующих поисковому запр\
-        осу по логину"
-      operationId: searchPersonsByLogin
-      parameters:
-      - name: login
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseListPersonDto"
-      security:
-      - bearerAuth: []
   /api/person/{login}/search/count:
     get:
       tags:
@@ -9230,9 +9584,6 @@ components:
         gridPageSize:
           type: integer
           format: int32
-        isManager:
-          type: boolean
-          deprecated: true
         role:
           type: string
           enum:
@@ -9569,6 +9920,32 @@ components:
           $ref: "#/components/schemas/Metadata"
         payload:
           $ref: "#/components/schemas/OrderUploadRecordDto"
+    InventoryDto:
+      required:
+      - code
+      - name
+      - state
+      - warehouseCode
+      type: object
+      properties:
+        warehouseCode:
+          type: string
+        code:
+          type: string
+        name:
+          type: string
+        state:
+          type: string
+          enum:
+          - UPLOADING
+          - CLOSED
+    ResponseInventoryDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          $ref: "#/components/schemas/InventoryDto"
     AccountFilterDto:
       type: object
       properties:
@@ -9710,6 +10087,8 @@ components:
           - TO_ORDER_FROM_OUTSIDE
           - TO_WAREHOUSE_FROM_ORDER
           - TO_WAREHOUSE_FROM_WAREHOUSE
+        transitionTypeRu:
+          type: string
     TransitionFilterFlatDto:
       type: object
       properties:
@@ -9795,6 +10174,8 @@ components:
           type: string
           format: date-time
         transitionType:
+          type: string
+        transitionTypeRu:
           type: string
         debetSupplyId:
           type: string
@@ -10426,6 +10807,35 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/MainBookDto"
+    ResponseListInventoryDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          type: array
+          items:
+            $ref: "#/components/schemas/InventoryDto"
+    InventoryRecordDto:
+      type: object
+      properties:
+        warehouseCode:
+          type: string
+        inventoryCode:
+          type: string
+        shelfCode:
+          type: string
+        shelfName:
+          type: string
+    ResponseListInventoryRecordDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          type: array
+          items:
+            $ref: "#/components/schemas/InventoryRecordDto"
     ResponseListArticleDto:
       type: object
       properties:

@@ -1,6 +1,5 @@
 import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListTenantDto } from '../model/response-list-tenant-dto';
 import { ResponseTenantDto } from '../model/response-tenant-dto';
@@ -34,30 +33,6 @@ export declare class TenantService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
-    /**
-     * Удалить тенант
-     * Удаляет тенант по коду
-     * @endpoint delete /api/tenant/{tenantCode}
-     * @param tenantCode Код тенанта
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    deleteTenant(tenantCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    deleteTenant(tenantCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    deleteTenant(tenantCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
     /**
      * Получить тенант по коду
      * Возвращает тенант по его коду

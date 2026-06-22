@@ -166,31 +166,6 @@ export declare class SupplyService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
-     * Удалить поставку
-     * Удалить поставку по коду склада и коду поставки
-     * @endpoint delete /api/warehouse/{warehouseCode}/supply/{supplyCode}
-     * @param warehouseCode
-     * @param supplyCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    deleteSupply(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCommonDto>;
-    deleteSupply(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCommonDto>>;
-    deleteSupply(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCommonDto>>;
-    /**
      * Скачать записи разнесения в CSV формате
      * Экспортировать данные записей разнесения в CSV файл
      * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/csv
