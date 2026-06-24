@@ -7,9 +7,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { InventoryShelvesRecordDto } from './inventory-shelves-record-dto';
 import { Metadata } from './metadata';
-import { InventoryShelvedRecordDto } from './inventory-shelved-record-dto';
-export interface ResponseListInventoryShelvedRecordDto {
+export interface ResponseListInventoryShelvesRecordDto {
     metadata?: Metadata;
-    payload?: Array<InventoryShelvedRecordDto>;
+    payload?: Array<InventoryShelvesRecordDto>;
 }

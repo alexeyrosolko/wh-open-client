@@ -2471,15 +2471,15 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    clearInventoryShelvedRecords(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
+    clearInventoryShelvesRecords(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling clearInventoryShelvedRecords.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling clearInventoryShelvesRecords.');
         }
         if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
-            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling clearInventoryShelvedRecords.');
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling clearInventoryShelvesRecords.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
-            throw new Error('Required parameter inventoryCode was null or undefined when calling clearInventoryShelvedRecords.');
+            throw new Error('Required parameter inventoryCode was null or undefined when calling clearInventoryShelvesRecords.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -2563,15 +2563,15 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    countInventoryShelvedRecords(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
+    countInventoryShelvesRecords(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling countInventoryShelvedRecords.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countInventoryShelvesRecords.');
         }
         if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
-            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling countInventoryShelvedRecords.');
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling countInventoryShelvesRecords.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
-            throw new Error('Required parameter inventoryCode was null or undefined when calling countInventoryShelvedRecords.');
+            throw new Error('Required parameter inventoryCode was null or undefined when calling countInventoryShelvesRecords.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -2609,15 +2609,15 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    downloadInventoryShelvedRecordsCsv(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
+    downloadInventoryShelvesRecordsCsv(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadInventoryShelvedRecordsCsv.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadInventoryShelvesRecordsCsv.');
         }
         if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
-            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling downloadInventoryShelvedRecordsCsv.');
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling downloadInventoryShelvesRecordsCsv.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
-            throw new Error('Required parameter inventoryCode was null or undefined when calling downloadInventoryShelvedRecordsCsv.');
+            throw new Error('Required parameter inventoryCode was null or undefined when calling downloadInventoryShelvesRecordsCsv.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -2701,18 +2701,18 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getInventoryShelvedRecords(warehouseCode, inventoryProcessCode, inventoryCode, pageable, observe = 'body', reportProgress = false, options) {
+    getInventoryShelvesRecords(warehouseCode, inventoryProcessCode, inventoryCode, pageable, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling getInventoryShelvedRecords.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getInventoryShelvesRecords.');
         }
         if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
-            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling getInventoryShelvedRecords.');
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling getInventoryShelvesRecords.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
-            throw new Error('Required parameter inventoryCode was null or undefined when calling getInventoryShelvedRecords.');
+            throw new Error('Required parameter inventoryCode was null or undefined when calling getInventoryShelvesRecords.');
         }
         if (pageable === null || pageable === undefined) {
-            throw new Error('Required parameter pageable was null or undefined when calling getInventoryShelvedRecords.');
+            throw new Error('Required parameter pageable was null or undefined when calling getInventoryShelvesRecords.');
         }
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);

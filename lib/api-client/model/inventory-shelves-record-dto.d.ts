@@ -7,7 +7,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export interface InventoryShelvedRecordDto {
+export interface InventoryShelvesRecordDto {
     warehouseCode?: string;
     inventoryCode?: string;
     shelfCode?: string;

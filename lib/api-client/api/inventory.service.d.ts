@@ -5,7 +5,7 @@ import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseInventoryDto } from '../model/response-inventory-dto';
 import { ResponseListInventoryDto } from '../model/response-list-inventory-dto';
-import { ResponseListInventoryShelvedRecordDto } from '../model/response-list-inventory-shelved-record-dto';
+import { ResponseListInventoryShelvesRecordDto } from '../model/response-list-inventory-shelves-record-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
 import * as i0 from "@angular/core";
@@ -49,17 +49,17 @@ export declare class InventoryService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    clearInventoryShelvedRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    clearInventoryShelvesRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
-    clearInventoryShelvedRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    clearInventoryShelvesRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
-    clearInventoryShelvedRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    clearInventoryShelvesRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
@@ -99,17 +99,17 @@ export declare class InventoryService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    countInventoryShelvedRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    countInventoryShelvesRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCountDto>;
-    countInventoryShelvedRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    countInventoryShelvesRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
-    countInventoryShelvedRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    countInventoryShelvesRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
@@ -124,17 +124,17 @@ export declare class InventoryService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    downloadInventoryShelvedRecordsCsv(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    downloadInventoryShelvesRecordsCsv(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<string>;
-    downloadInventoryShelvedRecordsCsv(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    downloadInventoryShelvesRecordsCsv(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
-    downloadInventoryShelvedRecordsCsv(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    downloadInventoryShelvesRecordsCsv(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
@@ -175,21 +175,21 @@ export declare class InventoryService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    getInventoryShelvedRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
+    getInventoryShelvesRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<ResponseListInventoryShelvedRecordDto>;
-    getInventoryShelvedRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
+    }): Observable<ResponseListInventoryShelvesRecordDto>;
+    getInventoryShelvesRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListInventoryShelvedRecordDto>>;
-    getInventoryShelvedRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
+    }): Observable<HttpResponse<ResponseListInventoryShelvesRecordDto>>;
+    getInventoryShelvesRecords(warehouseCode: string, inventoryProcessCode: string, inventoryCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListInventoryShelvedRecordDto>>;
+    }): Observable<HttpEvent<ResponseListInventoryShelvesRecordDto>>;
     /**
      * Поиск инвентаризаций
      * @endpoint get /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/{inventoryCode}/search

@@ -8010,7 +8010,7 @@ paths:
       tags:
       - Inventory
       summary: Получить записи инвентаризации
-      operationId: getInventoryShelvedRecords
+      operationId: getInventoryShelvesRecords
       parameters:
       - name: warehouseCode
         in: path
@@ -8062,14 +8062,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ResponseListInventoryShelvedRecordDto"
+                $ref: "#/components/schemas/ResponseListInventoryShelvesRecordDto"
       security:
       - bearerAuth: []
     delete:
       tags:
       - Inventory
       summary: Очистить записи инвентаризации
-      operationId: clearInventoryShelvedRecords
+      operationId: clearInventoryShelvesRecords
       parameters:
       - name: warehouseCode
         in: path
@@ -8124,7 +8124,7 @@ paths:
       tags:
       - Inventory
       summary: Скачать записи инвентаризации в CSV
-      operationId: downloadInventoryShelvedRecordsCsv
+      operationId: downloadInventoryShelvesRecordsCsv
       parameters:
       - name: warehouseCode
         in: path
@@ -8179,7 +8179,7 @@ paths:
       tags:
       - Inventory
       summary: Количество записей инвентаризации
-      operationId: countInventoryShelvedRecords
+      operationId: countInventoryShelvesRecords
       parameters:
       - name: warehouseCode
         in: path
@@ -11256,7 +11256,7 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/InventoryDto"
-    InventoryShelvedRecordDto:
+    InventoryShelvesRecordDto:
       type: object
       properties:
         warehouseCode:
@@ -11267,7 +11267,7 @@ components:
           type: string
         shelfName:
           type: string
-    ResponseListInventoryShelvedRecordDto:
+    ResponseListInventoryShelvesRecordDto:
       type: object
       properties:
         metadata:
@@ -11275,7 +11275,7 @@ components:
         payload:
           type: array
           items:
-            $ref: "#/components/schemas/InventoryShelvedRecordDto"
+            $ref: "#/components/schemas/InventoryShelvesRecordDto"
     ResponseListArticleDto:
       type: object
       properties:
