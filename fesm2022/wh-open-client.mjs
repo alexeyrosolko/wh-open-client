@@ -2239,9 +2239,12 @@ class InventoriesService extends BaseService {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
-    addInventory(warehouseCode, inventoryDto, observe = 'body', reportProgress = false, options) {
+    addInventory(warehouseCode, inventoryProcessCode, inventoryDto, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling addInventory.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling addInventory.');
         }
         if (inventoryDto === null || inventoryDto === undefined) {
             throw new Error('Required parameter inventoryDto was null or undefined when calling addInventory.');
@@ -2278,7 +2281,7 @@ class InventoriesService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2291,9 +2294,12 @@ class InventoriesService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    countAllInventories(warehouseCode, observe = 'body', reportProgress = false, options) {
+    countAllInventories(warehouseCode, inventoryProcessCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling countAllInventories.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling countAllInventories.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -2319,7 +2325,7 @@ class InventoriesService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/count`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/count`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2331,9 +2337,12 @@ class InventoriesService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getInventories(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
+    getInventories(warehouseCode, inventoryProcessCode, pageable, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling getInventories.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling getInventories.');
         }
         if (pageable === null || pageable === undefined) {
             throw new Error('Required parameter pageable was null or undefined when calling getInventories.');
@@ -2364,7 +2373,7 @@ class InventoriesService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2410,9 +2419,12 @@ class InventoryService extends BaseService {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
-    changeInventoryState(warehouseCode, inventoryCode, expectedState, newState, observe = 'body', reportProgress = false, options) {
+    changeInventoryState(warehouseCode, inventoryProcessCode, inventoryCode, expectedState, newState, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling changeInventoryState.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling changeInventoryState.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
             throw new Error('Required parameter inventoryCode was null or undefined when calling changeInventoryState.');
@@ -2447,7 +2459,7 @@ class InventoryService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/state/from/${this.configuration.encodeParam({ name: "expectedState", value: expectedState, in: "path", style: "simple", explode: false, dataType: "'UPLOADING' | 'CLOSED'", dataFormat: undefined })}/to/${this.configuration.encodeParam({ name: "newState", value: newState, in: "path", style: "simple", explode: false, dataType: "'UPLOADING' | 'CLOSED'", dataFormat: undefined })}`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/state/from/${this.configuration.encodeParam({ name: "expectedState", value: expectedState, in: "path", style: "simple", explode: false, dataType: "'UPLOADING' | 'CLOSED'", dataFormat: undefined })}/to/${this.configuration.encodeParam({ name: "newState", value: newState, in: "path", style: "simple", explode: false, dataType: "'UPLOADING' | 'CLOSED'", dataFormat: undefined })}`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('post', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2459,12 +2471,15 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    clearInventoryRecords(warehouseCode, inventoryCode, observe = 'body', reportProgress = false, options) {
+    clearInventoryShelvedRecords(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling clearInventoryRecords.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling clearInventoryShelvedRecords.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling clearInventoryShelvedRecords.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
-            throw new Error('Required parameter inventoryCode was null or undefined when calling clearInventoryRecords.');
+            throw new Error('Required parameter inventoryCode was null or undefined when calling clearInventoryShelvedRecords.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -2490,7 +2505,7 @@ class InventoryService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('delete', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2502,9 +2517,12 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    countInventoryByCode(warehouseCode, inventoryCode, observe = 'body', reportProgress = false, options) {
+    countInventoryByCode(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling countInventoryByCode.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling countInventoryByCode.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
             throw new Error('Required parameter inventoryCode was null or undefined when calling countInventoryByCode.');
@@ -2533,7 +2551,7 @@ class InventoryService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search/count`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search/count`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2545,12 +2563,15 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    countInventoryRecords(warehouseCode, inventoryCode, observe = 'body', reportProgress = false, options) {
+    countInventoryShelvedRecords(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling countInventoryRecords.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countInventoryShelvedRecords.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling countInventoryShelvedRecords.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
-            throw new Error('Required parameter inventoryCode was null or undefined when calling countInventoryRecords.');
+            throw new Error('Required parameter inventoryCode was null or undefined when calling countInventoryShelvedRecords.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -2576,7 +2597,7 @@ class InventoryService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/count`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/count`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2588,12 +2609,15 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    downloadInventoryRecordsCsv(warehouseCode, inventoryCode, observe = 'body', reportProgress = false, options) {
+    downloadInventoryShelvedRecordsCsv(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadInventoryRecordsCsv.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling downloadInventoryShelvedRecordsCsv.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling downloadInventoryShelvedRecordsCsv.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
-            throw new Error('Required parameter inventoryCode was null or undefined when calling downloadInventoryRecordsCsv.');
+            throw new Error('Required parameter inventoryCode was null or undefined when calling downloadInventoryShelvedRecordsCsv.');
         }
         let localVarHeaders = this.defaultHeaders;
         // authentication (bearerAuth) required
@@ -2619,7 +2643,7 @@ class InventoryService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/csv`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record/csv`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2631,9 +2655,12 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getInventoryByCode(warehouseCode, inventoryCode, observe = 'body', reportProgress = false, options) {
+    getInventoryByCode(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling getInventoryByCode.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling getInventoryByCode.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
             throw new Error('Required parameter inventoryCode was null or undefined when calling getInventoryByCode.');
@@ -2662,7 +2689,7 @@ class InventoryService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2674,15 +2701,18 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    getInventoryRecords(warehouseCode, inventoryCode, pageable, observe = 'body', reportProgress = false, options) {
+    getInventoryShelvedRecords(warehouseCode, inventoryProcessCode, inventoryCode, pageable, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
-            throw new Error('Required parameter warehouseCode was null or undefined when calling getInventoryRecords.');
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getInventoryShelvedRecords.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling getInventoryShelvedRecords.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
-            throw new Error('Required parameter inventoryCode was null or undefined when calling getInventoryRecords.');
+            throw new Error('Required parameter inventoryCode was null or undefined when calling getInventoryShelvedRecords.');
         }
         if (pageable === null || pageable === undefined) {
-            throw new Error('Required parameter pageable was null or undefined when calling getInventoryRecords.');
+            throw new Error('Required parameter pageable was null or undefined when calling getInventoryShelvedRecords.');
         }
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
@@ -2710,7 +2740,7 @@ class InventoryService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/record`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2723,9 +2753,12 @@ class InventoryService extends BaseService {
             reportProgress: reportProgress
         });
     }
-    searchInventories(warehouseCode, inventoryCode, observe = 'body', reportProgress = false, options) {
+    searchInventories(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling searchInventories.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling searchInventories.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
             throw new Error('Required parameter inventoryCode was null or undefined when calling searchInventories.');
@@ -2754,7 +2787,7 @@ class InventoryService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -2793,15 +2826,400 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
  * Do not edit the class manually.
  */
 /* tslint:disable:no-unused-variable member-ordering */
+class InventoryProcessService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    changeInventoryProcessState(warehouseCode, inventoryProcessCode, expectedState, newState, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling changeInventoryProcessState.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling changeInventoryProcessState.');
+        }
+        if (expectedState === null || expectedState === undefined) {
+            throw new Error('Required parameter expectedState was null or undefined when calling changeInventoryProcessState.');
+        }
+        if (newState === null || newState === undefined) {
+            throw new Error('Required parameter newState was null or undefined when calling changeInventoryProcessState.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/state/from/${this.configuration.encodeParam({ name: "expectedState", value: expectedState, in: "path", style: "simple", explode: false, dataType: "'UPLOADING' | 'CLOSED'", dataFormat: undefined })}/to/${this.configuration.encodeParam({ name: "newState", value: newState, in: "path", style: "simple", explode: false, dataType: "'UPLOADING' | 'CLOSED'", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countInventoryProcessByCode(warehouseCode, inventoryProcessCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countInventoryProcessByCode.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling countInventoryProcessByCode.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getInventoryProcessByCode(warehouseCode, inventoryProcessCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getInventoryProcessByCode.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling getInventoryProcessByCode.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    searchInventoryProcesses(warehouseCode, inventoryProcessCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling searchInventoryProcesses.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling searchInventoryProcesses.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/search`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: InventoryProcessService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: InventoryProcessService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: InventoryProcessService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
+class InventoryProcessesService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    addInventoryProcess(warehouseCode, inventoryProcessDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling addInventoryProcess.');
+        }
+        if (inventoryProcessDto === null || inventoryProcessDto === undefined) {
+            throw new Error('Required parameter inventoryProcessDto was null or undefined when calling addInventoryProcess.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: inventoryProcessDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    countAllInventoryProcesses(warehouseCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling countAllInventoryProcesses.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/count`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getInventoryProcesses(warehouseCode, pageable, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getInventoryProcesses.');
+        }
+        if (pageable === null || pageable === undefined) {
+            throw new Error('Required parameter pageable was null or undefined when calling getInventoryProcesses.');
+        }
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters, 'pageable', pageable, QueryParamStyle.Form, true);
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            params: localVarQueryParameters.toHttpParams(),
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: InventoryProcessesService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: InventoryProcessesService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: InventoryProcessesService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
 class InventoryTaskService extends BaseService {
     httpClient;
     constructor(httpClient, basePath, configuration) {
         super(basePath, configuration);
         this.httpClient = httpClient;
     }
-    getInventoryTasksByInventoryCode(warehouseCode, inventoryCode, observe = 'body', reportProgress = false, options) {
+    getInventoryTasksByInventoryCode(warehouseCode, inventoryProcessCode, inventoryCode, observe = 'body', reportProgress = false, options) {
         if (warehouseCode === null || warehouseCode === undefined) {
             throw new Error('Required parameter warehouseCode was null or undefined when calling getInventoryTasksByInventoryCode.');
+        }
+        if (inventoryProcessCode === null || inventoryProcessCode === undefined) {
+            throw new Error('Required parameter inventoryProcessCode was null or undefined when calling getInventoryTasksByInventoryCode.');
         }
         if (inventoryCode === null || inventoryCode === undefined) {
             throw new Error('Required parameter inventoryCode was null or undefined when calling getInventoryTasksByInventoryCode.');
@@ -2830,7 +3248,7 @@ class InventoryTaskService extends BaseService {
                 responseType_ = 'blob';
             }
         }
-        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/task`;
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventoryprocess/${this.configuration.encodeParam({ name: "inventoryProcessCode", value: inventoryProcessCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/inventory/${this.configuration.encodeParam({ name: "inventoryCode", value: inventoryCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/task`;
         const { basePath, withCredentials } = this.configuration;
         return this.httpClient.request('get', `${basePath}${localVarPath}`, {
             context: localVarHttpContext,
@@ -10471,7 +10889,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
                     type: Optional
                 }] }] });
 
-const APIS = [AbsentArticlesService, AbsentShelfService, AdminService, ArticleService, ArticlesService, ExampleService, HelloWorldService, HelperService, HistoryService, ImageService, InventoriesService, InventoryService, InventoryTaskService, LoginService, MainBookService, ManagersService, OrderService, OrderAbsentRecordService, OrderRecordsService, OrderTaskService, OrderTransformedRecordsService, OrderTransitionService, OrderUploadService, OrderUploadAbsentArticleService, OrdersService, PersonService, PrintService, PrintAgentService, PrintersService, ShelfService, StockService, SuppliesService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, TurnoverService, WarehouseService, WarehouseUploadService];
+const APIS = [AbsentArticlesService, AbsentShelfService, AdminService, ArticleService, ArticlesService, ExampleService, HelloWorldService, HelperService, HistoryService, ImageService, InventoriesService, InventoryService, InventoryProcessService, InventoryProcessesService, InventoryTaskService, LoginService, MainBookService, ManagersService, OrderService, OrderAbsentRecordService, OrderRecordsService, OrderTaskService, OrderTransformedRecordsService, OrderTransitionService, OrderUploadService, OrderUploadAbsentArticleService, OrdersService, PersonService, PrintService, PrintAgentService, PrintersService, ShelfService, StockService, SuppliesService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, TurnoverService, WarehouseService, WarehouseUploadService];
 
 /**
  * OpenAPI definition
@@ -10529,6 +10947,23 @@ var InventoryDto;
         Closed: 'CLOSED'
     };
 })(InventoryDto || (InventoryDto = {}));
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+var InventoryProcessDto;
+(function (InventoryProcessDto) {
+    InventoryProcessDto.StateEnum = {
+        Uploading: 'UPLOADING',
+        Closed: 'CLOSED'
+    };
+})(InventoryProcessDto || (InventoryProcessDto = {}));
 
 /**
  * OpenAPI definition
@@ -11082,5 +11517,5 @@ function provideApi(configOrBasePath) {
  * Generated bundle index. Do not edit.
  */
 
-export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, ExampleService, HelloWorldService, HelperService, HistoryService, ImageService, InventoriesService, InventoryDto, InventoryService, InventoryTaskService, LoginService, MainBookService, ManagersService, OrderAbsentRecordService, OrderDto, OrderRecordsService, OrderService, OrderTaskService, OrderTransformedRecordsService, OrderTransitionService, OrderUploadAbsentArticleService, OrderUploadService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, StockService, SuppliesService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionFilterFlatDto, TransitionHistoryDto, TransitionService, TurnoverService, WarehouseDto, WarehouseService, WarehouseUploadService, provideApi };
+export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, ExampleService, HelloWorldService, HelperService, HistoryService, ImageService, InventoriesService, InventoryDto, InventoryProcessDto, InventoryProcessService, InventoryProcessesService, InventoryService, InventoryTaskService, LoginService, MainBookService, ManagersService, OrderAbsentRecordService, OrderDto, OrderRecordsService, OrderService, OrderTaskService, OrderTransformedRecordsService, OrderTransitionService, OrderUploadAbsentArticleService, OrderUploadService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, StockService, SuppliesService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionFilterFlatDto, TransitionHistoryDto, TransitionService, TurnoverService, WarehouseDto, WarehouseService, WarehouseUploadService, provideApi };
 //# sourceMappingURL=wh-open-client.mjs.map

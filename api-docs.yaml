@@ -2630,15 +2630,185 @@ paths:
                 $ref: "#/components/schemas/ResponseOrderDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/inventory:
+  /api/warehouse/{warehouseCode}/inventoryprocess:
+    get:
+      tags:
+      - InventoryProcesses
+      summary: Получить все процессы инвентаризации
+      operationId: getInventoryProcesses
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageable
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/Pageable"
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListInventoryProcessDto"
+      security:
+      - bearerAuth: []
+    post:
+      tags:
+      - InventoryProcesses
+      summary: Создать процесс инвентаризации
+      operationId: addInventoryProcess
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InventoryProcessDto"
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseInventoryProcessDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/state/from/{expectedState}/to/{newState}:
+    post:
+      tags:
+      - InventoryProcess
+      summary: Изменить состояние процесса инвентаризации
+      operationId: changeInventoryProcessState
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: expectedState
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - UPLOADING
+          - CLOSED
+      - name: newState
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - UPLOADING
+          - CLOSED
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseInventoryProcessDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory:
     get:
       tags:
       - Inventories
       summary: Получить все инвентаризации
-      description: Получить список всех инвентаризаций текущего склада с пагинацией
       operationId: getInventories
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -2685,10 +2855,14 @@ paths:
       tags:
       - Inventories
       summary: Создать инвентаризацию
-      description: Создать новую инвентаризацию на складе
       operationId: addInventory
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -2732,16 +2906,19 @@ paths:
                 $ref: "#/components/schemas/ResponseInventoryDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/state/from/{expectedState}/to/{newState}:
-    post:
+  ? /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/{inventoryCode}/state/from/{expectedState}/to/{newState}
+  : post:
       tags:
       - Inventory
       summary: Изменить состояние инвентаризации
-      description: "Изменить состояние инвентаризации: выполнить переход из ожидае\
-        мого состояния в новое"
       operationId: changeInventoryState
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -7458,15 +7635,169 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}:
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}:
+    get:
+      tags:
+      - InventoryProcess
+      summary: Получить процесс инвентаризации по коду
+      operationId: getInventoryProcessByCode
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseInventoryProcessDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/search:
+    get:
+      tags:
+      - InventoryProcess
+      summary: Поиск процессов инвентаризации
+      operationId: searchInventoryProcesses
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListInventoryProcessDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/search/count:
+    get:
+      tags:
+      - InventoryProcess
+      summary: Посчитать процессы по коду
+      operationId: countInventoryProcessByCode
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/{inventoryCode}:
     get:
       tags:
       - Inventory
       summary: Получить инвентаризацию по коду
-      description: Вернуть информацию об инвентаризации по коду склада и коду инвентаризации
       operationId: getInventoryByCode
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -7509,15 +7840,19 @@ paths:
                 $ref: "#/components/schemas/ResponseInventoryDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/task:
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/{inventoryCode}/task:
     get:
       tags:
       - InventoryTask
       summary: Получить задачи по инвентаризации
-      description: Получить список задач для указанной инвентаризации на складе
       operationId: getInventoryTasksByInventoryCode
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -7560,15 +7895,19 @@ paths:
                 $ref: "#/components/schemas/ResponseListTaskDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/search:
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/{inventoryCode}/search:
     get:
       tags:
       - Inventory
       summary: Поиск инвентаризаций
-      description: Найти список инвентаризаций по коду склада и шаблону кода инвентаризации
       operationId: searchInventories
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -7611,16 +7950,19 @@ paths:
                 $ref: "#/components/schemas/ResponseListInventoryDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/search/count:
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/{inventoryCode}/search/count:
     get:
       tags:
       - Inventory
       summary: Посчитать инвентаризации по коду
-      description: "Вернуть количество инвентаризаций, соответствующих шаблону код\
-        а"
       operationId: countInventoryByCode
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -7663,15 +8005,19 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/record:
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/{inventoryCode}/record:
     get:
       tags:
       - Inventory
       summary: Получить записи инвентаризации
-      description: Получить список записей инвентаризации с пагинацией
-      operationId: getInventoryRecords
+      operationId: getInventoryShelvedRecords
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -7716,17 +8062,21 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ResponseListInventoryRecordDto"
+                $ref: "#/components/schemas/ResponseListInventoryShelvedRecordDto"
       security:
       - bearerAuth: []
     delete:
       tags:
       - Inventory
       summary: Очистить записи инвентаризации
-      description: Удалить все записи инвентаризации
-      operationId: clearInventoryRecords
+      operationId: clearInventoryShelvedRecords
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -7769,15 +8119,19 @@ paths:
                 $ref: "#/components/schemas/ResponseCommonDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/record/csv:
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/{inventoryCode}/record/csv:
     get:
       tags:
       - Inventory
       summary: Скачать записи инвентаризации в CSV
-      description: Экспортировать записи инвентаризации в CSV файл
-      operationId: downloadInventoryRecordsCsv
+      operationId: downloadInventoryShelvedRecordsCsv
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -7820,15 +8174,19 @@ paths:
                 type: string
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/inventory/{inventoryCode}/record/count:
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/{inventoryCode}/record/count:
     get:
       tags:
       - Inventory
-      summary: Получить количество записей инвентаризации
-      description: Получить общее количество записей в инвентаризации
-      operationId: countInventoryRecords
+      summary: Количество записей инвентаризации
+      operationId: countInventoryShelvedRecords
       parameters:
       - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
         in: path
         required: true
         schema:
@@ -7871,13 +8229,62 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/inventory/count:
+  /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/count:
     get:
       tags:
       - Inventories
       summary: Получить количество инвентаризаций
-      description: Получить общее количество инвентаризаций на складе
       operationId: countAllInventories
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: inventoryProcessCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/inventoryprocess/count:
+    get:
+      tags:
+      - InventoryProcesses
+      summary: Количество процессов инвентаризации
+      operationId: countAllInventoryProcesses
       parameters:
       - name: warehouseCode
         in: path
@@ -9920,15 +10327,39 @@ components:
           $ref: "#/components/schemas/Metadata"
         payload:
           $ref: "#/components/schemas/OrderUploadRecordDto"
-    InventoryDto:
+    InventoryProcessDto:
       required:
       - code
-      - name
       - state
       - warehouseCode
       type: object
       properties:
         warehouseCode:
+          type: string
+        code:
+          type: string
+        state:
+          type: string
+          enum:
+          - UPLOADING
+          - CLOSED
+    ResponseInventoryProcessDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          $ref: "#/components/schemas/InventoryProcessDto"
+    InventoryDto:
+      required:
+      - code
+      - name
+      - state
+      type: object
+      properties:
+        warehouseCode:
+          type: string
+        inventoryProcessCode:
           type: string
         code:
           type: string
@@ -10807,6 +11238,15 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/MainBookDto"
+    ResponseListInventoryProcessDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          type: array
+          items:
+            $ref: "#/components/schemas/InventoryProcessDto"
     ResponseListInventoryDto:
       type: object
       properties:
@@ -10816,7 +11256,7 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/InventoryDto"
-    InventoryRecordDto:
+    InventoryShelvedRecordDto:
       type: object
       properties:
         warehouseCode:
@@ -10827,7 +11267,7 @@ components:
           type: string
         shelfName:
           type: string
-    ResponseListInventoryRecordDto:
+    ResponseListInventoryShelvedRecordDto:
       type: object
       properties:
         metadata:
@@ -10835,7 +11275,7 @@ components:
         payload:
           type: array
           items:
-            $ref: "#/components/schemas/InventoryRecordDto"
+            $ref: "#/components/schemas/InventoryShelvedRecordDto"
     ResponseListArticleDto:
       type: object
       properties:

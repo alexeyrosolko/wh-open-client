@@ -7,14 +7,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export interface InventoryDto {
-    warehouseCode?: string;
-    inventoryProcessCode?: string;
+export interface InventoryProcessDto {
+    warehouseCode: string;
     code: string;
-    name: string;
-    state: InventoryDto.StateEnum;
+    state: InventoryProcessDto.StateEnum;
 }
-export declare namespace InventoryDto {
+export declare namespace InventoryProcessDto {
     const StateEnum: {
         readonly Uploading: "UPLOADING";
         readonly Closed: "CLOSED";

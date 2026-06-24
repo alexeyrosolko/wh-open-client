@@ -7,9 +7,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { InventoryProcessDto } from './inventory-process-dto';
 import { Metadata } from './metadata';
-import { InventoryRecordDto } from './inventory-record-dto';
-export interface ResponseListInventoryRecordDto {
+export interface ResponseInventoryProcessDto {
     metadata?: Metadata;
-    payload?: Array<InventoryRecordDto>;
+    payload?: InventoryProcessDto;
 }

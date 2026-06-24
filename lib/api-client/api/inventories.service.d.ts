@@ -13,74 +13,74 @@ export declare class InventoriesService extends BaseService {
     constructor(httpClient: HttpClient, basePath: string | string[], configuration?: Configuration);
     /**
      * Создать инвентаризацию
-     * Создать новую инвентаризацию на складе
-     * @endpoint post /api/warehouse/{warehouseCode}/inventory
+     * @endpoint post /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory
      * @param warehouseCode
+     * @param inventoryProcessCode
      * @param inventoryDto
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    addInventory(warehouseCode: string, inventoryDto: InventoryDto, observe?: 'body', reportProgress?: boolean, options?: {
+    addInventory(warehouseCode: string, inventoryProcessCode: string, inventoryDto: InventoryDto, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseInventoryDto>;
-    addInventory(warehouseCode: string, inventoryDto: InventoryDto, observe?: 'response', reportProgress?: boolean, options?: {
+    addInventory(warehouseCode: string, inventoryProcessCode: string, inventoryDto: InventoryDto, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseInventoryDto>>;
-    addInventory(warehouseCode: string, inventoryDto: InventoryDto, observe?: 'events', reportProgress?: boolean, options?: {
+    addInventory(warehouseCode: string, inventoryProcessCode: string, inventoryDto: InventoryDto, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseInventoryDto>>;
     /**
      * Получить количество инвентаризаций
-     * Получить общее количество инвентаризаций на складе
-     * @endpoint get /api/warehouse/{warehouseCode}/inventory/count
+     * @endpoint get /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory/count
      * @param warehouseCode
+     * @param inventoryProcessCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    countAllInventories(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    countAllInventories(warehouseCode: string, inventoryProcessCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCountDto>;
-    countAllInventories(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    countAllInventories(warehouseCode: string, inventoryProcessCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
-    countAllInventories(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    countAllInventories(warehouseCode: string, inventoryProcessCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
      * Получить все инвентаризации
-     * Получить список всех инвентаризаций текущего склада с пагинацией
-     * @endpoint get /api/warehouse/{warehouseCode}/inventory
+     * @endpoint get /api/warehouse/{warehouseCode}/inventoryprocess/{inventoryProcessCode}/inventory
      * @param warehouseCode
+     * @param inventoryProcessCode
      * @param pageable
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    getInventories(warehouseCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
+    getInventories(warehouseCode: string, inventoryProcessCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseListInventoryDto>;
-    getInventories(warehouseCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
+    getInventories(warehouseCode: string, inventoryProcessCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListInventoryDto>>;
-    getInventories(warehouseCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
+    getInventories(warehouseCode: string, inventoryProcessCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
