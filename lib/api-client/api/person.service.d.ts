@@ -131,6 +131,29 @@ export declare class PersonService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListPersonDto>>;
     /**
+     * Получить текущего пользователя
+     * Возвращает пользователя, определённого по Bearer токену из заголовка Authorization
+     * @endpoint get /api/person/current
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    getCurrentPerson(observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponsePersonDto>;
+    getCurrentPerson(observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponsePersonDto>>;
+    getCurrentPerson(observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponsePersonDto>>;
+    /**
      * Получить пользователя по логину
      * Получить данные конкретного пользователя по его логину
      * @endpoint get /api/person/{login}
