@@ -91,7 +91,7 @@ export declare class SupplyTransitionService extends BaseService {
     /**
      * getSupplyRecordsWithoutPriceRest
      * getSupplyRecordsWithoutPriceRest
-     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/transition/sparepart/{articleCode}/rest
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/transition/article/{articleCode}/rest
      * @param warehouseCode
      * @param supplyCode
      * @param articleCode

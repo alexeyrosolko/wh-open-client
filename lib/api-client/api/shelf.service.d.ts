@@ -38,6 +38,31 @@ export declare class ShelfService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseShelfDto>>;
     /**
+     * Создать несколько полок на складе
+     * Создать несколько новых полок на складе за один запрос
+     * @endpoint post /api/warehouse/{warehouseCode}/shelf/list
+     * @param warehouseCode
+     * @param shelfDto
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    addShelves(warehouseCode: string, shelfDto: Array<ShelfDto>, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseListShelfDto>;
+    addShelves(warehouseCode: string, shelfDto: Array<ShelfDto>, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseListShelfDto>>;
+    addShelves(warehouseCode: string, shelfDto: Array<ShelfDto>, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseListShelfDto>>;
+    /**
      * Скопировать полки в буфер обмена
      * Скопировать данные полок склада в буфер обмена
      * @endpoint get /api/warehouse/{warehouseCode}/shelf/csv/clipboard

@@ -43,14 +43,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -94,14 +94,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -140,14 +140,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -191,14 +191,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -243,14 +243,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -290,14 +290,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -335,14 +335,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -392,14 +392,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -438,14 +438,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -489,14 +489,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -542,14 +542,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -599,14 +599,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -651,14 +651,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -708,14 +708,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -761,14 +761,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -812,14 +812,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -863,14 +863,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -914,14 +914,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -965,14 +965,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1016,14 +1016,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1072,14 +1072,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1128,14 +1128,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1178,14 +1178,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1229,14 +1229,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1291,14 +1291,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1342,14 +1342,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1398,14 +1398,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1474,14 +1474,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1494,13 +1494,13 @@ paths:
                 $ref: "#/components/schemas/ResponseSupplyDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendsparepart/movetospareparts:
+  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle/movetoarticles:
     post:
       tags:
       - Supply
       summary: Переместить отсутствующие товары в запчасти
       description: Переместить все отсутствующие товары в статус активных запчастей
-      operationId: moveAbsentArticlesToSpareParts
+      operationId: moveAbsentArticlesToArticles
       parameters:
       - name: warehouseCode
         in: path
@@ -1525,14 +1525,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1545,13 +1545,13 @@ paths:
                 $ref: "#/components/schemas/ResponseCommonDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle/movetospareparts:
+  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendarticle/movetoarticles:
     post:
       tags:
       - Supply
       summary: Переместить отсутствующие товары в запчасти
       description: Переместить все отсутствующие товары в статус активных запчастей
-      operationId: moveAbsentArticlesToSpareParts_1
+      operationId: moveAbsentArticlesToArticles_1
       parameters:
       - name: warehouseCode
         in: path
@@ -1576,14 +1576,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1642,14 +1642,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1693,14 +1693,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1744,14 +1744,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1762,6 +1762,60 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ResponseShelfDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/shelf/list:
+    post:
+      tags:
+      - Shelf
+      summary: Создать несколько полок на складе
+      description: Создать несколько новых полок на складе за один запрос
+      operationId: addShelves
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/ShelfDto"
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListShelfDto"
       security:
       - bearerAuth: []
   /api/warehouse/{warehouseCode}/shelf/csv:
@@ -1790,14 +1844,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1846,14 +1900,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1892,14 +1946,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1943,14 +1997,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -1990,14 +2044,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2042,14 +2096,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2093,14 +2147,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2144,14 +2198,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2200,14 +2254,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2256,14 +2310,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2306,14 +2360,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2357,14 +2411,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2418,14 +2472,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2469,14 +2523,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2525,14 +2579,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2610,14 +2664,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2660,14 +2714,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2710,14 +2764,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2776,14 +2830,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2831,14 +2885,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2886,14 +2940,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -2957,14 +3011,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3004,14 +3058,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3056,14 +3110,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3108,14 +3162,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3154,14 +3208,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3200,14 +3254,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3246,14 +3300,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3312,14 +3366,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3357,14 +3411,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3377,7 +3431,412 @@ paths:
                 $ref: "#/components/schemas/ResponseTenantDto"
       security:
       - bearerAuth: []
-  /api/sparepart:
+  /api/printer:
+    get:
+      tags:
+      - Printers
+      summary: Получить список принтеров
+      description: Возвращает список всех принтеров с пагинацией
+      operationId: getPrinters
+      parameters:
+      - name: pageable
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/Pageable"
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListPrinterDto"
+    post:
+      tags:
+      - Printers
+      summary: Добавить принтер в тенант
+      description: Добавить принтер в тенант
+      operationId: createPrinter
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PrinterDto"
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponsePrinterDto"
+      security:
+      - bearerAuth: []
+  /api/print:
+    post:
+      tags:
+      - Print
+      summary: Добавить задание печати
+      description: Создать новое задание печати. Передается только payload. Пользователь
+        берется из токена. Принтер из настроек.
+      operationId: addPrintTask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PrintTaskDto"
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+      security:
+      - bearerAuth: []
+  /api/person:
+    get:
+      tags:
+      - Person
+      summary: Получить всех пользователей
+      description: Получить список всех пользователей системы. Нужно при раздаче прав
+      operationId: getAllPersons
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListPersonDto"
+      security:
+      - bearerAuth: []
+    post:
+      tags:
+      - Person
+      summary: Создать пользователя
+      description: Создать нового пользователя
+      operationId: createPerson
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PersonDto"
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponsePersonDto"
+      security:
+      - bearerAuth: []
+  /api/manager:
+    post:
+      tags:
+      - Managers
+      summary: Создать менеджера
+      description: Создать нового менеджера (требуется права администратора)
+      operationId: createManager
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ManagerDto"
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseManagerDto"
+      security:
+      - bearerAuth: []
+  /api/managers:
+    post:
+      tags:
+      - Managers
+      summary: Создать менеджера
+      description: Создать нового менеджера (требуется права администратора)
+      operationId: createManager_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ManagerDto"
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseManagerDto"
+      security:
+      - bearerAuth: []
+  /api/login:
+    post:
+      tags:
+      - Login
+      summary: Аутентификация пользователя
+      description: "Аутентифицирует пользователя по логину и паролю, возвращает от\
+        вет с заголовком авторизации"
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginDto"
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+  /api/barcode:
+    post:
+      tags:
+      - Image
+      summary: Получить изображение штрих-кода
+      description: Получить изображение штрих-кода в формате PNG по коду
+      operationId: getBarImage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: "#/components/schemas/PrintNameBarCountPayload"
+              - $ref: "#/components/schemas/PrintSringPayload"
+        required: true
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            image/png:
+              schema:
+                type: string
+                format: byte
+  /api/article:
     get:
       tags:
       - Articles
@@ -3404,14 +3863,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3449,14 +3908,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3469,7 +3928,7 @@ paths:
                 $ref: "#/components/schemas/ResponseArticleDto"
       security:
       - bearerAuth: []
-  /api/sparepart/csv:
+  /api/article/csv:
     get:
       tags:
       - Articles
@@ -3489,14 +3948,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3539,14 +3998,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3559,7 +4018,7 @@ paths:
                 $ref: "#/components/schemas/ResponseCommonDto"
       security:
       - bearerAuth: []
-  /api/sparepart/csv/clipboard:
+  /api/article/csv/clipboard:
     get:
       tags:
       - Articles
@@ -3579,14 +4038,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3624,14 +4083,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -3644,411 +4103,6 @@ paths:
                 $ref: "#/components/schemas/ResponseCommonDto"
       security:
       - bearerAuth: []
-  /api/printer:
-    get:
-      tags:
-      - Printers
-      summary: Получить список принтеров
-      description: Возвращает список всех принтеров с пагинацией
-      operationId: getPrinters
-      parameters:
-      - name: pageable
-        in: query
-        required: true
-        schema:
-          $ref: "#/components/schemas/Pageable"
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseListPrinterDto"
-    post:
-      tags:
-      - Printers
-      summary: Добавить принтер в тенант
-      description: Добавить принтер в тенант
-      operationId: createPrinter
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/PrinterDto"
-        required: true
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponsePrinterDto"
-      security:
-      - bearerAuth: []
-  /api/print:
-    post:
-      tags:
-      - Print
-      summary: Добавить задание печати
-      description: Создать новое задание печати. Передается только payload. Пользователь
-        берется из токена. Принтер из настроек.
-      operationId: addPrintTask
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/PrintTaskDto"
-        required: true
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-      security:
-      - bearerAuth: []
-  /api/person:
-    get:
-      tags:
-      - Person
-      summary: Получить всех пользователей
-      description: Получить список всех пользователей системы. Нужно при раздаче прав
-      operationId: getAllPersons
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseListPersonDto"
-      security:
-      - bearerAuth: []
-    post:
-      tags:
-      - Person
-      summary: Создать пользователя
-      description: Создать нового пользователя
-      operationId: createPerson
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/PersonDto"
-        required: true
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponsePersonDto"
-      security:
-      - bearerAuth: []
-  /api/manager:
-    post:
-      tags:
-      - Managers
-      summary: Создать менеджера
-      description: Создать нового менеджера (требуется права администратора)
-      operationId: createManager
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/ManagerDto"
-        required: true
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseManagerDto"
-      security:
-      - bearerAuth: []
-  /api/managers:
-    post:
-      tags:
-      - Managers
-      summary: Создать менеджера
-      description: Создать нового менеджера (требуется права администратора)
-      operationId: createManager_1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/ManagerDto"
-        required: true
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseManagerDto"
-      security:
-      - bearerAuth: []
-  /api/login:
-    post:
-      tags:
-      - Login
-      summary: Аутентификация пользователя
-      description: "Аутентифицирует пользователя по логину и паролю, возвращает от\
-        вет с заголовком авторизации"
-      operationId: login
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/LoginDto"
-        required: true
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-  /api/barcode:
-    post:
-      tags:
-      - Image
-      summary: Получить изображение штрих-кода
-      description: Получить изображение штрих-кода в формате PNG по коду
-      operationId: getBarImage
-      requestBody:
-        content:
-          application/json:
-            schema:
-              oneOf:
-              - $ref: "#/components/schemas/PrintNameBarCountPayload"
-              - $ref: "#/components/schemas/PrintSringPayload"
-        required: true
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            image/png:
-              schema:
-                type: string
-                format: byte
   /api/admin/whadmin:
     get:
       tags:
@@ -4069,14 +4123,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4114,14 +4168,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4153,14 +4207,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4213,14 +4267,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4257,14 +4311,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4308,14 +4362,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4353,14 +4407,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4399,14 +4453,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4450,14 +4504,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4506,14 +4560,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4557,14 +4611,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4608,14 +4662,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4659,14 +4713,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4710,14 +4764,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4761,14 +4815,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4818,14 +4872,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4868,14 +4922,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4924,14 +4978,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -4942,7 +4996,56 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ResponseListSupplyRecordDto"
-  /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/transition/sparepart/{articleCode}/rest:
+  /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/transition/count:
+    get:
+      tags:
+      - SupplyTransition
+      summary: countSupplyRecordsWithoutPrice
+      description: countSupplyRecordsWithoutPrice
+      operationId: countSupplyRecordsWithoutPrice
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: supplyCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+  /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/transition/article/{articleCode}/rest:
     get:
       tags:
       - SupplyTransition
@@ -4978,63 +5081,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
         "400":
           description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseCountDto"
-  /api/warehouse/{warehouseCode}/supply/{supplyCode}/record/transition/count:
-    get:
-      tags:
-      - SupplyTransition
-      summary: countSupplyRecordsWithoutPrice
-      description: countSupplyRecordsWithoutPrice
-      operationId: countSupplyRecordsWithoutPrice
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: supplyCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
         "404":
           description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5076,14 +5130,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5127,14 +5181,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5147,7 +5201,7 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendsparepart/count:
+  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle/count:
     get:
       tags:
       - Supply
@@ -5178,14 +5232,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5198,7 +5252,7 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle/count:
+  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendarticle/count:
     get:
       tags:
       - Supply
@@ -5229,14 +5283,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5249,7 +5303,7 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendsparepart:
+  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle:
     get:
       tags:
       - Supply
@@ -5285,14 +5339,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5305,7 +5359,7 @@ paths:
                 $ref: "#/components/schemas/ResponseListSupplyAbsendArticleDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle:
+  /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendarticle:
     get:
       tags:
       - Supply
@@ -5341,14 +5395,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5387,14 +5441,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5438,334 +5492,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
         "400":
           description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseListStockDto"
-      security:
-      - bearerAuth: []
-  /api/warehouse/{warehouseCode}/stock/sparepart/{articleCode}/csv:
-    get:
-      tags:
-      - Stock
-      summary: Отчет по складу. Получить товары по коду товара в CSV
-      description: Отчет по складу. Получить товары по коду товара в CSV
-      operationId: downloadStockByArticle
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: articleCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
         "404":
           description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: string
-      security:
-      - bearerAuth: []
-  /api/warehouse/{warehouseCode}/stock/article/{articleCode}/csv:
-    get:
-      tags:
-      - Stock
-      summary: Отчет по складу. Получить товары по коду товара в CSV
-      description: Отчет по складу. Получить товары по коду товара в CSV
-      operationId: downloadStockByArticle_1
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: articleCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: string
-      security:
-      - bearerAuth: []
-  /api/warehouse/{warehouseCode}/stock/sparepart/{articleCode}/count:
-    get:
-      tags:
-      - Stock
-      summary: Отчет по складу. Получить количество товара по коду товара
-      description: Отчет по складу. Получить общее количество товара по коду товара
-        на складе
-      operationId: countStockByArticle
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: articleCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseCountDto"
-      security:
-      - bearerAuth: []
-  /api/warehouse/{warehouseCode}/stock/article/{articleCode}/count:
-    get:
-      tags:
-      - Stock
-      summary: Отчет по складу. Получить количество товара по коду товара
-      description: Отчет по складу. Получить общее количество товара по коду товара
-        на складе
-      operationId: countStockByArticle_1
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: articleCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseCountDto"
-      security:
-      - bearerAuth: []
-  /api/warehouse/{warehouseCode}/stock/article/{articleCode}:
-    get:
-      tags:
-      - Stock
-      summary: Отчет по складу. Получить товар по коду товара
-      description: Отчет по складу. Получить список товаров на всех полках склада
-        по коду товара с пагинацией
-      operationId: getStockByArticle
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: articleCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: pageable
-        in: query
-        required: true
-        schema:
-          $ref: "#/components/schemas/Pageable"
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseListStockDto"
-      security:
-      - bearerAuth: []
-  /api/warehouse/{warehouseCode}/stock/sparepart/{articleCode}:
-    get:
-      tags:
-      - Stock
-      summary: Отчет по складу. Получить товар по коду товара
-      description: Отчет по складу. Получить список товаров на всех полках склада
-        по коду товара с пагинацией
-      operationId: getStockByArticle_1
-      parameters:
-      - name: warehouseCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: articleCode
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: pageable
-        in: query
-        required: true
-        schema:
-          $ref: "#/components/schemas/Pageable"
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
           content:
             '*/*':
               schema:
@@ -5815,14 +5549,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5866,14 +5600,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5918,14 +5652,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -5964,14 +5698,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6010,14 +5744,174 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
         "404":
           description: Not Found
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/stock/article/{articleCode}:
+    get:
+      tags:
+      - Stock
+      summary: Отчет по складу. Получить товар по коду товара
+      description: Отчет по складу. Получить список товаров на всех полках склада
+        по коду товара с пагинацией
+      operationId: getStockByArticle
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: articleCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageable
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/Pageable"
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
         "400":
           description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListStockDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/stock/article/{articleCode}/csv:
+    get:
+      tags:
+      - Stock
+      summary: Отчет по складу. Получить товары по коду товара в CSV
+      description: Отчет по складу. Получить товары по коду товара в CSV
+      operationId: downloadStockByArticle
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: articleCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/stock/article/{articleCode}/count:
+    get:
+      tags:
+      - Stock
+      summary: Отчет по складу. Получить количество товара по коду товара
+      description: Отчет по складу. Получить общее количество товара по коду товара
+        на складе
+      operationId: countStockByArticle
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: articleCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6061,14 +5955,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6112,14 +6006,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6163,14 +6057,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6209,14 +6103,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6261,14 +6155,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6308,14 +6202,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6354,14 +6248,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6400,14 +6294,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6451,14 +6345,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6496,14 +6390,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6542,14 +6436,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6593,14 +6487,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6644,14 +6538,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6700,14 +6594,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6751,14 +6645,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6802,14 +6696,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6825,7 +6719,7 @@ paths:
   /api/warehouse/{warehouseCode}/order/{orderCode}/search:
     get:
       tags:
-      - Orders
+      - Order
       summary: Поиск заказов
       description: Поиск заказов по шаблону кода
       operationId: searchOrdersByCode
@@ -6853,14 +6747,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6876,7 +6770,7 @@ paths:
   /api/warehouse/{warehouseCode}/order/{orderCode}/search/count:
     get:
       tags:
-      - Orders
+      - Order
       summary: Посчитать заказы по коду
       description: "Посчитать количество заказов, соответствующих шаблону кода"
       operationId: countOrdersByCode
@@ -6904,14 +6798,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -6960,14 +6854,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7010,14 +6904,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7066,14 +6960,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7117,14 +7011,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7168,14 +7062,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7219,14 +7113,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7270,14 +7164,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7326,14 +7220,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7377,14 +7271,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7397,7 +7291,7 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/order/{orderCode}/absendsparepart:
+  /api/warehouse/{warehouseCode}/order/{orderCode}/absendarticle:
     get:
       tags:
       - OrderUploadAbsentArticle
@@ -7433,14 +7327,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7453,7 +7347,7 @@ paths:
                 $ref: "#/components/schemas/ResponseListOrderAbsentArticleDto"
       security:
       - bearerAuth: []
-  /api/warehouse/{warehouseCode}/order/{orderCode}/absendsparepart/count:
+  /api/warehouse/{warehouseCode}/order/{orderCode}/absendarticle/count:
     get:
       tags:
       - OrderUploadAbsentArticle
@@ -7484,14 +7378,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7530,14 +7424,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7581,14 +7475,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7627,14 +7521,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7673,14 +7567,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7723,14 +7617,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7773,14 +7667,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7823,14 +7717,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7878,14 +7772,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7933,14 +7827,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -7988,14 +7882,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8043,14 +7937,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8103,14 +7997,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8157,14 +8051,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8212,14 +8106,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8267,14 +8161,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8317,14 +8211,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8362,14 +8256,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8413,14 +8307,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8470,14 +8364,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8522,14 +8416,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8573,14 +8467,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8625,14 +8519,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8672,14 +8566,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8712,14 +8606,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8752,14 +8646,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8799,14 +8693,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8846,14 +8740,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8893,14 +8787,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8933,14 +8827,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -8979,14 +8873,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9019,14 +8913,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9060,14 +8954,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9078,138 +8972,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ResponseSystemSettingDto"
-  /api/sparepart/{articleCode}/search:
-    get:
-      tags:
-      - Articles
-      summary: Поиск запчастей/товаров по коду
-      description: Выполнить поиск запчастей/товаров по коду (частичное совпадение)
-      operationId: searchArticles
-      parameters:
-      - name: articleCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseListArticleDto"
-      security:
-      - bearerAuth: []
-  /api/sparepart/{articleCode}/search/count:
-    get:
-      tags:
-      - Articles
-      summary: Получить количество найденных запчастей/товаров
-      description: Получить количество запчастей/товаров по результатам поиска
-      operationId: countSearchArticles
-      parameters:
-      - name: articleCode
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseCountDto"
-      security:
-      - bearerAuth: []
-  /api/sparepart/count:
-    get:
-      tags:
-      - Articles
-      summary: Получить количество запчастей/товаров
-      description: Получить общее количество запчастей/товаров в складе
-      operationId: countArticles
-      responses:
-        "401":
-          description: Unauthorized
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "403":
-          description: Forbidden
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
-          content:
-            '*/*':
-              schema:
-                $ref: "#/components/schemas/ResponseCommonDto"
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ResponseCountDto"
-      security:
-      - bearerAuth: []
   /api/printer/count:
     get:
       tags:
@@ -9230,14 +8992,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9281,14 +9043,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9325,14 +9087,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9376,14 +9138,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9427,14 +9189,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9472,14 +9234,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9518,14 +9280,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9559,14 +9321,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9599,14 +9361,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9649,14 +9411,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9697,14 +9459,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9735,14 +9497,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9773,14 +9535,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9817,14 +9579,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9861,14 +9623,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9907,14 +9669,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9925,6 +9687,138 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ResponseArticleDto"
+      security:
+      - bearerAuth: []
+  /api/article/{articleCode}/search:
+    get:
+      tags:
+      - Article
+      summary: Поиск запчастей/товаров по коду
+      description: Выполнить поиск запчастей/товаров по коду (частичное совпадение)
+      operationId: searchArticles
+      parameters:
+      - name: articleCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListArticleDto"
+      security:
+      - bearerAuth: []
+  /api/article/{articleCode}/search/count:
+    get:
+      tags:
+      - Article
+      summary: Получить количество найденных запчастей/товаров
+      description: Получить количество запчастей/товаров по результатам поиска
+      operationId: countSearchArticles
+      parameters:
+      - name: articleCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
+      security:
+      - bearerAuth: []
+  /api/article/count:
+    get:
+      tags:
+      - Articles
+      summary: Получить количество запчастей/товаров
+      description: Получить общее количество запчастей/товаров в складе
+      operationId: countArticles
+      responses:
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
   /api/admin:
@@ -9947,14 +9841,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -9993,14 +9887,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -10033,14 +9927,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -10077,14 +9971,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -10115,14 +10009,14 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "404":
-          description: Not Found
+        "400":
+          description: Bad Request
           content:
             '*/*':
               schema:
                 $ref: "#/components/schemas/ResponseCommonDto"
-        "400":
-          description: Bad Request
+        "404":
+          description: Not Found
           content:
             '*/*':
               schema:
@@ -10230,8 +10124,8 @@ components:
           $ref: "#/components/schemas/WarehouseDto"
     ToStockTransitionDto:
       required:
+      - articleCode
       - shelfCode
-      - sparePartCode
       type: object
       properties:
         warehouseCode:
@@ -10249,12 +10143,12 @@ components:
         timestamp:
           type: string
           format: date-time
-        sparePartCode:
+        articleCode:
           type: string
     SupplyTransitionDto:
       required:
+      - articleCode
       - shelfCode
-      - sparePartCode
       - supplyCode
       - warehouseCode
       type: object
@@ -10272,12 +10166,12 @@ components:
         timestamp:
           type: string
           format: date-time
-        sparePartCode:
+        articleCode:
           type: string
     OutStockTransitionDto:
       required:
+      - articleCode
       - shelfCode
-      - sparePartCode
       type: object
       properties:
         warehouseCode:
@@ -10293,13 +10187,13 @@ components:
         timestamp:
           type: string
           format: date-time
-        sparePartCode:
+        articleCode:
           type: string
     OrderTransitionDto:
       required:
+      - articleCode
       - orderCode
       - shelfCode
-      - sparePartCode
       - warehouseCode
       type: object
       properties:
@@ -10316,12 +10210,12 @@ components:
         timestamp:
           type: string
           format: date-time
-        sparePartCode:
+        articleCode:
           type: string
     InsideStockTransitionDto:
       required:
+      - articleCode
       - sourceShelfCode
-      - sparePartCode
       - targetShelfCode
       type: object
       properties:
@@ -10340,7 +10234,7 @@ components:
         timestamp:
           type: string
           format: date-time
-        sparePartCode:
+        articleCode:
           type: string
     OrderDto:
       required:
@@ -10456,9 +10350,9 @@ components:
           format: int32
         price:
           type: number
-        sparePartCode:
+        articleCode:
           type: string
-        sparePartName:
+        articleName:
           type: string
     ResponseSupplyUploadRecordDto:
       type: object
@@ -10487,6 +10381,15 @@ components:
           $ref: "#/components/schemas/Metadata"
         payload:
           $ref: "#/components/schemas/ShelfDto"
+    ResponseListShelfDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          type: array
+          items:
+            $ref: "#/components/schemas/ShelfDto"
     TurnoverPeriodDto:
       type: object
       properties:
@@ -10514,7 +10417,7 @@ components:
           minimum: 1
           type: integer
           format: int32
-        sparePartCode:
+        articleCode:
           type: string
     ResponseOrderUploadRecordDto:
       type: object
@@ -10885,30 +10788,6 @@ components:
           $ref: "#/components/schemas/Metadata"
         payload:
           $ref: "#/components/schemas/TenantDto"
-    ArticleDto:
-      required:
-      - code
-      - name
-      - vendor
-      type: object
-      properties:
-        id:
-          type: string
-        code:
-          type: string
-        name:
-          type: string
-        vendor:
-          type: string
-        tenantCode:
-          type: string
-    ResponseArticleDto:
-      type: object
-      properties:
-        metadata:
-          $ref: "#/components/schemas/Metadata"
-        payload:
-          $ref: "#/components/schemas/ArticleDto"
     PrinterDto:
       required:
       - code
@@ -11020,6 +10899,30 @@ components:
           type: string
         password:
           type: string
+    ArticleDto:
+      required:
+      - code
+      - name
+      - vendor
+      type: object
+      properties:
+        id:
+          type: string
+        code:
+          type: string
+        name:
+          type: string
+        vendor:
+          type: string
+        tenantCode:
+          type: string
+    ResponseArticleDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          $ref: "#/components/schemas/ArticleDto"
     WhAdminDto:
       required:
       - login
@@ -11067,10 +10970,6 @@ components:
         articleCode:
           type: string
         articleName:
-          type: string
-        sparePartCode:
-          type: string
-        sparePartName:
           type: string
         shelfCode:
           type: string
@@ -11139,9 +11038,9 @@ components:
         rest:
           type: integer
           format: int32
-        sparePartCode:
+        articleCode:
           type: string
-        sparePartName:
+        articleName:
           type: string
     ResponseListSupplyAbsendArticleDto:
       type: object
@@ -11161,9 +11060,9 @@ components:
           type: string
         vendor:
           type: string
-        sparePartCode:
+        articleCode:
           type: string
-        sparePartName:
+        articleName:
           type: string
     ResponseListStockDto:
       type: object
@@ -11185,24 +11084,11 @@ components:
           type: string
         articleName:
           type: string
-        sparePartCode:
-          type: string
-        sparePartName:
-          type: string
         vendor:
           type: string
         quantity:
           type: integer
           format: int32
-    ResponseListShelfDto:
-      type: object
-      properties:
-        metadata:
-          $ref: "#/components/schemas/Metadata"
-        payload:
-          type: array
-          items:
-            $ref: "#/components/schemas/ShelfDto"
     ResponseListTurnoverRecordDto:
       type: object
       properties:
@@ -11260,9 +11146,9 @@ components:
           minimum: 1
           type: integer
           format: int32
-        sparePartCode:
+        articleCode:
           type: string
-        sparePartName:
+        articleName:
           type: string
     ResponseListOrderTransformedRecordDto:
       type: object
@@ -11296,10 +11182,6 @@ components:
           type: string
         articleName:
           type: string
-        sparePartCode:
-          type: string
-        sparePartName:
-          type: string
         shelfCode:
           type: string
         shelfName:
@@ -11329,10 +11211,6 @@ components:
           type: string
         articleName:
           type: string
-        sparePartCode:
-          type: string
-        sparePartName:
-          type: string
         shelfCode:
           type: string
         shelfName:
@@ -11356,10 +11234,6 @@ components:
         articleCode:
           type: string
         articleName:
-          type: string
-        sparePartCode:
-          type: string
-        sparePartName:
           type: string
         vendor:
           type: string
@@ -11388,7 +11262,7 @@ components:
           type: string
         vendor:
           type: string
-        sparePartCode:
+        articleCode:
           type: string
     ResponseListOrderAbsentArticleDto:
       type: object
@@ -11403,10 +11277,6 @@ components:
       type: object
       properties:
         warehouseCode:
-          type: string
-        sparePartCode:
-          type: string
-        sparePartName:
           type: string
         articleCode:
           type: string

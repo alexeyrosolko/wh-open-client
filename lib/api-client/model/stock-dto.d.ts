@@ -12,8 +12,6 @@ export interface StockDto {
     shelfCode?: string;
     articleCode?: string;
     articleName?: string;
-    sparePartCode?: string;
-    sparePartName?: string;
     vendor?: string;
     quantity?: number;
 }

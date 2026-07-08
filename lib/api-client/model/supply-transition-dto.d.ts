@@ -13,5 +13,5 @@ export interface SupplyTransitionDto {
     shelfCode: string;
     quantity?: number;
     timestamp?: string;
-    sparePartCode: string;
+    articleCode: string;
 }

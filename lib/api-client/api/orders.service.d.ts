@@ -61,31 +61,6 @@ export declare class OrdersService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
-     * Посчитать заказы по коду
-     * Посчитать количество заказов, соответствующих шаблону кода
-     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/search/count
-     * @param warehouseCode
-     * @param orderCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    countOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCountDto>;
-    countOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCountDto>>;
-    countOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCountDto>>;
-    /**
      * Получить заказы склада
      * Вернуть список заказов для указанного склада
      * @endpoint get /api/warehouse/{warehouseCode}/order
@@ -106,31 +81,6 @@ export declare class OrdersService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListOrderDto>>;
     getOrders(warehouseCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListOrderDto>>;
-    /**
-     * Поиск заказов
-     * Поиск заказов по шаблону кода
-     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/search
-     * @param warehouseCode
-     * @param orderCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    searchOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseListOrderDto>;
-    searchOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListOrderDto>>;
-    searchOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;

@@ -12,6 +12,6 @@ export interface OrderTransformedRecordDto {
     orderCode?: string;
     vendor?: string;
     quantity?: number;
-    sparePartCode?: string;
-    sparePartName?: string;
+    articleCode?: string;
+    articleName?: string;
 }

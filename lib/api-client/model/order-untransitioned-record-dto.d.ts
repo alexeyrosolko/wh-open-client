@@ -14,8 +14,6 @@ export interface OrderUntransitionedRecordDto {
     rest?: number;
     articleCode?: string;
     articleName?: string;
-    sparePartCode?: string;
-    sparePartName?: string;
     shelfCode?: string;
     shelfName?: string;
 }

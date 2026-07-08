@@ -12,8 +12,6 @@ export interface OrderAbsentRecordDto {
     orderCode?: string;
     articleCode?: string;
     articleName?: string;
-    sparePartCode?: string;
-    sparePartName?: string;
     vendor?: string;
     quantity?: number;
     rest?: number;

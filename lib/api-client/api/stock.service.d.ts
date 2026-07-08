@@ -36,7 +36,7 @@ export declare class StockService extends BaseService {
     /**
      * Отчет по складу. Получить количество товара по коду товара
      * Отчет по складу. Получить общее количество товара по коду товара на складе
-     * @endpoint get /api/warehouse/{warehouseCode}/stock/sparepart/{articleCode}/count
+     * @endpoint get /api/warehouse/{warehouseCode}/stock/article/{articleCode}/count
      * @param warehouseCode
      * @param articleCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -54,31 +54,6 @@ export declare class StockService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCountDto>>;
     countStockByArticle(warehouseCode: string, articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCountDto>>;
-    /**
-     * Отчет по складу. Получить количество товара по коду товара
-     * Отчет по складу. Получить общее количество товара по коду товара на складе
-     * @endpoint get /api/warehouse/{warehouseCode}/stock/article/{articleCode}/count
-     * @param warehouseCode
-     * @param articleCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    countStockByArticle1(warehouseCode: string, articleCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCountDto>;
-    countStockByArticle1(warehouseCode: string, articleCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCountDto>>;
-    countStockByArticle1(warehouseCode: string, articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
@@ -111,7 +86,7 @@ export declare class StockService extends BaseService {
     /**
      * Отчет по складу. Получить товары по коду товара в CSV
      * Отчет по складу. Получить товары по коду товара в CSV
-     * @endpoint get /api/warehouse/{warehouseCode}/stock/sparepart/{articleCode}/csv
+     * @endpoint get /api/warehouse/{warehouseCode}/stock/article/{articleCode}/csv
      * @param warehouseCode
      * @param articleCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -129,31 +104,6 @@ export declare class StockService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<string>>;
     downloadStockByArticle(warehouseCode: string, articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<string>>;
-    /**
-     * Отчет по складу. Получить товары по коду товара в CSV
-     * Отчет по складу. Получить товары по коду товара в CSV
-     * @endpoint get /api/warehouse/{warehouseCode}/stock/article/{articleCode}/csv
-     * @param warehouseCode
-     * @param articleCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    downloadStockByArticle1(warehouseCode: string, articleCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<string>;
-    downloadStockByArticle1(warehouseCode: string, articleCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'text/plain';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<string>>;
-    downloadStockByArticle1(warehouseCode: string, articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'text/plain';
         context?: HttpContext;
         transferCache?: boolean;
@@ -254,32 +204,6 @@ export declare class StockService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseListStockDto>>;
     getStockByArticle(warehouseCode: string, articleCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListStockDto>>;
-    /**
-     * Отчет по складу. Получить товар по коду товара
-     * Отчет по складу. Получить список товаров на всех полках склада по коду товара с пагинацией
-     * @endpoint get /api/warehouse/{warehouseCode}/stock/sparepart/{articleCode}
-     * @param warehouseCode
-     * @param articleCode
-     * @param pageable
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    getStockByArticle1(warehouseCode: string, articleCode: string, pageable: Pageable, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseListStockDto>;
-    getStockByArticle1(warehouseCode: string, articleCode: string, pageable: Pageable, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListStockDto>>;
-    getStockByArticle1(warehouseCode: string, articleCode: string, pageable: Pageable, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;

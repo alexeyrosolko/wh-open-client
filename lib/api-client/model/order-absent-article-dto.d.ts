@@ -11,5 +11,5 @@ export interface OrderAbsentArticleDto {
     warehouseCode?: string;
     supplyCode?: string;
     vendor?: string;
-    sparePartCode?: string;
+    articleCode?: string;
 }

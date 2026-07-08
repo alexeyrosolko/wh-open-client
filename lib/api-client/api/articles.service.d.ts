@@ -15,7 +15,7 @@ export declare class ArticlesService extends BaseService {
     /**
      * Добавить запчасть/товар
      * Добавить новую запчасть/товар в тенант
-     * @endpoint post /api/sparepart
+     * @endpoint post /api/article
      * @param articleDto
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -39,7 +39,7 @@ export declare class ArticlesService extends BaseService {
     /**
      * Скопировать запчасти/товары в буфер обмена
      * Скопировать список запчастей/товаров в буфер обмена
-     * @endpoint get /api/sparepart/csv/clipboard
+     * @endpoint get /api/article/csv/clipboard
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
@@ -62,7 +62,7 @@ export declare class ArticlesService extends BaseService {
     /**
      * Получить количество запчастей/товаров
      * Получить общее количество запчастей/товаров в складе
-     * @endpoint get /api/sparepart/count
+     * @endpoint get /api/article/count
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
@@ -83,33 +83,9 @@ export declare class ArticlesService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseCountDto>>;
     /**
-     * Получить количество найденных запчастей/товаров
-     * Получить количество запчастей/товаров по результатам поиска
-     * @endpoint get /api/sparepart/{articleCode}/search/count
-     * @param articleCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    countSearchArticles(articleCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseCountDto>;
-    countSearchArticles(articleCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseCountDto>>;
-    countSearchArticles(articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseCountDto>>;
-    /**
      * Скачать запчасти/товары в CSV
      * Скачать список всех запчастей/товаров в формате CSV
-     * @endpoint get /api/sparepart/csv
+     * @endpoint get /api/article/csv
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
@@ -132,7 +108,7 @@ export declare class ArticlesService extends BaseService {
     /**
      * Получить все запчасти/товары склада
      * Получить список всех запчастей/товаров для указанного склада с поддержкой пагинации
-     * @endpoint get /api/sparepart
+     * @endpoint get /api/article
      * @param pageable
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -154,33 +130,9 @@ export declare class ArticlesService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseListArticleDto>>;
     /**
-     * Поиск запчастей/товаров по коду
-     * Выполнить поиск запчастей/товаров по коду (частичное совпадение)
-     * @endpoint get /api/sparepart/{articleCode}/search
-     * @param articleCode
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     * @param options additional options
-     */
-    searchArticles(articleCode: string, observe?: 'body', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<ResponseListArticleDto>;
-    searchArticles(articleCode: string, observe?: 'response', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpResponse<ResponseListArticleDto>>;
-    searchArticles(articleCode: string, observe?: 'events', reportProgress?: boolean, options?: {
-        httpHeaderAccept?: '*/*' | 'application/json';
-        context?: HttpContext;
-        transferCache?: boolean;
-    }): Observable<HttpEvent<ResponseListArticleDto>>;
-    /**
      * Загрузить запчасти/товары из CSV
      * Загрузить список запчастей/товаров из CSV файла
-     * @endpoint post /api/sparepart/csv
+     * @endpoint post /api/article/csv
      * @param file
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -204,7 +156,7 @@ export declare class ArticlesService extends BaseService {
     /**
      * Загрузить запчасти/товары из буфера обмена
      * Загрузить список запчастей/товаров из строки в буфере обмена
-     * @endpoint post /api/sparepart/csv/clipboard
+     * @endpoint post /api/article/csv/clipboard
      * @param body
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

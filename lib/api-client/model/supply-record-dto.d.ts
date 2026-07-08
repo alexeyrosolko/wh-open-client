@@ -15,6 +15,6 @@ export interface SupplyRecordDto {
     price?: number;
     quantity: number;
     rest?: number;
-    sparePartCode?: string;
-    sparePartName?: string;
+    articleCode?: string;
+    articleName?: string;
 }

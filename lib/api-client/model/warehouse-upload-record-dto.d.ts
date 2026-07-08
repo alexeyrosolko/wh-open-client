@@ -12,8 +12,6 @@ export interface WarehouseUploadRecordDto {
     vendor?: string;
     articleCode?: string;
     articleName?: string;
-    sparePartCode?: string;
-    sparePartName?: string;
     shelfCode?: string;
     shelfName?: string;
     quantity: number;

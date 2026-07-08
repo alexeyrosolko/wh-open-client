@@ -11,6 +11,6 @@ export interface SupplyAbsendArticleDto {
     warehouseCode?: string;
     supplyCode?: string;
     vendor?: string;
-    sparePartCode?: string;
-    sparePartName?: string;
+    articleCode?: string;
+    articleName?: string;
 }

@@ -14,5 +14,5 @@ export interface ToStockTransitionDto {
     quantity?: number;
     price?: number;
     timestamp?: string;
-    sparePartCode: string;
+    articleCode: string;
 }

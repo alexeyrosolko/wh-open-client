@@ -13,6 +13,6 @@ export interface SupplyUploadRecordDto {
     vendor?: string;
     quantity: number;
     price?: number;
-    sparePartCode?: string;
-    sparePartName?: string;
+    articleCode?: string;
+    articleName?: string;
 }

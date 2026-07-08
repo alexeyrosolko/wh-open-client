@@ -1,5 +1,7 @@
 import { HttpClient, HttpResponse, HttpEvent, HttpContext } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ResponseCountDto } from '../model/response-count-dto';
+import { ResponseListOrderDto } from '../model/response-list-order-dto';
 import { ResponseOrderDto } from '../model/response-order-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
@@ -35,6 +37,31 @@ export declare class OrderService extends BaseService {
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseOrderDto>>;
     /**
+     * Посчитать заказы по коду
+     * Посчитать количество заказов, соответствующих шаблону кода
+     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/search/count
+     * @param warehouseCode
+     * @param orderCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    countOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseCountDto>;
+    countOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseCountDto>>;
+    countOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseCountDto>>;
+    /**
      * Получить заказ по коду
      * Вернуть заказ по коду склада и коду заказа
      * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}
@@ -59,6 +86,31 @@ export declare class OrderService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseOrderDto>>;
+    /**
+     * Поиск заказов
+     * Поиск заказов по шаблону кода
+     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/search
+     * @param warehouseCode
+     * @param orderCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    searchOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseListOrderDto>;
+    searchOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseListOrderDto>>;
+    searchOrdersByCode(warehouseCode: string, orderCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseListOrderDto>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<OrderService, [null, { optional: true; }, { optional: true; }]>;
     static ɵprov: i0.ɵɵInjectableDeclaration<OrderService>;
 }

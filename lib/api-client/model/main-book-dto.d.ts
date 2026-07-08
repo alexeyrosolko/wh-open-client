@@ -9,8 +9,6 @@
  */
 export interface MainBookDto {
     warehouseCode?: string;
-    sparePartCode?: string;
-    sparePartName?: string;
     articleCode?: string;
     articleName?: string;
     vendor?: string;

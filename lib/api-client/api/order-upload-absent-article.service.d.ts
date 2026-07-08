@@ -12,7 +12,7 @@ export declare class OrderUploadAbsentArticleService extends BaseService {
     /**
      * countOrderAbsentArticles
      * countOrderAbsentArticles
-     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/absendsparepart/count
+     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/absendarticle/count
      * @param warehouseCode
      * @param orderCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -37,7 +37,7 @@ export declare class OrderUploadAbsentArticleService extends BaseService {
     /**
      * getOrderAbsentArticles
      * getOrderAbsentArticles
-     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/absendsparepart
+     * @endpoint get /api/warehouse/{warehouseCode}/order/{orderCode}/absendarticle
      * @param warehouseCode
      * @param orderCode
      * @param pageable

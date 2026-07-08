@@ -68,7 +68,7 @@ export declare class SupplyService extends BaseService {
     /**
      * Получить количество отсутствующих товаров
      * Получить количество отсутствующих товаров в поставке
-     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendsparepart/count
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle/count
      * @param warehouseCode
      * @param supplyCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -93,7 +93,7 @@ export declare class SupplyService extends BaseService {
     /**
      * Получить количество отсутствующих товаров
      * Получить количество отсутствующих товаров в поставке
-     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle/count
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendarticle/count
      * @param warehouseCode
      * @param supplyCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -193,7 +193,7 @@ export declare class SupplyService extends BaseService {
     /**
      * Получить отсутствующие товары в поставке
      * Получить список отсутствующих товаров в конкретной поставке с пагинацией
-     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendsparepart
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle
      * @param warehouseCode
      * @param supplyCode
      * @param pageable
@@ -219,7 +219,7 @@ export declare class SupplyService extends BaseService {
     /**
      * Получить отсутствующие товары в поставке
      * Получить список отсутствующих товаров в конкретной поставке с пагинацией
-     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle
+     * @endpoint get /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendarticle
      * @param warehouseCode
      * @param supplyCode
      * @param pageable
@@ -296,24 +296,24 @@ export declare class SupplyService extends BaseService {
     /**
      * Переместить отсутствующие товары в запчасти
      * Переместить все отсутствующие товары в статус активных запчастей
-     * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendsparepart/movetospareparts
+     * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle/movetoarticles
      * @param warehouseCode
      * @param supplyCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    moveAbsentArticlesToSpareParts(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    moveAbsentArticlesToArticles(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
-    moveAbsentArticlesToSpareParts(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    moveAbsentArticlesToArticles(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
-    moveAbsentArticlesToSpareParts(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    moveAbsentArticlesToArticles(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
@@ -321,24 +321,24 @@ export declare class SupplyService extends BaseService {
     /**
      * Переместить отсутствующие товары в запчасти
      * Переместить все отсутствующие товары в статус активных запчастей
-     * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/absentsarticle/movetospareparts
+     * @endpoint post /api/warehouse/{warehouseCode}/supply/{supplyCode}/absendarticle/movetoarticles
      * @param warehouseCode
      * @param supplyCode
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    moveAbsentArticlesToSpareParts1(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+    moveAbsentArticlesToArticles1(warehouseCode: string, supplyCode: string, observe?: 'body', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<ResponseCommonDto>;
-    moveAbsentArticlesToSpareParts1(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+    moveAbsentArticlesToArticles1(warehouseCode: string, supplyCode: string, observe?: 'response', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpResponse<ResponseCommonDto>>;
-    moveAbsentArticlesToSpareParts1(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+    moveAbsentArticlesToArticles1(warehouseCode: string, supplyCode: string, observe?: 'events', reportProgress?: boolean, options?: {
         httpHeaderAccept?: '*/*' | 'application/json';
         context?: HttpContext;
         transferCache?: boolean;
