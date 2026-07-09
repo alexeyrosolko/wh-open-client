@@ -5,6 +5,7 @@ import { ResponseCommonDto } from '../model/response-common-dto';
 import { ResponseCountDto } from '../model/response-count-dto';
 import { ResponseListShelfDto } from '../model/response-list-shelf-dto';
 import { ResponseShelfDto } from '../model/response-shelf-dto';
+import { ResponseShelfTreeNodeDto } from '../model/response-shelf-tree-node-dto';
 import { ShelfDto } from '../model/shelf-dto';
 import { Configuration } from '../configuration';
 import { BaseService } from '../api.base.service';
@@ -209,6 +210,30 @@ export declare class ShelfService extends BaseService {
         context?: HttpContext;
         transferCache?: boolean;
     }): Observable<HttpEvent<ResponseShelfDto>>;
+    /**
+     * Получить дерево полок склада
+     * Построить дерево полок склада на основе иерархии кодов, разделённых точкой
+     * @endpoint get /api/warehouse/{warehouseCode}/shelf/tree
+     * @param warehouseCode
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     * @param options additional options
+     */
+    getShelfTree(warehouseCode: string, observe?: 'body', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<ResponseShelfTreeNodeDto>;
+    getShelfTree(warehouseCode: string, observe?: 'response', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpResponse<ResponseShelfTreeNodeDto>>;
+    getShelfTree(warehouseCode: string, observe?: 'events', reportProgress?: boolean, options?: {
+        httpHeaderAccept?: '*/*' | 'application/json';
+        context?: HttpContext;
+        transferCache?: boolean;
+    }): Observable<HttpEvent<ResponseShelfTreeNodeDto>>;
     /**
      * Поиск полок по коду
      * Выполнить поиск полок по коду (частичное совпадение)
