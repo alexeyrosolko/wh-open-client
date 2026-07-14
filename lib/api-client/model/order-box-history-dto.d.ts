@@ -7,9 +7,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export interface AccountFilterDto {
-    supplyCode?: string;
-    orderCode?: string;
-    shelfCode?: string;
-    orderBoxCode?: string;
+export interface OrderBoxHistoryDto {
+    id?: string;
+    code?: string;
+    name?: string;
 }

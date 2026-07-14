@@ -2684,6 +2684,221 @@ paths:
                 $ref: "#/components/schemas/ResponseOrderDto"
       security:
       - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/box:
+    get:
+      tags:
+      - OrderBox
+      summary: Получить коробки заказа
+      description: Вернуть список коробок для выбытия указанного заказа
+      operationId: getOrderBoxesByOrderCode
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseListOrderBoxDto"
+      security:
+      - bearerAuth: []
+    post:
+      tags:
+      - OrderBox
+      summary: Открыть коробку
+      description: Открыть новую коробку для выбытия заказа
+      operationId: openOrderBox
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OrderBoxDto"
+        required: true
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseOrderBoxDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/box/next:
+    post:
+      tags:
+      - OrderBox
+      summary: Следующая коробка
+      description: Закрыть текущую открытую коробку заказа (если есть) и открыть новую
+      operationId: nextOrderBox
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OrderBoxDto"
+        required: true
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseOrderBoxDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/box/close:
+    post:
+      tags:
+      - OrderBox
+      summary: Закрыть коробку
+      description: Закрыть текущую открытую коробку заказа
+      operationId: closeCurrentOrderBox
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseOrderBoxDto"
+      security:
+      - bearerAuth: []
   /api/warehouse/{warehouseCode}/inventoryprocess:
     get:
       tags:
@@ -7231,6 +7446,113 @@ paths:
                 $ref: "#/components/schemas/ResponseCountDto"
       security:
       - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/box/open:
+    get:
+      tags:
+      - OrderBox
+      summary: Получить открытую коробку
+      description: Вернуть текущую открытую коробку заказа
+      operationId: getOpenOrderBox
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseOrderBoxDto"
+      security:
+      - bearerAuth: []
+  /api/warehouse/{warehouseCode}/order/{orderCode}/box/code/{boxCode}:
+    get:
+      tags:
+      - OrderBox
+      summary: Получить коробку по коду
+      description: Вернуть коробку заказа по коду коробки
+      operationId: getOrderBoxByCode
+      parameters:
+      - name: warehouseCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderCode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: boxCode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "403":
+          description: Forbidden
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "401":
+          description: Unauthorized
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "400":
+          description: Bad Request
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/ResponseCommonDto"
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseOrderBoxDto"
+      security:
+      - bearerAuth: []
   /api/warehouse/{warehouseCode}/order/{orderCode}/absentrecord:
     get:
       tags:
@@ -10473,6 +10795,43 @@ components:
           $ref: "#/components/schemas/Metadata"
         payload:
           $ref: "#/components/schemas/OrderUploadRecordDto"
+    OrderBoxDto:
+      required:
+      - code
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        code:
+          type: string
+        name:
+          type: string
+        boxIndex:
+          type: integer
+          format: int32
+        state:
+          type: string
+          enum:
+          - OPEN
+          - CLOSED
+        openedAt:
+          type: string
+          format: date-time
+        closedAt:
+          type: string
+          format: date-time
+        personOpenLogin:
+          type: string
+        personCloseLogin:
+          type: string
+    ResponseOrderBoxDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          $ref: "#/components/schemas/OrderBoxDto"
     InventoryProcessDto:
       required:
       - code
@@ -10532,6 +10891,8 @@ components:
           type: string
         shelfCode:
           type: string
+        orderBoxCode:
+          type: string
     TransitionFilterDto:
       type: object
       properties:
@@ -10584,6 +10945,18 @@ components:
           $ref: "#/components/schemas/OrderHistoryDto"
         shelf:
           $ref: "#/components/schemas/ShelfHistoryDto"
+        orderBox:
+          $ref: "#/components/schemas/OrderBoxHistoryDto"
+    OrderBoxHistoryDto:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        code:
+          type: string
+        name:
+          type: string
     OrderHistoryDto:
       type: object
       properties:
@@ -10664,6 +11037,8 @@ components:
           - TO_ORDER_FROM_OUTSIDE
           - TO_WAREHOUSE_FROM_ORDER
           - TO_WAREHOUSE_FROM_WAREHOUSE
+          - TO_ORDERBOX_FROM_ORDER
+          - TO_ORDER_FROM_ORDERBOX
         transitionTypeRu:
           type: string
     TransitionFilterFlatDto:
@@ -10679,17 +11054,23 @@ components:
           type: string
         allShelfCode:
           type: string
+        allOrderBoxCode:
+          type: string
         debetSupplyCode:
           type: string
         debetOrderCode:
           type: string
         debetShelfCode:
           type: string
+        debetOrderBoxCode:
+          type: string
         creditSupplyCode:
           type: string
         creditOrderCode:
           type: string
         creditShelfCode:
+          type: string
+        creditOrderBoxCode:
           type: string
         articleCode:
           type: string
@@ -10716,6 +11097,8 @@ components:
           - TO_ORDER_FROM_OUTSIDE
           - TO_WAREHOUSE_FROM_ORDER
           - TO_WAREHOUSE_FROM_WAREHOUSE
+          - TO_ORDERBOX_FROM_ORDER
+          - TO_ORDER_FROM_ORDERBOX
     ResponseListTransitionHistoryFlatDto:
       type: object
       properties:
@@ -10795,6 +11178,20 @@ components:
         creditShelfCode:
           type: string
         creditShelfName:
+          type: string
+        debetOrderBoxId:
+          type: string
+          format: uuid
+        debetOrderBoxCode:
+          type: string
+        debetOrderBoxName:
+          type: string
+        creditOrderBoxId:
+          type: string
+          format: uuid
+        creditOrderBoxCode:
+          type: string
+        creditOrderBoxName:
           type: string
     CountDto:
       type: object
@@ -11289,6 +11686,15 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/OrderUntransitionedRecordDto"
+    ResponseListOrderBoxDto:
+      type: object
+      properties:
+        metadata:
+          $ref: "#/components/schemas/Metadata"
+        payload:
+          type: array
+          items:
+            $ref: "#/components/schemas/OrderBoxDto"
     OrderAbsentRecordDto:
       type: object
       properties:

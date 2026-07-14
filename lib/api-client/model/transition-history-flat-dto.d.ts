@@ -37,4 +37,10 @@ export interface TransitionHistoryFlatDto {
     creditShelfId?: string;
     creditShelfCode?: string;
     creditShelfName?: string;
+    debetOrderBoxId?: string;
+    debetOrderBoxCode?: string;
+    debetOrderBoxName?: string;
+    creditOrderBoxId?: string;
+    creditOrderBoxCode?: string;
+    creditOrderBoxName?: string;
 }

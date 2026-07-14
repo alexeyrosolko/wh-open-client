@@ -9,9 +9,11 @@
  */
 import { OrderHistoryDto } from './order-history-dto';
 import { SupplyHistoryDto } from './supply-history-dto';
+import { OrderBoxHistoryDto } from './order-box-history-dto';
 import { ShelfHistoryDto } from './shelf-history-dto';
 export interface AccountHistoryDto {
     supply?: SupplyHistoryDto;
     order?: OrderHistoryDto;
     shelf?: ShelfHistoryDto;
+    orderBox?: OrderBoxHistoryDto;
 }

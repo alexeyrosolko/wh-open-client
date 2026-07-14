@@ -13,12 +13,15 @@ export interface TransitionFilterFlatDto {
     allSupplyCode?: string;
     allOrderCode?: string;
     allShelfCode?: string;
+    allOrderBoxCode?: string;
     debetSupplyCode?: string;
     debetOrderCode?: string;
     debetShelfCode?: string;
+    debetOrderBoxCode?: string;
     creditSupplyCode?: string;
     creditOrderCode?: string;
     creditShelfCode?: string;
+    creditOrderBoxCode?: string;
     articleCode?: string;
     quantity?: number;
     price?: number;
@@ -37,6 +40,8 @@ export declare namespace TransitionFilterFlatDto {
         readonly ToOrderFromOutside: "TO_ORDER_FROM_OUTSIDE";
         readonly ToWarehouseFromOrder: "TO_WAREHOUSE_FROM_ORDER";
         readonly ToWarehouseFromWarehouse: "TO_WAREHOUSE_FROM_WAREHOUSE";
+        readonly ToOrderboxFromOrder: "TO_ORDERBOX_FROM_ORDER";
+        readonly ToOrderFromOrderbox: "TO_ORDER_FROM_ORDERBOX";
     };
     type TransitionTypeEnum = typeof TransitionTypeEnum[keyof typeof TransitionTypeEnum];
 }

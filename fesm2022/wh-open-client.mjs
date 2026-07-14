@@ -4201,6 +4201,324 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
  * Do not edit the class manually.
  */
 /* tslint:disable:no-unused-variable member-ordering */
+class OrderBoxService extends BaseService {
+    httpClient;
+    constructor(httpClient, basePath, configuration) {
+        super(basePath, configuration);
+        this.httpClient = httpClient;
+    }
+    closeCurrentOrderBox(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling closeCurrentOrderBox.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling closeCurrentOrderBox.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/box/close`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getOpenOrderBox(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOpenOrderBox.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getOpenOrderBox.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/box/open`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getOrderBoxByCode(warehouseCode, orderCode, boxCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderBoxByCode.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getOrderBoxByCode.');
+        }
+        if (boxCode === null || boxCode === undefined) {
+            throw new Error('Required parameter boxCode was null or undefined when calling getOrderBoxByCode.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/box/code/${this.configuration.encodeParam({ name: "boxCode", value: boxCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    getOrderBoxesByOrderCode(warehouseCode, orderCode, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling getOrderBoxesByOrderCode.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling getOrderBoxesByOrderCode.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/box`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('get', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    nextOrderBox(warehouseCode, orderCode, orderBoxDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling nextOrderBox.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling nextOrderBox.');
+        }
+        if (orderBoxDto === null || orderBoxDto === undefined) {
+            throw new Error('Required parameter orderBoxDto was null or undefined when calling nextOrderBox.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/box/next`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: orderBoxDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    openOrderBox(warehouseCode, orderCode, orderBoxDto, observe = 'body', reportProgress = false, options) {
+        if (warehouseCode === null || warehouseCode === undefined) {
+            throw new Error('Required parameter warehouseCode was null or undefined when calling openOrderBox.');
+        }
+        if (orderCode === null || orderCode === undefined) {
+            throw new Error('Required parameter orderCode was null or undefined when calling openOrderBox.');
+        }
+        if (orderBoxDto === null || orderBoxDto === undefined) {
+            throw new Error('Required parameter orderBoxDto was null or undefined when calling openOrderBox.');
+        }
+        let localVarHeaders = this.defaultHeaders;
+        // authentication (bearerAuth) required
+        localVarHeaders = this.configuration.addCredentialToHeaders('bearerAuth', 'Authorization', localVarHeaders, 'Bearer ');
+        const localVarHttpHeaderAcceptSelected = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
+            '*/*',
+            'application/json'
+        ]);
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+        const localVarHttpContext = options?.context ?? new HttpContext();
+        const localVarTransferCache = options?.transferCache ?? true;
+        // to determine the Content-Type header
+        const consumes = [
+            'application/json'
+        ];
+        const httpContentTypeSelected = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+        let responseType_ = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            }
+            else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            }
+            else {
+                responseType_ = 'blob';
+            }
+        }
+        let localVarPath = `/api/warehouse/${this.configuration.encodeParam({ name: "warehouseCode", value: warehouseCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/order/${this.configuration.encodeParam({ name: "orderCode", value: orderCode, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined })}/box`;
+        const { basePath, withCredentials } = this.configuration;
+        return this.httpClient.request('post', `${basePath}${localVarPath}`, {
+            context: localVarHttpContext,
+            body: orderBoxDto,
+            responseType: responseType_,
+            ...(withCredentials ? { withCredentials } : {}),
+            headers: localVarHeaders,
+            observe: observe,
+            ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
+            reportProgress: reportProgress
+        });
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: OrderBoxService, deps: [{ token: i1.HttpClient }, { token: BASE_PATH, optional: true }, { token: Configuration, optional: true }], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: OrderBoxService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImport: i0, type: OrderBoxService, decorators: [{
+            type: Injectable,
+            args: [{
+                    providedIn: 'root'
+                }]
+        }], ctorParameters: () => [{ type: i1.HttpClient }, { type: undefined, decorators: [{
+                    type: Optional
+                }, {
+                    type: Inject,
+                    args: [BASE_PATH]
+                }] }, { type: Configuration, decorators: [{
+                    type: Optional
+                }] }] });
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+/* tslint:disable:no-unused-variable member-ordering */
 class OrderRecordsService extends BaseService {
     httpClient;
     constructor(httpClient, basePath, configuration) {
@@ -11108,7 +11426,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.25", ngImpo
                     type: Optional
                 }] }] });
 
-const APIS = [AbsentArticlesService, AbsentShelfService, AdminService, ArticleService, ArticlesService, DictionaryService, ExampleService, HelloWorldService, HelperService, HistoryService, ImageService, InventoriesService, InventoryService, InventoryProcessService, InventoryProcessesService, InventoryTaskService, LoginService, MainBookService, ManagersService, OrderService, OrderAbsentRecordService, OrderRecordsService, OrderTaskService, OrderTransformedRecordsService, OrderTransitionService, OrderUploadService, OrderUploadAbsentArticleService, OrdersService, PersonService, PrintService, PrintAgentService, PrintersService, ShelfService, StockService, SuppliesService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, TurnoverService, WarehouseService, WarehouseDictionaryService, WarehouseUploadService, YandexService];
+const APIS = [AbsentArticlesService, AbsentShelfService, AdminService, ArticleService, ArticlesService, DictionaryService, ExampleService, HelloWorldService, HelperService, HistoryService, ImageService, InventoriesService, InventoryService, InventoryProcessService, InventoryProcessesService, InventoryTaskService, LoginService, MainBookService, ManagersService, OrderService, OrderAbsentRecordService, OrderBoxService, OrderRecordsService, OrderTaskService, OrderTransformedRecordsService, OrderTransitionService, OrderUploadService, OrderUploadAbsentArticleService, OrdersService, PersonService, PrintService, PrintAgentService, PrintersService, ShelfService, StockService, SuppliesService, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionService, TurnoverService, WarehouseService, WarehouseDictionaryService, WarehouseUploadService, YandexService];
 
 /**
  * OpenAPI definition
@@ -11263,6 +11581,33 @@ var InventoryProcessDto;
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+
+/**
+ * OpenAPI definition
+ *
+ *
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ */
+var OrderBoxDto;
+(function (OrderBoxDto) {
+    OrderBoxDto.StateEnum = {
+        Open: 'OPEN',
+        Closed: 'CLOSED'
+    };
+})(OrderBoxDto || (OrderBoxDto = {}));
 
 /**
  * OpenAPI definition
@@ -11602,7 +11947,9 @@ var TransitionFilterFlatDto;
         ToOutsideFromOrder: 'TO_OUTSIDE_FROM_ORDER',
         ToOrderFromOutside: 'TO_ORDER_FROM_OUTSIDE',
         ToWarehouseFromOrder: 'TO_WAREHOUSE_FROM_ORDER',
-        ToWarehouseFromWarehouse: 'TO_WAREHOUSE_FROM_WAREHOUSE'
+        ToWarehouseFromWarehouse: 'TO_WAREHOUSE_FROM_WAREHOUSE',
+        ToOrderboxFromOrder: 'TO_ORDERBOX_FROM_ORDER',
+        ToOrderFromOrderbox: 'TO_ORDER_FROM_ORDERBOX'
     };
 })(TransitionFilterFlatDto || (TransitionFilterFlatDto = {}));
 
@@ -11617,7 +11964,9 @@ var TransitionHistoryDto;
         ToOutsideFromOrder: 'TO_OUTSIDE_FROM_ORDER',
         ToOrderFromOutside: 'TO_ORDER_FROM_OUTSIDE',
         ToWarehouseFromOrder: 'TO_WAREHOUSE_FROM_ORDER',
-        ToWarehouseFromWarehouse: 'TO_WAREHOUSE_FROM_WAREHOUSE'
+        ToWarehouseFromWarehouse: 'TO_WAREHOUSE_FROM_WAREHOUSE',
+        ToOrderboxFromOrder: 'TO_ORDERBOX_FROM_ORDER',
+        ToOrderFromOrderbox: 'TO_ORDER_FROM_ORDERBOX'
     };
 })(TransitionHistoryDto || (TransitionHistoryDto = {}));
 
@@ -11756,5 +12105,5 @@ function provideApi(configOrBasePath) {
  * Generated bundle index. Do not edit.
  */
 
-export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, DictionaryService, ExampleService, HelloWorldService, HelperService, HistoryService, ImageService, InventoriesService, InventoryDto, InventoryProcessDto, InventoryProcessService, InventoryProcessesService, InventoryService, InventoryTaskService, LoginService, MainBookService, ManagersService, OrderAbsentRecordService, OrderDto, OrderRecordsService, OrderService, OrderTaskService, OrderTransformedRecordsService, OrderTransitionService, OrderUploadAbsentArticleService, OrderUploadService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, StockService, SuppliesService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionFilterFlatDto, TransitionHistoryDto, TransitionService, TurnoverService, WarehouseDictionaryService, WarehouseDto, WarehouseService, WarehouseUploadService, YandexService, provideApi };
+export { APIS, AbsentArticlesService, AbsentShelfService, AdminService, ApiModule, ArticleService, ArticlesService, BASE_PATH, COLLECTION_FORMATS, Configuration, DictionaryService, ExampleService, HelloWorldService, HelperService, HistoryService, ImageService, InventoriesService, InventoryDto, InventoryProcessDto, InventoryProcessService, InventoryProcessesService, InventoryService, InventoryTaskService, LoginService, MainBookService, ManagersService, OrderAbsentRecordService, OrderBoxDto, OrderBoxService, OrderDto, OrderRecordsService, OrderService, OrderTaskService, OrderTransformedRecordsService, OrderTransitionService, OrderUploadAbsentArticleService, OrderUploadService, OrdersService, PersonDto, PersonService, PrintAgentService, PrintService, PrintersService, ShelfService, StockService, SuppliesService, SupplyDto, SupplyService, SupplyTaskService, SupplyTasksService, SupplyTransitionService, SupplyUploadRecordService, SystemService, TaskService, TenantService, TenantsService, ToStockTransitionService, TransitionFilterFlatDto, TransitionHistoryDto, TransitionService, TurnoverService, WarehouseDictionaryService, WarehouseDto, WarehouseService, WarehouseUploadService, YandexService, provideApi };
 //# sourceMappingURL=wh-open-client.mjs.map

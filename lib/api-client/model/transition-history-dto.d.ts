@@ -34,6 +34,8 @@ export declare namespace TransitionHistoryDto {
         readonly ToOrderFromOutside: "TO_ORDER_FROM_OUTSIDE";
         readonly ToWarehouseFromOrder: "TO_WAREHOUSE_FROM_ORDER";
         readonly ToWarehouseFromWarehouse: "TO_WAREHOUSE_FROM_WAREHOUSE";
+        readonly ToOrderboxFromOrder: "TO_ORDERBOX_FROM_ORDER";
+        readonly ToOrderFromOrderbox: "TO_ORDER_FROM_ORDERBOX";
     };
     type TransitionTypeEnum = typeof TransitionTypeEnum[keyof typeof TransitionTypeEnum];
 }
